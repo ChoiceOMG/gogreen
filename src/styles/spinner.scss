@@ -1,0 +1,26 @@
+@keyframes spinner-1o3y8q {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer base {
+  .spinner {
+    @apply relative w-[56px] h-[56px] flex items-center justify-center;
+    &::before,
+    &::after {
+      @apply border-[6.7px] border-solid border-goGreen-green rounded-full absolute content-[''] block;
+    }
+
+    &::before {
+      animation: spinner-1o3y8q 0.75s infinite linear reverse;
+
+      @apply w-[33.6px] h-[33.6px] border-b-transparent border-l-transparent;
+    }
+    &::after {
+      animation: spinner-1o3y8q 0.5s infinite linear;
+
+      @apply w-[56px] h-[56px] border-r-transparent border-t-transparent;
+    }
+  }
+}

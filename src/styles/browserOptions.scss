@@ -1,0 +1,38 @@
+@layer base {
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+    &-thumb {
+      @apply bg-white border-4  rounded-full transition-all duration-300 ease-in-out;
+      &:hover {
+        @apply bg-goGreen-green;
+      }
+    }
+
+    &-track {
+      @apply bg-goGreen-black;
+    }
+  }
+
+  /* Selection Styles */
+  ::selection {
+    @apply text-white bg-goGreen-green;
+  }
+
+  /*   body {
+    cursor: none;
+  } */
+}
+
+// add the code bellow
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
