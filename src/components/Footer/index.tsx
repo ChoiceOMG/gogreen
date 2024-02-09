@@ -34,7 +34,7 @@ const Footer = () => {
               alt="GoGreen"
             />
           </Link>
-          <div className="flex justify-between flex-wrap gap-4 mt-9">
+          <div className="flex justify-between flex-wrap gap-11 md:gap-4 mt-9">
             <div className="grid sm:grid-cols-2 gap-7">
               {menuColumns.map((column, index) => (
                 <nav key={index} className=" space-y-6 flex flex-col">
@@ -92,11 +92,10 @@ const Footer = () => {
       </div>
       <div className=" bg-goGreen-black py-[14px]">
         <div className="container">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center max-md:flex-col gap-4">
             {' '}
-            <p className="text-white ">
-              Copyright 2024 © Birdtail Waterfowl Outfitters. Canadian Web
-              Design by{' '}
+            <p className="text-white text-center ">
+              Copyright 2024 © GoGreen. Canadian Web Design by{' '}
               <Link
                 href="https://www.choice.marketing/"
                 target="_blank"

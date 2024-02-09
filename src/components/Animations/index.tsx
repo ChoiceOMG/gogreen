@@ -1,9 +1,9 @@
 'use client';
 import { motion } from 'framer-motion';
 import { ReactNode, useEffect, useState } from 'react';
-
+import { InView } from 'react-intersection-observer';
 type PageWrapperProps = {
-  children: ReactNode;
+  children?: ReactNode;
   delay?: number;
   className?: string;
   once?: boolean;
@@ -274,3 +274,25 @@ export const BubblePopComponent = ({
     {children}
   </motion.div>
 );
+
+export const ScrollExpandLine = ({
+  className = '',
+  once,
+  delay
+}: PageWrapperProps) => {
+  return (
+    <InView triggerOnce={once} threshold={0.7}>
+      {({ inView, ref }) => (
+        <motion.div
+          ref={ref}
+          initial={{ height: 5 }}
+          animate={inView ? { height: '100%' } : { height: 5 }}
+          transition={{ duration: delay || 1 }}
+          className={
+            `h-full absolute w-[4px] bg-goGreen-green top-0 left-0 ` + className
+          }
+        />
+      )}
+    </InView>
+  );
+};
