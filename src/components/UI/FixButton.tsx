@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 
 export const FixButton = () => {
-  const [isToggled, setIsToggled] = useState(false);
   const [showText, setShowText] = useState(false);
 
   const [hover, setHover] = useState(false);
@@ -14,38 +13,22 @@ export const FixButton = () => {
     let intervalId: string | number | NodeJS.Timeout | undefined;
 
     const toggleText = () => {
-      setShowText(prev => !prev); // Переключение видимости текста
+      setShowText(prev => !prev);
     };
 
     if (!hover) {
-      intervalId = setInterval(toggleText, 5000); // Запуск интервала при отсутствии наведения
+      intervalId = setInterval(toggleText, 5000);
     }
 
-    return () => clearInterval(intervalId); // Очистка интервала при размонтировании компонента или при наведении
+    return () => clearInterval(intervalId);
   }, [hover]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowText(true);
-    }, 5000); // Появление текста через 5 секунд
+    }, 5000);
 
     return () => clearTimeout(timer);
-  }, []);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as Node;
-    const menu = document.querySelector('.FixButton');
-
-    if (menu && !menu.contains(target)) {
-      setIsToggled(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
   }, []);
 
   return (

@@ -15,9 +15,14 @@ const buttonVariants = cva(
           'bg-newYellow border-2 border-newYellow text-goGreen-black  rounded-md hover:bg-transparent hover:text-newYellow transition-all duration-300 ease-in-out',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
+        white:
+          'bg-white border-2 border-goGreen-green text-goGreen-green hover:bg-goGreen-green hover:text-white transition-all duration-300 ease-in-out rounded-full',
         outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-
+          'border border-input bg-goGreen-mint hover:bg-goGreen-mint/80 hover:text-accent-foreground disabled:opacity-0 transition-all duration-300 ease-in-out',
+        green:
+          'bg-goGreen-green border-goGreen-green border-2 text-white hover:bg-white hover:text-goGreen-green transition-all duration-300 ease-in-out disabled:opacity-0',
+        black:
+          'bg-goGreen-black border-goGreen-black border-2 text-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out disabled:opacity-0',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline'
       },

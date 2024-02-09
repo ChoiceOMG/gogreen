@@ -1,14 +1,15 @@
 import { Metadata } from 'next';
 import { getPageMeta } from '@/utils/getMeta';
-import { MainSection } from '../../components/MainSection';
-import { AboutSection } from './components/AboutSection';
-import { ServicesSection } from '../../components/ServicesSection';
-import { IndustriesSection } from '../../components/BigSliderSection';
-import { WhyUsSection } from '../../components/WhyUsSection';
-import { ReviewsSection } from '../../components/ReviewsSection';
-import { ArticlesSection } from './components/ArticlesSection';
-import { PartnersSection } from './components/PartnersSection';
-import { ContactUsSection } from './components/ContactUsSection';
+import { MainSection } from '@/components/MainSection';
+
+import { ContactUsSection } from '@/components/ContactUsSection';
+
+import { ImageTextSection } from '@/components/UI/ImageTextSection';
+
+import { TextBlock } from '@/components/UI/TextBlock';
+import { IndustriesSection } from '@/components/BigSliderSection';
+import { ServicesSection } from '@/components/ServicesSection';
+import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
 
 export const metadata: Metadata = getPageMeta('/');
 
@@ -67,18 +68,31 @@ export default async function Home() {
 
   return (
     <>
-      <MainSection reverse={true} />
-      <AboutSection />
+      <MainSection
+        title="Services/Ind."
+        subTitle="Edmonton’s Green Cleaning Experts"
+        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        buttonText="Request a Quote"
+        imgSrc="/images/services/main.png"
+      />
+
       <ServicesSection />
       <IndustriesSection
         items={carouselItems}
         title="Industries"
-        subTitle="Better Service and Better Quotes"
+        subTitle="Your Partner for Eco-Friendly Cleaning"
       />
-      <WhyUsSection />
-      <ReviewsSection className="-top-24" />
-      <ArticlesSection />
-      <PartnersSection />
+      <section className="pb-24 lg:pb-44">
+        <div className="container">
+          <TextAndImagesSection
+            subtitle="Your Partner for Eco-Friendly Cleaning"
+            title="Innovations in Services"
+            paragraph="At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton."
+            image1Src="/images/home/about_1.png"
+            image2Src="/images/home/about_2.png"
+          />
+        </div>
+      </section>
       <ContactUsSection />
     </>
   );
