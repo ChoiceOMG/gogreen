@@ -9,6 +9,8 @@ import { Avenir, openSans } from '@/styles/fonts/fonts';
 
 import { GoogleTagManager } from '@next/third-parties/google';
 import { FixButton } from '@/components/UI/FixButton';
+import Cursor from './Cursor';
+import { LogoAnimation } from '@/components/Animations/LogoAnimation';
 
 const title = 'GoGreen';
 const description = '';
@@ -45,12 +47,14 @@ export default function RootLayout({
       className={` ${openSans.className} ${Avenir.variable} text-goGreen-black`}
     >
       <body>
+        <Cursor />
         <Header />
         <Suspense fallback={<Loading />}>
           <main className="relative min-h-screen">{children}</main>
         </Suspense>
         <FixButton />
         <Footer />
+        <LogoAnimation />
       </body>
       {process.env.NODE_ENV === 'production' &&
         process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (

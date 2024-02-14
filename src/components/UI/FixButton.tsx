@@ -7,8 +7,10 @@ import Link from 'next/link';
 export const FixButton = () => {
   const [showText, setShowText] = useState(false);
 
+  const isDesktopOrLaptop =
+    typeof window !== 'undefined' && window.innerWidth >= 770;
   const [hover, setHover] = useState(false);
-
+  const [footerVisible, setFooterVisible] = useState(false);
   useEffect(() => {
     let intervalId: string | number | NodeJS.Timeout | undefined;
 
@@ -31,14 +33,35 @@ export const FixButton = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const footer = document.getElementById('footer_bottom');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFooterVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footer) {
+      observer.observe(footer);
+    }
+
+    return () => {
+      if (footer) {
+        observer.unobserve(footer);
+      }
+    };
+  }, []);
+
   return (
-    <div
+    <motion.div
       className="fixed right-0 sm:right-5 bottom-5 flex justify-end FixButton z-[2] max-w-[275px]"
       onMouseEnter={() => {
         setHover(true); // stop interval on hover
         setShowText(true); // show text on hover
       }}
       onMouseLeave={() => setHover(false)} // start interval on leave
+      animate={{ y: footerVisible ? (isDesktopOrLaptop ? -50 : -100) : 0 }}
     >
       <Link
         href="/contact"
@@ -81,6 +104,6 @@ export const FixButton = () => {
           />
         </motion.svg>
       </Link>
-    </div>
+    </motion.div>
   );
 };

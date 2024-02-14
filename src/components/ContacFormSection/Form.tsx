@@ -3,12 +3,12 @@
 import { Button } from '@/components/UI/button';
 import { sendContactForm } from '@/services/actions';
 import React, { useRef, useState } from 'react';
-import LoadingSpinner from '../../loading';
+import LoadingSpinner from '../../app/(site)/loading';
 
 import OverlayMessage from '@/components/UI/OverlayMessage';
 import { validatePhoneNumber } from '@/utils/validators';
 
-export const Form = () => {
+export const Form = ({ className = '' }: { className?: string }) => {
   // State for the form fields
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -61,7 +61,7 @@ export const Form = () => {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="max-md:-ml-6 md:pl-8 relative"
+      className={`lg:pl-8 relative ${className}`}
     >
       <div className=" grid md:grid-cols-2 gap-6">
         <div className="flex flex-col">

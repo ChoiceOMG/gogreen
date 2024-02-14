@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const path = require('path');
-
+const redirects = require('./redirects');
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
@@ -25,6 +25,9 @@ const nextConfig = {
         hostname: 'placehold.it'
       }
     ]
+  },
+  async redirects() {
+    return redirects;
   }
 };
 

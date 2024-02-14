@@ -90,7 +90,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-goGreen-black py-[14px]">
+      <div className=" bg-goGreen-black py-[14px]" id="footer_bottom">
         <div className="container">
           <div className="flex justify-between items-center max-md:flex-col gap-4">
             {' '}

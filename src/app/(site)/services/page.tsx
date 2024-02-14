@@ -10,62 +10,11 @@ import { TextBlock } from '@/components/UI/TextBlock';
 import { IndustriesSection } from '@/components/BigSliderSection';
 import { ServicesSection } from '@/components/ServicesSection';
 import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
+import { _industries, _services } from '@/utils/constants';
 
 export const metadata: Metadata = getPageMeta('/');
 
-export default async function Home() {
-  const carouselItems = [
-    {
-      title: 'Commercial',
-      description:
-        'Go Green provides comprehensive, green cleaning solutions for commercial spaces, enhancing your business environment and customer experience.',
-      link: '/industries/commercial',
-      linkTitle: 'Commercial Services',
-      img: '/images/home/hero.png'
-    },
-
-    {
-      title: 'Educational',
-      description:
-        'Safe and sustainable cleaning services for educational institutions by Go Green, creating healthy learning environments for students and staff.',
-      link: '/industries/educational',
-      linkTitle: 'Educational Services',
-      img: '/images/home/hero.png'
-    },
-    {
-      title: 'Industrial',
-      description:
-        "Go Green's industrial cleaning services ensure clean, compliant, and efficient operations with environmentally responsible cleaning practices.",
-      link: '/industries/industrial',
-      linkTitle: 'Industrial Services',
-      img: '/images/home/hero.png'
-    },
-    {
-      title: 'Hospitality',
-      description:
-        "Enhance guest experiences with Go Green's hospitality cleaning services, offering sustainable solutions for hotels, restaurants, and entertainment venues.",
-      link: '/industries/hospitality',
-      linkTitle: 'Hospitality Services',
-      img: '/images/home/hero.png'
-    },
-    {
-      title: 'Healthcare',
-      description:
-        "Go Green's healthcare cleaning services prioritize safety and hygiene, using non-toxic products to maintain clean and healthy medical facilities.",
-      link: '/industries/healthcare',
-      linkTitle: 'Healthcare Services',
-      img: '/images/home/hero.png'
-    },
-    {
-      title: 'Recreational',
-      description:
-        "Keep recreational facilities inviting and clean with Go Green's eco-conscious cleaning services, from gyms to public parks and community centers.",
-      link: '/industries/recreational',
-      linkTitle: 'Recreational Services',
-      img: '/images/home/hero.png'
-    }
-  ];
-
+export default async function Page() {
   return (
     <>
       <MainSection
@@ -76,9 +25,13 @@ export default async function Home() {
         imgSrc="/images/services/main.png"
       />
 
-      <ServicesSection />
+      <ServicesSection
+        items={_services}
+        subtitle="Discover the Difference with GoGreen"
+        title="Services"
+      />
       <IndustriesSection
-        items={carouselItems}
+        items={_industries}
         title="Industries"
         subTitle="Your Partner for Eco-Friendly Cleaning"
       />
