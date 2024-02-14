@@ -1,7 +1,5 @@
 export const _siteUrl =
   process.env.NEXT_PUBLIC_URL_BASE || 'http://localhost:3046';
-export const _blurDataURL =
-  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAKGAooDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAFxABAQEBAAAAAAAAAAAAAAAAABEBEv/EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAFhEBAQEAAAAAAAAAAAAAAAAAABEB/9oADAMBAAIRAxEAPwD6QDm2AAIqAAAgACAAioAgCIACAAiKgCKgCKgCKggioAACAKAAgAAAAAAAoKgCgAACKIoAAAACoAoCqAAAAAAAAAAAAAAAAgAAAAAPYAw2AgAAAIAACAAgAIAIgIAioAioAioCAAIAgioACAAKgAAAAAAAAAoAAoigACCoAoAAAAAKIKqgAAAAAAAAAAACAAAAAAAAAPYIMNgAAICoACAACAAgAIIIqAIAIACAgAIAAIgACAoACAgAqAAACoAogooAAAKIogAAqAKIoAAACqAAAAAAAAAAAAAAAAAAAAAA9Ygw2ogAAAgAAgAIAAIgIACAIqAIACAAgAIAggAAigAAAIAAAgKIqgAAACiAKAIKgCiKAAAAqqIAogCiAKIAogCggKIAogCiAAAAAAAPWIMNqIAAAIAAIACCKgAIIACAAgAIAgAIAggAAgAIoqAAAIAAAAAKAACoAoiiAAKIAoigAAogqqIAogCiAKIoAAAAAICiAKIAogCiAKIA9Ygw2qAAIAqAAIAAggCAAgAIAgAIACAAgCCAAIKAICoAAAgAAAAAoAAKgCiKAACiAiiKKAKKIAogCiAKIAogCiAKIAogCiAKIAogCiAKIA9Qgw2ogCoAAgCoIIqAAIACACAAgAIACAAgioqCAogACAqAAICKIAogoogCgAAAogCiKAqAKIKKIAoAAAKIAogCiAKIAogCiAKIAqAAAAAAAD1CDDYAAIAqAICAAgACAqCAqCKAIAIACAAIICAAICiAAICiAioACoKKIAogCiAKIoKIAogooigogCiAKIAogCiAKAAAAAAIAogCiAKIAogCiAPUIMtqIACAiiAAgAIAqCAqCAqCAqCAqCAqCAqCCKgACAAgCiAAIIogoogCiAKIAoigogCiCiiAKqAKIAogCiAKIoKIAogCiAKIAogAAAAAAAAAAD0iDLSoICiAKIACAKggKggKggKggKggKggKggKggiiAAgACAogoogICAKIAogCiAKrKgogoogCiANCAKIAogCiKCiAKIAogCiAKIAogCiAKIAogCiAKIA9IyMtKIAohQVEoCiAAgCogCoICoICoICoICoIIqCAogAIAqCKKIAoiCKIAogCiAKIAogo0IAogCiAKrKgogCiAKrIDQyA0MrQUQBRAFEFFEAUQQUQBRAFEAUQB6KVKMtLSslBqpUAWlQBUQBUEBRAAQAEAVEAVEAVBFRUEBREBRAFRAFEABARRAFEAUQUUQBVZAaGVBRAFEAVWQGhmqCiFBRKAogClQUWiUBRAGhkBoZAaGQGhkBoZAaGQGhkB6CoVlpaVKUFpUqUGqlSlBaVKlBqpUpQWpUpQWpUpQWlSpQWiVKCiUoAgICAAgCiICiUB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';
 
 export const _mail = 'rfq@ggfservices.com';
 export const _phone = '(780) 437-1011';
@@ -11,3 +9,123 @@ export const _addressLink =
 export const _facebook = '';
 export const _instagram = '';
 export const _twitter = '';
+
+export const _services = [
+  {
+    title: 'Cleaning',
+    description:
+      'Discover eco-friendly cleaning services by Go Green, offering sustainable solutions for commercial spaces to ensure a clean, healthy work environment.',
+    link: '/services/cleaning',
+    linkTitle: 'Cleaning Services'
+  },
+  {
+    title: 'Integrated Facility',
+    description:
+      'Go Green`s Integrated Facility Services combine expert cleaning, maintenance, and management for efficient upkeep of commercial properties.',
+    link: '/services/integrated',
+    linkTitle: 'Integrated Facility Services'
+  },
+  {
+    title: 'Specialized Services',
+    description:
+      'Explore Go Green`s specialized cleaning services, tailored to meet unique commercial needs with environmentally conscious practices and advanced technology.',
+    link: '/services/specialized',
+    linkTitle: 'Specialized Services'
+  },
+
+  {
+    title: 'Disinfection & Sanitization',
+    description:
+      'Ensure a germ-free environment with Go Green`s disinfection and sanitary processing services, using eco-safe products for effective cleaning.',
+    link: '/services/sanitization',
+    linkTitle: 'Disinfection & Sanitization Services'
+  },
+  {
+    title: 'Environmental',
+    description:
+      'Go Green`s Environmental Services promote sustainability in commercial cleaning, reducing your carbon footprint while maintaining pristine facilities.',
+    link: '/services/environmental',
+    linkTitle: 'Environmental Services'
+  },
+  {
+    title: 'Post-Construction Cleaning',
+    description:
+      'Post-construction cleanup by Go Green offers thorough, eco-friendly cleaning services to prepare new spaces for safe and immediate use.',
+    link: '/services/post-construction',
+    linkTitle: 'Post-Construction Cleaning Services'
+  },
+  {
+    title: 'Commercial Floor Cleaning',
+    description:
+      'Professional commercial floor cleaning services by Go Green use green methods to maintain and restore the beauty of your floors sustainably.',
+    link: '/services/commercial',
+    linkTitle: 'Commercial Floor Cleaning Services'
+  },
+  {
+    title: 'Outdoor Building Maintenance',
+    description:
+      'Maintain your building`s exterior with Go Green`s Outdoor Building Maintenance Services, ensuring a clean and professional appearance year-round.',
+    link: '/services/outdoor',
+    linkTitle: 'Outdoor Building Maintenance Services'
+  }
+];
+
+export const _industries = [
+  {
+    title: 'Commercial',
+    description:
+      'Go Green provides comprehensive, green cleaning solutions for commercial spaces, enhancing your business environment and customer experience.',
+    link: '/industries/commercial',
+    linkTitle: 'Commercial Services',
+    img: '/images/home/hero.png'
+  },
+
+  {
+    title: 'Educational',
+    description:
+      'Safe and sustainable cleaning services for educational institutions by Go Green, creating healthy learning environments for students and staff.',
+    link: '/industries/educational',
+    linkTitle: 'Educational Services',
+    img: '/images/home/hero.png'
+  },
+  {
+    title: 'Industrial',
+    description:
+      "Go Green's industrial cleaning services ensure clean, compliant, and efficient operations with environmentally responsible cleaning practices.",
+    link: '/industries/industrial',
+    linkTitle: 'Industrial Services',
+    img: '/images/home/hero.png'
+  },
+  {
+    title: 'Institutional',
+    description:
+      "Go Green's institutional cleaning services provide safe and sustainable solutions for government and public facilities, ensuring clean and healthy environments.",
+    link: '/industries/institutional',
+    linkTitle: 'Institutional Services',
+    img: '/images/home/hero.png'
+  },
+  {
+    title: 'Hospitality',
+    description:
+      "Enhance guest experiences with Go Green's hospitality cleaning services, offering sustainable solutions for hotels, restaurants, and entertainment venues.",
+    link: '/industries/hospitality',
+    linkTitle: 'Hospitality Services',
+    img: '/images/home/hero.png'
+  },
+  {
+    title: 'Healthcare',
+    description:
+      "Go Green's healthcare cleaning services prioritize safety and hygiene, using non-toxic products to maintain clean and healthy medical facilities.",
+    link: '/industries/healthcare',
+    linkTitle: 'Healthcare Services',
+    img: '/images/home/hero.png'
+  },
+  {
+    title: 'Recreational',
+    description:
+      "Keep recreational facilities inviting and clean with Go Green's eco-conscious cleaning services, from gyms to public parks and community centers.",
+    link: '/industries/recreational',
+    linkTitle: 'Recreational Services',
+    img: '/images/home/hero.png'
+  }
+];

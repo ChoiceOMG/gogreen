@@ -2,7 +2,7 @@ import { ScrollExpandLine } from '@/components/Animations';
 import React from 'react';
 import { Form } from './Form';
 
-export const ContactUsSection = () => {
+export const ContacFormSection = () => {
   return (
     <section className="py-20 lg:py-44">
       <div className="container">
@@ -12,7 +12,7 @@ export const ContactUsSection = () => {
           <h4 className="h4 mb-4">Your Partner for Eco-Friendly Cleaning</h4>
           <h2 className="h2 mb-8">Contact Us</h2>
 
-          <Form />
+          <Form className="max-md:-ml-6" />
         </div>
       </div>
     </section>

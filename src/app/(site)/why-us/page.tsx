@@ -16,7 +16,7 @@ import { Leaf } from '@/components/UI/SVG/Leaf';
 
 export const metadata: Metadata = getPageMeta('/');
 
-export default async function Home() {
+export default async function Page() {
   return (
     <>
       <MainSection

@@ -22,7 +22,13 @@ export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
         <div className="grid lg:grid-cols-2 items-center gap-9">
           <div className="grid grid-cols-2 gap-2">
             <div className=" relative h-full min-h-[345px] sm:min-h-[465px] rounded-end-start-md overflow-hidden">
-              <Image src={image1Src} alt="1" fill className=" object-cover" />
+              <Image
+                src={image1Src}
+                alt="1"
+                fill
+                quality={100}
+                className=" object-cover"
+              />
             </div>
             <div
               className={`flex  gap-2 ${imageOnTop ? 'flex-col-reverse' : 'flex-col'}`}
@@ -30,7 +36,13 @@ export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
               <div className=" bg-goGreen-green w-full h-[30%] rounded-start-end-sm"></div>
 
               <div className="  relative h-[70%] w-full rounded-start-end-md overflow-hidden">
-                <Image src={image2Src} alt="2" fill className=" object-cover" />
+                <Image
+                  src={image2Src}
+                  alt="2"
+                  fill
+                  className=" object-cover"
+                  quality={100}
+                />
               </div>
             </div>
           </div>

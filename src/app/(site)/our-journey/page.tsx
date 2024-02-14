@@ -12,7 +12,7 @@ import { TextBlock } from '@/components/UI/TextBlock';
 
 export const metadata: Metadata = getPageMeta('/');
 
-export default async function Home() {
+export default async function Page() {
   return (
     <>
       <MainSection
