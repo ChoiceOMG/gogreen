@@ -5,7 +5,13 @@ import { MenuItem } from '@/types/types';
 import Image from 'next/image';
 import { Socials } from '../UI/Socials';
 import { MailIcon } from '../UI/SVG/MailIcon';
-import { _address, _addressLink, _mail, _phone } from '@/utils/constants';
+import {
+  _address,
+  _addressLink,
+  _googleLink,
+  _mail,
+  _phone
+} from '@/utils/constants';
 import { PhoneIcon } from '../UI/SVG/PhoneIcon';
 import { LocateIcon } from '../UI/SVG/LocateIcon';
 const Footer = () => {
@@ -81,7 +87,7 @@ const Footer = () => {
                 <LocateIcon width={28} height={37} />
 
                 <Link
-                  href={_addressLink}
+                  href={_googleLink}
                   target="_blank"
                   className=" whitespace-nowrap font-Avenir font-black uppercase transition-colors duration-300 ease-in-out hover:text-goGreen-green "
                 >{`${_address}`}</Link>

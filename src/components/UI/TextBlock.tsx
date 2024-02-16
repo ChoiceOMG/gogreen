@@ -23,7 +23,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({
 `}
     >
       <h4 className="h4 mb-4">{subtitle}</h4>
-      <h2 className="h2 mb-11">{title}</h2>
+      <h2 className="h2 mb-4">{title}</h2>
       <div className="content">
         {paragraph instanceof String ? <p>{paragraph}</p> : paragraph}
       </div>

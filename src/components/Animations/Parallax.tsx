@@ -5,9 +5,14 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 type ParallaxProps = {
   children: ReactNode;
   offset?: number;
+  className?: string;
 };
 
-const Parallax = ({ children, offset = 50 }: ParallaxProps): JSX.Element => {
+const Parallax = ({
+  children,
+  offset = 50,
+  className = ''
+}: ParallaxProps): JSX.Element => {
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
   // Указываем тип для useRef как HTMLDivElement
@@ -40,7 +45,7 @@ const Parallax = ({ children, offset = 50 }: ParallaxProps): JSX.Element => {
   }, [ref]);
 
   return (
-    <motion.div ref={ref} style={{ y }}>
+    <motion.div ref={ref} style={{ y }} className={className}>
       {children}
     </motion.div>
   );

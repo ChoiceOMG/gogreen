@@ -54,9 +54,13 @@ export const MainSection: React.FC<MainSectionProps> = ({
                 />
               </Parallax>
             </div>
-            <div
+
+            <Parallax
+              offset={100}
               className={`w-full h-full ${borderRadiusClasses}  absolute bg-goGreen-mint max-lg:-bottom-10 lg:-top-10 z-[0] `}
-            ></div>
+            >
+              <div></div>
+            </Parallax>
           </div>
           <div className="flex flex-col relative z-[1]">
             <h4 className="h4 mb-7">{subTitle}</h4>

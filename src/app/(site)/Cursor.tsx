@@ -60,7 +60,7 @@ const Cursor = () => {
         yStart: y,
         xEnd: x + (Math.random() * 100 - 50),
         yEnd: y + (Math.random() * 100 - 50),
-        customStyles: `petal fixed w-3 h-3 rounded-full bg-goGreen-green z-10 ${rotation} ${scale} ${opacity} ${borderRadius}`
+        customStyles: `petal fixed w-3 h-3 rounded-full pointer-events-none bg-goGreen-green z-10 ${rotation} ${scale} ${opacity} ${borderRadius}`
       }
     };
     setPetals(currentPetals => [...currentPetals, newPetal]);

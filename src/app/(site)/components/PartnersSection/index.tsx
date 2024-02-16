@@ -1,9 +1,10 @@
 import { Leaf } from '@/components/UI/SVG/Leaf';
 import Image from 'next/image';
 import React from 'react';
-import partner_1 from './partners/1.png';
+import partner_1 from './partners/Starbritelogo.png';
 import partner_2 from './partners/2.png';
 import partner_3 from './partners/3.png';
+
 import Parallax from '@/components/Animations/Parallax';
 export const PartnersSection = () => {
   return (
@@ -27,24 +28,28 @@ export const PartnersSection = () => {
             <h4 className="h4 mb-4">It’s a Team Effort</h4>
             <h2 className="h2">Our Partners</h2>
           </div>
-          <div className="flex items-center justify-evenly max-md:flex-col gap-11 mt-8 md:mt-14">
+          <div className="flex items-center justify-evenly max-md:flex-col gap-11 mt-8 md:mt-14 ">
             <Image
               src={partner_1}
               alt="Partners"
               quality={100}
+              width={400}
+              height={60}
               className="object-cover"
             />
             <Image
               src={partner_2}
               alt="Partners"
               quality={100}
+              height={60}
               className="object-cover"
             />
             <Image
               src={partner_3}
               alt="Partners"
               quality={100}
-              className="object-cover"
+              height={60}
+              className="object-cover h-[60px]"
             />
           </div>
         </div>

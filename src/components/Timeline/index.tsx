@@ -31,7 +31,7 @@ const Timeline = () => {
   ];
 
   return (
-    <section className=" py-48">
+    <section className="max-sm:pb-56 py-48">
       <div className="container">
         <div className="relative flex flex-row justify-between items-center ">
           <div className="h-1 w-full bg-goGreen-black absolute  right-1/2 transform translate-x-1/2 z-[-1]"></div>

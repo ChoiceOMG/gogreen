@@ -32,7 +32,7 @@ export default async function Page() {
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="Intro"
             paragraph="At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton."
-            className=" pb-14"
+            className=" pb-8"
           />,
           <TextBlock
             key={2}

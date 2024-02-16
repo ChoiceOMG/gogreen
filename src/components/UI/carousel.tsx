@@ -178,7 +178,7 @@ const CarouselContent = React.forwardRef<HTMLDivElement, CarouselContentProps>(
     return (
       <div
         ref={carouselRef}
-        className={`overflow-hidden md:afterLight ${isHero && (isLastSlide ? 'afterLight-left' : 'afterLight-right')} `}
+        className={`overflow-hidden md:afterLight ${isHero && (isLastSlide ? '' : 'afterLight-right')} `}
       >
         <div
           ref={ref}

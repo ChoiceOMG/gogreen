@@ -19,9 +19,9 @@
     @apply text-white bg-goGreen-green;
   }
 
-  body {
+  /*  body {
     cursor: none;
-  }
+  } */
 }
 
 // add the code bellow
@@ -38,6 +38,7 @@
 
   .cursor {
     @apply fixed w-8 h-8 z-[99999] pointer-events-none left-0 top-0 outline-none border-none rounded-full overflow-hidden;
+    @apply max-sm:hidden;
   }
   .cursor div {
     @apply absolute grid place-items-center;
