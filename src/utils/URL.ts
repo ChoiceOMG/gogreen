@@ -14,10 +14,6 @@ export const MenuHeader: MenuItem[] = [
   {
     name: 'Blog',
     link: '/blog'
-  },
-  {
-    name: 'Contact Us',
-    link: '/contact'
   }
 ];
 

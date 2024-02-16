@@ -13,7 +13,7 @@ export const AboutSection = () => {
               title="Core Values"
               subtitle="At the Heart of Our Organization"
               paragraph="Integrity, transparency, and reliability define our approach to business, building trust with our clients through honest communication and dependable service. Innovation drives us forward as we continuously seek new methods and technologies to enhance efficiency and effectiveness."
-              className=" pb-14"
+              className="  pb-10"
               line={false}
             />
             <TextBlock

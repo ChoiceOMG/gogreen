@@ -18,6 +18,7 @@ export default async function Page() {
         text="We maintain competitive pricing and unwavering quality and are committed to reducing environmental impact and protecting people's health."
         buttonText="Why Choose Go Green?"
         imgSrc="/images/about/main.png"
+        links={'services'}
       />
       <SecondSection />
       <WhyUsSection />

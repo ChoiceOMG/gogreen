@@ -1,9 +1,9 @@
 import { Button } from '@/components/UI/button';
 import React from 'react';
 
-export const ContactSection = () => {
+export const ContactSection = ({ className = '' }: { className?: string }) => {
   return (
-    <section className=" bg-goGreen-mint py-16 relative mb-36 lg:mb-56">
+    <section className={' bg-goGreen-mint py-16 relative ' + className}>
       <div className="container">
         <div className="flex justify-center items-center  flex-col">
           <h4 className="h4 mb-4 text-center">

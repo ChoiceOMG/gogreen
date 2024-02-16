@@ -23,7 +23,7 @@ export const CompanyLogosSection = () => {
             Your Partner for Eco-Friendly Cleaning
           </h4>
           <h2 className="h2 mb-16 max-w-[800px] mx-auto">Logos of Companies</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-11">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-11">
             <Image
               src={'https://placehold.it/270x170/#EEF1F'}
               width={270}

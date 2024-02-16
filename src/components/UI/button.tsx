@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           'bg-goGreen-green border-2 border-goGreen-green text-white  rounded-md hover:bg-transparent hover:text-goGreen-green transition-all duration-300 ease-in-out',
         secondary:
-          'bg-newYellow border-2 border-newYellow text-goGreen-black  rounded-md hover:bg-transparent hover:text-newYellow transition-all duration-300 ease-in-out',
+          'bg-newYellow border-2 border-newYellow text-goGreen-black  rounded-md hover:bg-transparent hover:text-newYellow transition-all duration-300 ease-in-out disabled:opacity-50',
         destructive:
           'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         white:

@@ -44,7 +44,25 @@ export const TooltipDot = ({
     <div className="group md:relative py-5 " onMouseEnter={onMouseEnter}>
       {block}
 
-      <div className="w-[30px] h-[30px] bg-goGreen-green rounded-full cursor-pointer"></div>
+      <motion.div
+        className="w-[30px] h-[30px] bg-goGreen-green rounded-full cursor-pointer relative"
+        animate={{ scale: active ? 1 : 1.1 }}
+        transition={{
+          repeat: active ? 0 : Infinity,
+          repeatType: 'reverse',
+          duration: 0.5
+        }}
+      >
+        <motion.div
+          className="w-[40px] h-[40px] bg-goGreen-green rounded-full cursor-pointer absolute -top-[5px] -left-[5px]  z-[-1]"
+          animate={{ scale: active ? 1 : 1.1, opacity: !active ? 0.5 : 0 }}
+          transition={{
+            repeat: active ? 0 : Infinity,
+            repeatType: 'reverse',
+            duration: 0.5
+          }}
+        ></motion.div>
+      </motion.div>
     </div>
   );
 };

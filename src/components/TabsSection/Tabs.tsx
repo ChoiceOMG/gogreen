@@ -66,7 +66,7 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <div
-      className={`w-full flex items-center  bg-goGreen-green rounded-[10px] overflow-hidden px-4 relative`}
+      className={`w-full flex items-center  bg-goGreen-green rounded-[10px] overflow-hidden px-4 relative select-none`}
     >
       <div
         className={`afterLightGreen w-full h-full absolute left-0 top-0 pointer-events-none ${showPrevArrow ? 'afterLightGreen-left' : ''} `}
@@ -74,7 +74,7 @@ export const Tabs: React.FC<TabsProps> = ({
       <div
         className={`afterLightGreen  w-full h-full absolute left-0 top-0  pointer-events-none ${showNextArrow ? 'afterLightGreen-right' : ''} `}
       ></div>
-      {showPrevArrow && (
+      {/*  {showPrevArrow && (
         <motion.button
           onClick={() => scroll(-100)}
           className="absolute left-5 z-[1] "
@@ -83,20 +83,20 @@ export const Tabs: React.FC<TabsProps> = ({
           <Arrows variant="left" className="text-white max-w-[20px]" />
         </motion.button>
       )}
-
+ */}
       <div
-        className="flex h-[50px] cursor-grab overflow-x-scroll  no-scrollbar items-center gap-10 lg:gap-28"
+        className="flex h-[50px]  overflow-x-scroll  no-scrollbar items-center gap-10 lg:gap-28 cursor-grab  select-none"
+        ref={scrollContainerRef}
         onMouseDown={startDrag}
         onMouseLeave={endDrag}
         onMouseUp={endDrag}
         onMouseMove={drag}
         onScroll={checkArrowsVisibility}
-        ref={scrollContainerRef}
       >
         {tabs.map((tab, index) => (
           <motion.button
-            className={`flex-none  text-center whitespace-nowrap text-white text-lg font-black uppercase font-Avenir border-b-2 px-2 rounded-full
-            ${activeTab === index ? 'border-white' : ' border-transparent'}`}
+            className={`flex-none  text-center whitespace-nowrap  text-lg font-black uppercase font-Avenir 
+            ${activeTab === index ? ' text-newYellow' : 'text-white'}`}
             key={index}
             onClick={() => setActiveTab(index)}
           >

@@ -91,7 +91,7 @@ function MobileMenu({ Menu }: { Menu: MenuItem[] }) {
               ))}
             </nav>
             <Button link="/contact" linkProps={{ title: 'Contact Page' }}>
-              Learn More
+              Contact Us
             </Button>
           </div>
         </div>

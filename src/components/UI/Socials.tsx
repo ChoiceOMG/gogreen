@@ -4,14 +4,14 @@ import { MailIcon } from './SVG/MailIcon';
 import { PhoneIcon } from './SVG/PhoneIcon';
 import { FacebookIcon } from './SVG/FacebookIcon';
 import { InstIcon } from './SVG/InstIcon';
-import { TwitterIcon } from './SVG/TwitterIcon';
+import { LinkedInIcon } from './SVG/LinkedInIcon';
 
 import {
   _facebook,
   _instagram,
   _mail,
   _phone,
-  _twitter
+  _linkedin
 } from '@/utils/constants';
 import Link from 'next/link';
 export const Socials = () => {
@@ -37,9 +37,9 @@ export const Socials = () => {
       alt: 'Instagram'
     },
     {
-      href: _twitter,
-      src: <TwitterIcon width={20} height={20} color="white" />,
-      alt: 'Twitter'
+      href: _linkedin,
+      src: <LinkedInIcon width={20} height={20} color="white" />,
+      alt: 'LinkedIn'
     }
   ];
 
@@ -47,7 +47,7 @@ export const Socials = () => {
     <Link
       key={index}
       href={link.href}
-      className=" hover:scale-105"
+      className=" hover:scale-110"
       title={link.alt}
       target="_blank"
     >

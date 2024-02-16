@@ -41,7 +41,7 @@ const Header = () => {
               linkProps={{ title: 'Contact Page' }}
               className="max-lg:hidden"
             >
-              Learn More
+              Contact Us
             </Button>
 
             <div className="lg:hidden block">

@@ -70,7 +70,7 @@ export const Slider = ({
             );
           })}
         </CarouselContent>
-        <CarouselPrevious className=" max-md:top-10 max-md:-translate-y-0 ml-5" />
+        <CarouselPrevious className=" max-md:top-10 max-md:-translate-y-0 ml-5 max-sm:hidden" />
         <CarouselNext className=" max-md:top-10 max-md:-translate-y-0 mr-5" />
       </div>
       {/*   <CarouselDots /> */}

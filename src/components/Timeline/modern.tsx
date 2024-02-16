@@ -1,14 +1,11 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import { TooltipNumber } from './TooltipNumber';
 
 const TimelineModern = () => {
-  const [activeDot, setActiveDot] = useState(0);
-
   const Titles = [
     {
-      title: 'Leave a Request'
+      title: 'Leave a Request',
+      link: '/contact'
     },
     {
       title: 'preliminary estimate'
@@ -30,6 +27,7 @@ const TimelineModern = () => {
             <TooltipNumber
               key={index}
               index={index + 1}
+              link={dot.link}
               title={dot.title}
               position={index % 2 === 0 ? 'bottom' : 'top'}
               reverse={index + 1 >= Titles.length}

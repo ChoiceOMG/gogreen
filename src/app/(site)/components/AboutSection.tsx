@@ -22,7 +22,6 @@ export const AboutSection = () => {
             { title: '36', subtitle: 'Hours of CI Training per employee' },
             { title: '364', subtitle: 'Edmonton facilities cleaned since 2021' }
           ]}
-          types={['hospital', 'restaurant', 'educational', 'commercial']}
         />
       </div>
     </section>

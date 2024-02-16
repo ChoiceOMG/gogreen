@@ -6,9 +6,12 @@ export const _phone = '(780) 437-1011';
 export const _address = '9805 33 Ave NW, Edmonton';
 export const _addressLink =
   'https://www.google.com/maps/place/9805+33+Ave+NW,+Edmonton,+AB+T6N+1B6/data=!4m2!3m1!1s0x53a01f29e07408b9:0x12762f0bffb5f2c9?sa=X&ved=2ahUKEwjS48q8oJWEAxUcJzQIHc1HBdMQ8gF6BAgVEAA';
-export const _facebook = '';
-export const _instagram = '';
-export const _twitter = '';
+export const _googleLink = 'https://maps.app.goo.gl/Ax5iWpznJ84Efu7R8';
+export const _facebook = 'https://www.facebook.com/ggfservices/';
+export const _instagram = 'https://www.instagram.com/ggfservices/';
+
+export const _linkedin =
+  'https://www.linkedin.com/company/go-green-facilities-services/';
 
 export const _services = [
   {
@@ -22,7 +25,7 @@ export const _services = [
     title: 'Integrated Facility',
     description:
       'Go Green`s Integrated Facility Services combine expert cleaning, maintenance, and management for efficient upkeep of commercial properties.',
-    link: '/services/integrated',
+    link: '/services/integrated-facility',
     linkTitle: 'Integrated Facility Services'
   },
   {
@@ -58,14 +61,14 @@ export const _services = [
     title: 'Commercial Floor Cleaning',
     description:
       'Professional commercial floor cleaning services by Go Green use green methods to maintain and restore the beauty of your floors sustainably.',
-    link: '/services/commercial',
+    link: '/services/commercial-floor-cleaning',
     linkTitle: 'Commercial Floor Cleaning Services'
   },
   {
     title: 'Outdoor Building Maintenance',
     description:
       'Maintain your building`s exterior with Go Green`s Outdoor Building Maintenance Services, ensuring a clean and professional appearance year-round.',
-    link: '/services/outdoor',
+    link: '/services/outdoor-building-maintenance',
     linkTitle: 'Outdoor Building Maintenance Services'
   }
 ];
@@ -77,7 +80,7 @@ export const _industries = [
       'Go Green provides comprehensive, green cleaning solutions for commercial spaces, enhancing your business environment and customer experience.',
     link: '/industries/commercial',
     linkTitle: 'Commercial Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/commercial/banner.png'
   },
 
   {
@@ -86,7 +89,7 @@ export const _industries = [
       'Safe and sustainable cleaning services for educational institutions by Go Green, creating healthy learning environments for students and staff.',
     link: '/industries/educational',
     linkTitle: 'Educational Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/educational/banner.png'
   },
   {
     title: 'Industrial',
@@ -94,7 +97,7 @@ export const _industries = [
       "Go Green's industrial cleaning services ensure clean, compliant, and efficient operations with environmentally responsible cleaning practices.",
     link: '/industries/industrial',
     linkTitle: 'Industrial Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/industrial/banner.png'
   },
   {
     title: 'Institutional',
@@ -102,7 +105,7 @@ export const _industries = [
       "Go Green's institutional cleaning services provide safe and sustainable solutions for government and public facilities, ensuring clean and healthy environments.",
     link: '/industries/institutional',
     linkTitle: 'Institutional Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/institutional/banner.png'
   },
   {
     title: 'Hospitality',
@@ -110,7 +113,7 @@ export const _industries = [
       "Enhance guest experiences with Go Green's hospitality cleaning services, offering sustainable solutions for hotels, restaurants, and entertainment venues.",
     link: '/industries/hospitality',
     linkTitle: 'Hospitality Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/hospitality/banner.png'
   },
   {
     title: 'Healthcare',
@@ -118,7 +121,7 @@ export const _industries = [
       "Go Green's healthcare cleaning services prioritize safety and hygiene, using non-toxic products to maintain clean and healthy medical facilities.",
     link: '/industries/healthcare',
     linkTitle: 'Healthcare Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/healthcare/banner.png'
   },
   {
     title: 'Recreational',
@@ -126,6 +129,6 @@ export const _industries = [
       "Keep recreational facilities inviting and clean with Go Green's eco-conscious cleaning services, from gyms to public parks and community centers.",
     link: '/industries/recreational',
     linkTitle: 'Recreational Services',
-    img: '/images/home/hero.png'
+    img: '/images/industries/recreational/banner.png'
   }
 ];

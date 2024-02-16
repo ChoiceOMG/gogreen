@@ -1,3 +1,5 @@
+import { _industries } from '@/utils/constants';
+import Link from 'next/link';
 import React from 'react';
 
 type Stat = {
@@ -7,13 +9,12 @@ type Stat = {
 
 type StatsAndTypesProps = {
   stats: Stat[];
-  types: string[];
   className?: string;
 };
 
 export const StatsAndTypes: React.FC<StatsAndTypesProps> = ({
   stats,
-  types,
+
   className = ''
 }) => {
   return (
@@ -28,14 +29,15 @@ export const StatsAndTypes: React.FC<StatsAndTypesProps> = ({
           </div>
         ))}
       </div>
-      <div className=" grid md:grid-cols-4 gap-4 md:gap-11 ">
-        {types.map((type, index) => (
-          <p
+      <div className=" flex flex-wrap justify-center gap-4 md:gap-x-11 gap-y-4 ">
+        {_industries.map((type, index) => (
+          <Link
             key={index}
-            className=" uppercase bg-goGreen-mint rounded-full flex items-center max-md:mx-auto justify-center h-[50px] px-4 w-fit md:w-full"
+            className=" uppercase bg-goGreen-mint rounded-full flex items-center max-md:mx-auto justify-center h-[50px] px-4 w-fit  cursor-pointer transition-colors duration-300 ease-in-out hover:bg-goGreen-green hover:text-white "
+            href={type.link}
           >
-            {type}
-          </p>
+            {type.title}
+          </Link>
         ))}
       </div>
     </div>
