@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Auth
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+enum RoleType {
+  ADMIN
+  STAFF
+  USER
+}
+
+model Role {
+  type  RoleType @id @unique
+  users User[]
+}
+
+// User (Person / Visitor / Customer / Staff / Admin)
+
+model User {
+  id            String    @id @default(uuid())
+  userName      String
+  firstName     String?
+  lastName      String?
+  phoneNumber   String?
+  email         String?   @unique
+  password      String?
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  roleType      RoleType  @default(USER)
+  role          Role      @relation(fields: [roleType], references: [type])
+
+  @@map("users")
+}
+
+model Article {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  image       String?
+  URL         String   @unique
+  date        DateTime @default(now())
+  status      String   @default("Draft") // draft, published
+  excerpt     String?
+  categoryId  Int // Add the categoryId field
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  description String?
+  image       String?
+  link        String    @unique
+  articles    Article[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

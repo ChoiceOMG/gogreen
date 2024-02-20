@@ -21,7 +21,7 @@ function Options() {
     <div className="relative ml-auto w-fit">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`px-4 py-2 rounded-3xl w-full text-white text-center flex items-center justify-center  font-bold uppercase bg-red max-w-[270px] 
+        className={`px-4 py-2 rounded-3xl w-full text-white text-center flex items-center justify-center  font-bold uppercase bg-goGreen-green max-w-[270px] 
           ${isOpen && 'rounded-b-none'}`}
         whileTap={{ scale: 0.95 }}
       >
@@ -31,7 +31,7 @@ function Options() {
             isOpen && 'rotate-180'
           } transition-transform duration-300`}
         >
-          <Arrows variant={'down'} className="max-w-[20px]" />
+          <Arrows variant={'down'} color="#fff" className="max-w-[20px]" />
         </span>
       </motion.button>
 
@@ -59,7 +59,7 @@ function Options() {
 
             <Button
               onClick={() => signOut({ callbackUrl: '/' })}
-              className="w-full h-[40px] rounded-none  bg-red"
+              className="w-full h-[40px]  bg-goGreen-green rounded-3xl rounded-t-none "
             >
               Sign Out
             </Button>

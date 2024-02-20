@@ -8,14 +8,16 @@ import {
 import React from 'react';
 
 import ArticleCard from '@/components/UI/ArticleCard';
-import { Article } from '@/types/types';
+
+import { getArticlesLast } from '@/app/services/data';
 type Props = {
-  articles: Article[];
   className?: string;
 };
 
-export const ArticlesSliderSection = ({ articles, className = '' }: Props) => {
-  if (!articles) {
+export const ArticlesSliderSection = async ({ className = '' }: Props) => {
+  const posts = await getArticlesLast();
+
+  if (!posts) {
     return null;
   }
 
@@ -25,15 +27,9 @@ export const ArticlesSliderSection = ({ articles, className = '' }: Props) => {
         <div className="relative">
           <Carousel className="pb-20">
             <CarouselContent isHero={false}>
-              {articles.map((item, index) => (
+              {posts.map((item, index) => (
                 <CarouselItem key={index}>
-                  <ArticleCard
-                    img={item.img}
-                    title={item.title}
-                    category={item.category}
-                    description={item.description}
-                    link={item.link}
-                  />
+                  <ArticleCard key={index} post={item} />
                 </CarouselItem>
               ))}
             </CarouselContent>

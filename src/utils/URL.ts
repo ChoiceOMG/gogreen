@@ -54,5 +54,9 @@ export const MenuAdmin: MenuItem[] = [
   {
     name: 'Articles',
     link: '/admin/articles'
+  },
+  {
+    name: 'Categories',
+    link: '/admin/categories'
   }
 ];

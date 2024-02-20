@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export function Header() {
   return (
-    <header className=" bg-black">
+    <header>
       <div className="container">
         <div className="flex justify-between py-5 items-center">
           <Link href="/">

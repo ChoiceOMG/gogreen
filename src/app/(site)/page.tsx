@@ -8,7 +8,6 @@ import { WhyUsSection } from '../../components/WhyUsSection';
 import { ReviewsSection } from '../../components/ReviewsSection';
 import { PartnersSection } from './components/PartnersSection';
 import { _industries, _services } from '@/utils/constants';
-import { ArticlesDev } from '@/services/ArticlesDev';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
 import { ContacFormSection } from '@/components/ContacFormSection';
 
@@ -31,7 +30,7 @@ export default async function Home() {
       />
       <WhyUsSection />
       <ReviewsSection className="-top-24" />
-      <ArticlesSliderSection articles={ArticlesDev} />
+      <ArticlesSliderSection />
       <PartnersSection />
       <ContacFormSection />
     </>

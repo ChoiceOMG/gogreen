@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious
 } from '@/components/UI/carousel';
-import { ReviewsDev } from '@/services/ReviewsDev';
+import { ReviewsDev } from '@/app/services/ReviewsDev';
 import React from 'react';
 import Image from 'next/image';
 export const ReviewsSlider = () => {
