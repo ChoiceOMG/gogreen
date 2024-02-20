@@ -1,43 +1,46 @@
 import Image from 'next/image';
 import { Button } from './button';
+import { Article, Category } from '@prisma/client';
+import slugify from '@/utils/slugify';
 
-type ArticleCardProps = {
-  img: string;
-  title: string;
-  category: {
-    title: string;
-    url: string;
+function truncateString(str: string, num: number) {
+  if (str.length <= num) {
+    return str;
+  }
+  return str.slice(0, num) + '...';
+}
+
+const ArticleCard = ({
+  post
+}: {
+  post: Article & {
+    category: Category;
   };
-  description: string;
-  link: string;
-};
-
-const ArticleCard: React.FC<ArticleCardProps> = ({
-  img,
-  title,
-  category,
-  description,
-  link
 }) => {
+  const excerptContent = truncateString(post.excerpt || '', 450);
+  const link = `/blog/${post.category ? slugify(post.category.link) + '/' : ''}${post.URL}`;
+
   return (
     <div className="grid lg:grid-cols-[1.5fr_2fr] gap-20 lg:gap-12 relative lg:pb-28">
       <div className="max-lg:pr-14">
-        <Image
-          src={img}
-          alt={title}
-          width={500}
-          height={500}
-          className="object-cover rounded-end-start"
-          quality={100}
-        />
+        {post.image && (
+          <Image
+            src={post.image}
+            alt={post.title}
+            width={500}
+            height={500}
+            className="object-cover rounded-end-start"
+            quality={100}
+          />
+        )}
       </div>
       <div className="flex flex-col lg:pr-12">
         <div className="mt-auto">
-          <h4 className="h4 text-goGreen-green mb-4">{category.title}</h4>
-          <h2 className="h2 mb-8">{title}</h2>
-          <p className="mb-9">{description}</p>
+          <h4 className="h4 text-goGreen-green mb-4">{post.category.name}</h4>
+          <h2 className="h2 mb-8">{post.title}</h2>
+          <p className="mb-9">{excerptContent}</p>
           <Button
-            link={'/blog' + category.url + link}
+            link={link}
             variant={'black'}
             linkProps={{ title: 'Read More' }}
             className="w-fit uppercase"

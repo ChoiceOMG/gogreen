@@ -10,14 +10,22 @@ type MainSectionProps = {
   subTitle: string;
   title: string;
   imgSrc?: string;
+  dateObj: Date;
 };
 
 export const MainSection: React.FC<MainSectionProps> = ({
   reverse = false,
   subTitle,
   title,
-  imgSrc
+  imgSrc,
+  dateObj
 }) => {
+  const month = dateObj.getMonth() + 1; // Месяцы начинаются с 0 в JavaScript
+  const day = dateObj.getDate();
+  const year = dateObj.getFullYear();
+
+  const date = `${month}/${day}/${year}`;
+
   const orderClasses = reverse ? 'lg:order-first' : 'lg:order-last';
 
   const borderRadiusClasses = reverse
@@ -67,7 +75,7 @@ export const MainSection: React.FC<MainSectionProps> = ({
             <h1 className="h1 mb-11 lg:mb-14">{title}</h1>
             <div className="flex items-center gap-4  mt-auto lg:mb-32">
               <DateIcon />
-              <p>Date</p>
+              <p>{date}</p>
             </div>
           </div>
         </div>

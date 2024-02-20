@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/UI/button';
-import { sendContactForm } from '@/services/actions';
+import { sendContactForm } from '@/app/services/actions';
 import React, { useRef, useState } from 'react';
 import LoadingSpinner from '../../app/(site)/loading';
 

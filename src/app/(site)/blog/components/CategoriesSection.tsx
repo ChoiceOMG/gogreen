@@ -1,15 +1,13 @@
 'use client';
 
 import Arrows from '@/components/UI/SVG/Arrows';
+import { Category } from '@prisma/client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 
 type CategoriesProps = {
-  items: {
-    title: string;
-    url: string;
-  }[];
+  items: Category[];
   currectUrl?: string;
 };
 
@@ -99,13 +97,13 @@ export const CategoriesSection: React.FC<CategoriesProps> = ({
           >
             {items.map((item, index) => (
               <Link
-                href={'/blog' + item.url}
+                href={'/blog/' + item.link}
                 scroll={false}
                 className={`flex-none  text-center whitespace-nowrap text-white text-lg font-black uppercase font-Avenir border-b-2 px-2 rounded-full
-            ${currectUrl === item.url ? 'border-white' : ' border-transparent'}`}
+            ${currectUrl === item.link ? 'border-white' : ' border-transparent'}`}
                 key={index}
               >
-                {item.title}
+                {item.name}
               </Link>
             ))}
           </div>

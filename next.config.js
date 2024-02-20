@@ -23,6 +23,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'placehold.it'
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.ggfservices.com'
       }
     ]
   },
