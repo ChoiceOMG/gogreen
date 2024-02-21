@@ -10,6 +10,7 @@ import { debounce } from 'lodash';
 import { cn } from '@/utils/utils';
 import { Button } from './button';
 import Arrows from './SVG/Arrows';
+import { FixPage } from '@/utils/fixPage';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -163,12 +164,12 @@ const Carousel = React.forwardRef<
           const entry = entries[0];
 
           setIsFixed(entry.isIntersecting);
-          fixPage(entry.isIntersecting);
+          FixPage(entry.isIntersecting, carouselRef2);
         },
         {
-          root: null, // относительно вьюпорта
+          root: null,
           rootMargin: '0px',
-          threshold: 0.5 // фиксируем, когда слайдер виден на 50%
+          threshold: 0.5
         }
       );
 
@@ -183,9 +184,6 @@ const Carousel = React.forwardRef<
       };
     }, []);
 
-    // Добавьте обработчик события скролла, когда слайдер фиксирован
-    // Добавьте обработчик события скролла, когда слайдер фиксирован
-    // Обработка события прокрутки
     React.useEffect(() => {
       const handleScroll = (e: WheelEvent) => {
         if (!enableScrollSnap || !isFixed || !api) return;
@@ -193,11 +191,9 @@ const Carousel = React.forwardRef<
         const { deltaY } = e;
 
         if ((isOnFirstSlide && deltaY < 0) || (isOnLastSlide && deltaY > 0)) {
-          // Разрешаем прокрутку страницы вверх
-          fixPage(false);
+          FixPage(false, carouselRef2);
           return;
         } else {
-          // Запрещаем прокрутку страницы и переключаем слайды
           if (deltaY > 0) {
             api.scrollNext();
           } else {
@@ -215,29 +211,6 @@ const Carousel = React.forwardRef<
         window.removeEventListener('wheel', handleScroll);
       };
     }, [isFixed, isOnFirstSlide, isOnLastSlide, api]);
-
-    const fixPage = React.useCallback((isFixed: boolean) => {
-      if (isFixed && carouselRef2.current) {
-        // автоматически прокручиваем страницу чтобы слайдер был виден по центру
-        const windowHeight = window.innerHeight;
-        const sliderHeight = carouselRef2.current.offsetHeight;
-        const sliderTopPosition =
-          carouselRef2.current.getBoundingClientRect().top + window.scrollY;
-        const centeredPosition =
-          sliderTopPosition + sliderHeight / 2 - windowHeight / 2;
-
-        // Прокручиваем страницу до центрированной позиции
-        window.scrollTo({
-          top: centeredPosition,
-          behavior: 'auto'
-        });
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.paddingRight = '9px';
-      } else {
-        document.documentElement.style.overflow = '';
-        document.body.style.paddingRight = '';
-      }
-    }, []);
 
     return (
       <div ref={carouselRef2}>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { TooltipDot } from './TooltipDot';
+import ScrollStopper from '../UI/ScrollStopper';
 
 const Timeline = () => {
   const [activeDot, setActiveDot] = useState(0);
@@ -33,20 +34,22 @@ const Timeline = () => {
   return (
     <section className="max-sm:pb-56 py-48">
       <div className="container">
-        <div className="relative flex flex-row justify-between items-center ">
-          <div className="h-1 w-full bg-goGreen-black absolute  right-1/2 transform translate-x-1/2 z-[-1]"></div>
-          {dots.map((dot, index) => (
-            <TooltipDot
-              key={index}
-              title={dot.title}
-              text={dot.text}
-              position={index % 2 === 0 ? 'top' : 'bottom'}
-              reverse={index <= dots.length / 2}
-              active={index === activeDot}
-              onMouseEnter={() => setActiveDot(index)}
-            />
-          ))}
-        </div>
+        <ScrollStopper>
+          <div className="relative flex flex-row justify-between items-center ">
+            <div className="h-1 w-full bg-goGreen-black absolute  right-1/2 transform translate-x-1/2 z-[-1]"></div>
+            {dots.map((dot, index) => (
+              <TooltipDot
+                key={index}
+                title={dot.title}
+                text={dot.text}
+                position={index % 2 === 0 ? 'top' : 'bottom'}
+                reverse={index <= dots.length / 2}
+                active={index === activeDot}
+                onMouseEnter={() => setActiveDot(index)}
+              />
+            ))}
+          </div>
+        </ScrollStopper>
       </div>
     </section>
   );
