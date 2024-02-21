@@ -37,6 +37,7 @@ export const ServicesSection = ({
             opts={{
               align: 'start'
             }}
+            enableScrollSnap={true}
             className="w-full"
           >
             <div className="relative max-md:-ml-6 max-md:pb-24">
