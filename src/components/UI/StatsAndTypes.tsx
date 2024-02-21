@@ -29,7 +29,7 @@ export const StatsAndTypes: React.FC<StatsAndTypesProps> = ({
           </div>
         ))}
       </div>
-      <div className=" flex flex-wrap justify-center gap-4 md:gap-x-11 gap-y-4 ">
+      {/*   <div className=" flex flex-wrap justify-center gap-4 md:gap-x-11 gap-y-4 ">
         {_industries.map((type, index) => (
           <Link
             key={index}
@@ -39,7 +39,7 @@ export const StatsAndTypes: React.FC<StatsAndTypesProps> = ({
             {type.title}
           </Link>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
