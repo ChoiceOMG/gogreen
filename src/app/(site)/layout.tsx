@@ -50,7 +50,8 @@ export default function RootLayout({
         <Cursor />
         <Header />
         <Suspense fallback={<Loading />}>
-          <main className="relative min-h-screen">{children}</main>
+          {' '}
+          <main className="relative min-h-screen">{children} </main>
         </Suspense>
         <FixButton />
         <Footer />

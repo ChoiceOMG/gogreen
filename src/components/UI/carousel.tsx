@@ -5,6 +5,8 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType
 } from 'embla-carousel-react';
 
+import { debounce } from 'lodash';
+
 import { cn } from '@/utils/utils';
 import { Button } from './button';
 import Arrows from './SVG/Arrows';
@@ -19,6 +21,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: 'horizontal' | 'vertical';
   setApi?: (api: CarouselApi) => void;
+  enableScrollSnap?: boolean;
 };
 
 type CarouselContentProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -58,6 +61,7 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      enableScrollSnap = false,
       ...props
     },
     ref
@@ -71,6 +75,14 @@ const Carousel = React.forwardRef<
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+
+    const [isFixed, setIsFixed] = React.useState(false);
+
+    const [isOnFirstSlide, setIsOnFirstSlide] = React.useState(true);
+    const [isOnLastSlide, setIsOnLastSlide] = React.useState(false);
+
+    // Используйте useRef для создания ссылки на элемент Carousel
+    const carouselRef2 = React.useRef<HTMLDivElement>(null);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -124,31 +136,136 @@ const Carousel = React.forwardRef<
       };
     }, [api, onSelect]);
 
+    React.useEffect(() => {
+      if (!api) return;
+
+      const updateSlideStatus = () => {
+        setIsOnFirstSlide(api.selectedScrollSnap() === 0);
+        setIsOnLastSlide(
+          api.selectedScrollSnap() === api.scrollSnapList().length - 1
+        );
+      };
+
+      updateSlideStatus();
+      api.on('select', updateSlideStatus);
+
+      return () => {
+        api.off('select', updateSlideStatus);
+      };
+    }, [api]);
+
+    React.useEffect(() => {
+      if (!enableScrollSnap) {
+        return;
+      }
+      const observer = new IntersectionObserver(
+        entries => {
+          const entry = entries[0];
+
+          setIsFixed(entry.isIntersecting);
+          fixPage(entry.isIntersecting);
+        },
+        {
+          root: null, // относительно вьюпорта
+          rootMargin: '0px',
+          threshold: 0.5 // фиксируем, когда слайдер виден на 50%
+        }
+      );
+
+      if (carouselRef2.current) {
+        observer.observe(carouselRef2.current);
+      }
+
+      return () => {
+        if (carouselRef2.current) {
+          observer.unobserve(carouselRef2.current);
+        }
+      };
+    }, []);
+
+    // Добавьте обработчик события скролла, когда слайдер фиксирован
+    // Добавьте обработчик события скролла, когда слайдер фиксирован
+    // Обработка события прокрутки
+    React.useEffect(() => {
+      const handleScroll = (e: WheelEvent) => {
+        if (!enableScrollSnap || !isFixed || !api) return;
+
+        const { deltaY } = e;
+
+        if ((isOnFirstSlide && deltaY < 0) || (isOnLastSlide && deltaY > 0)) {
+          // Разрешаем прокрутку страницы вверх
+          fixPage(false);
+          return;
+        } else {
+          // Запрещаем прокрутку страницы и переключаем слайды
+          if (deltaY > 0) {
+            api.scrollNext();
+          } else {
+            api.scrollPrev();
+          }
+          e.preventDefault();
+        }
+      };
+
+      if (isFixed) {
+        window.addEventListener('wheel', handleScroll, { passive: false });
+      }
+
+      return () => {
+        window.removeEventListener('wheel', handleScroll);
+      };
+    }, [isFixed, isOnFirstSlide, isOnLastSlide, api]);
+
+    const fixPage = React.useCallback((isFixed: boolean) => {
+      if (isFixed && carouselRef2.current) {
+        // автоматически прокручиваем страницу чтобы слайдер был виден по центру
+        const windowHeight = window.innerHeight;
+        const sliderHeight = carouselRef2.current.offsetHeight;
+        const sliderTopPosition =
+          carouselRef2.current.getBoundingClientRect().top + window.scrollY;
+        const centeredPosition =
+          sliderTopPosition + sliderHeight / 2 - windowHeight / 2;
+
+        // Прокручиваем страницу до центрированной позиции
+        window.scrollTo({
+          top: centeredPosition,
+          behavior: 'auto'
+        });
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.paddingRight = '9px';
+      } else {
+        document.documentElement.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+    }, []);
+
     return (
-      <CarouselContext.Provider
-        value={{
-          carouselRef,
-          api: api,
-          opts,
-          orientation:
-            orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
-          scrollPrev,
-          scrollNext,
-          canScrollPrev,
-          canScrollNext
-        }}
-      >
-        <div
-          ref={ref}
-          onKeyDownCapture={handleKeyDown}
-          className={cn('relative', className)}
-          role="region"
-          aria-roledescription="carousel"
-          {...props}
+      <div ref={carouselRef2}>
+        <CarouselContext.Provider
+          value={{
+            carouselRef,
+            api: api,
+            opts,
+            orientation:
+              orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+            scrollPrev,
+            scrollNext,
+            canScrollPrev,
+            canScrollNext
+          }}
         >
-          {children}
-        </div>
-      </CarouselContext.Provider>
+          <div
+            ref={ref}
+            onKeyDownCapture={handleKeyDown}
+            className={cn('relative', className)}
+            role="region"
+            aria-roledescription="carousel"
+            {...props}
+          >
+            {children}
+          </div>
+        </CarouselContext.Provider>
+      </div>
     );
   }
 );
