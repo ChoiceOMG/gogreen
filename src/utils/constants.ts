@@ -105,7 +105,7 @@ export const _industries = [
       "Go Green's institutional cleaning services provide safe and sustainable solutions for government and public facilities, ensuring clean and healthy environments.",
     link: '/industries/institutional',
     linkTitle: 'Institutional Services',
-    img: '/images/industries/institutional/banner.png'
+    img: '/images/industries/institutional/main.png'
   },
   {
     title: 'Hospitality',

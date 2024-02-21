@@ -72,7 +72,9 @@ export const MainSection: React.FC<MainSectionProps> = ({
           </div>
           <div className="flex flex-col relative z-[1]">
             <h4 className="h4 mb-7">{subTitle}</h4>
-            <h1 className="h1 mb-11 lg:mb-14">{title}</h1>
+            <h1 className={`h1 mb-11 lg:mb-14 ${!reverse && 'lg:pr-11'}`}>
+              {title}
+            </h1>
             <p className=" mb-14 lg:mb-10">{text}</p>
 
             <ListLink links={links} />
