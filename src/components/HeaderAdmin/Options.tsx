@@ -52,7 +52,7 @@ function Options() {
                   className="block text-black font-bold hover:scale-105 transition-transform duration-300 px-5 outline-none"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  {item.title}
                 </Link>
               ))}
             </div>
