@@ -15,7 +15,7 @@ import {
 } from '@/components/UI/select';
 import { _siteUrl } from '@/utils/constants';
 import slugify from '@/utils/slugify';
-import { Category } from '@prisma/client';
+import { Category, Prisma } from '@prisma/client';
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -24,12 +24,12 @@ import { toast } from 'react-toastify';
 
 function Wrapper({ Categories }: { Categories: Category[] }) {
   const router = useRouter();
-  console.log(Categories);
+
   const [title, setTitle] = useState('');
 
   const [openDropdown, setOpenDropdown] = useState(false);
   const [imageURL, setImageURL] = useState<string | null>(null);
-  const [category, setCategory] = useState('' as string);
+  const [categories, setCategories] = React.useState([0]);
   const [excerpt, setExcerpt] = useState('');
   const [slug, setSlug] = useState('');
   const [URL, setURL] = useState('');
@@ -37,7 +37,7 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
   const [status, setStatus] = useState('Draft');
   const [loadingImage, setLoadingImage] = useState(false);
   const [editor, setEditor] = useState<string>('');
-
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -89,7 +89,7 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
 
   useEffect(() => {
     if (Categories && Categories.length > 0) {
-      setCategory(Categories.find(cat => cat.id === 0)?.name || '');
+      setCategories([Categories.find(cat => cat.id === 0)?.id || 0]);
     }
   }, [Categories]);
 
@@ -105,11 +105,12 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
         image: imageURL,
         excerpt,
         URL,
-        categoryId: Categories.find(cat => cat.name === category)?.id || 0,
+
         date: selectedDate,
         status
       };
-      const res = await createArticle(createArticleData);
+
+      const res = await createArticle(createArticleData, categories);
 
       console.log(res);
 
@@ -228,27 +229,61 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
                 <div className="mb-8">
                   <label htmlFor="category">Category</label>
                   <hr className="w-[60px] h-[4px] bg-black mt-1 mb-3" />
-
-                  <Select
-                    onValueChange={e => {
-                      setCategory(e);
-                    }}
-                    value={category}
-                    name="category"
-                  >
-                    <SelectTrigger className="w-full text-black outline-none">
-                      <SelectValue placeholder="Category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectGroup>
-                        {Categories.map((category, index) => (
-                          <SelectItem key={index} value={category.name}>
-                            {category.name}
-                          </SelectItem>
-                        ))}
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
+                  <div className="flex flex-wrap items-center gap-4">
+                    {categories.map((category, index) => (
+                      <div
+                        key={index}
+                        className="px-2 py-1 bg-gray-200 rounded-full text-sm relative group"
+                      >
+                        {Categories.find(cat => cat.id === category)?.name}
+                        {category !== 0 && (
+                          <span
+                            className="absolute w-full h-full top-0 right-0  bg-red/70 text-white rounded-full  items-center justify-center cursor-pointer hidden group-hover:flex transition-all 
+                        duration-300"
+                            onClick={() => {
+                              setCategories(
+                                categories.filter(cat => cat !== category)
+                              );
+                            }}
+                          >
+                            X
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                    <Button
+                      onClick={() => setIsSelectOpen(true)}
+                      className="w-8 h-8 flex p-0 justify-center items-center   rounded-full text-sm"
+                    >
+                      +
+                    </Button>
+                    {isSelectOpen && (
+                      <Select
+                        onValueChange={values => {
+                          setCategories([...categories, parseInt(values)]);
+                          setIsSelectOpen(false);
+                        }}
+                        name="categories"
+                      >
+                        <SelectTrigger className="w-full text-black outline-none">
+                          <SelectValue placeholder="Categories" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectGroup>
+                            {Categories.map((category, index) => (
+                              <SelectItem
+                                key={index}
+                                value={category.id.toString()}
+                                disabled={categories.includes(category.id)}
+                              >
+                                {category.name}
+                              </SelectItem>
+                            ))}
+                          </SelectGroup>
+                        </SelectContent>
+                      </Select>
+                    )}
+                  </div>
                 </div>
               )}
               <div className="mb-8">
@@ -269,12 +304,26 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
                   <label htmlFor="articleDate font-normal text-2xl">URL</label>
                   <hr className="w-[60px] h-[4px] bg-black mt-1 mb-3" />
 
-                  <div
-                    className="w-full overflow-auto outline-none h-auto p-2 bg-transparent resize-none MasqualeroBold border-2 border-black appearance-none focus:outline-none focus:ring-0 peer"
-                    style={{ overflowWrap: 'break-word' }}
-                  >
-                    {_siteUrl}/blog/{category ? slugify(category) + '/' : ''}
-                    {URL}
+                  <div className="flex flex-col gap-4">
+                    {categories.length > 0 &&
+                      Categories.length > 0 &&
+                      categories.map((cat, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className="w-full block overflow-auto outline-none h-auto p-2 bg-transparent resize-none MasqualeroBold border-2 border-black appearance-none focus:outline-none focus:ring-0 peer"
+                            style={{ overflowWrap: 'break-word' }}
+                          >
+                            {_siteUrl}/blog/
+                            {Categories.find(c => c.id === cat)?.name
+                              ? slugify(
+                                  Categories.find(c => c.id === cat)!.name
+                                ) + '/'
+                              : ''}
+                            {URL}
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
               )}
@@ -291,7 +340,7 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
                       onChange={() => setStatus('Publish')}
                     />
 
-                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-red"></div>
+                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-goGreen-green"></div>
                     <span className="ml-3 text-sm font-medium text-gray-900">
                       Publish
                     </span>
@@ -306,7 +355,7 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
                       checked={status === 'Draft'}
                       onChange={() => setStatus('Draft')}
                     />
-                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-red"></div>
+                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4  rounded-full peer  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-goGreen-green"></div>
                     <span className="ml-3 text-sm font-medium text-gray-900">
                       Draft
                     </span>

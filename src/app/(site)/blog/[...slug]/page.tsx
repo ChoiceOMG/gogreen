@@ -15,12 +15,13 @@ export default async function Page({ params }: { params: { slug: [] } }) {
   const slug = params.slug;
   const url = slug[slug.length - 1];
   const Article = await getArticle(url);
+
   return (
     Article && (
       <>
         <MainSection
           title={Article.title}
-          subTitle={Article.category.name}
+          categories={Article.categories.map(category => category.category)}
           imgSrc={Article.image || ''}
           dateObj={Article.date}
         />

@@ -32,7 +32,7 @@ export async function getArticlesByPage(
 ) {
   noStore();
   const offset = (Number(page) - 1) * limit;
-  if (categoryLink === 'all') categoryLink = undefined;
+
   try {
     const articles = await prisma.article.findMany({
       orderBy: {
@@ -42,11 +42,23 @@ export async function getArticlesByPage(
       take: limit,
       where: {
         status: onlyPublished ? 'Publish' : undefined,
-        category: categoryLink ? { link: categoryLink } : undefined,
-        title: query ? { contains: query, mode: 'insensitive' } : undefined
+        title: query ? { contains: query, mode: 'insensitive' } : undefined,
+        categories: {
+          some: categoryLink
+            ? {
+                category: {
+                  link: categoryLink
+                }
+              }
+            : {}
+        }
       },
       include: {
-        category: true
+        categories: {
+          include: {
+            category: true
+          }
+        }
       }
     });
     return articles;
@@ -65,7 +77,11 @@ export async function getArticlesLast() {
       },
       take: 3,
       include: {
-        category: true
+        categories: {
+          include: {
+            category: true
+          }
+        }
       }
     });
     return articles;
@@ -79,7 +95,11 @@ export async function getTotalArticlesPages(category?: string) {
   noStore();
   try {
     const articlesCount = await prisma.article.count({
-      where: { category: category ? { link: category } : undefined }
+      where: {
+        categories: category
+          ? { some: { category: { link: category } } }
+          : undefined
+      }
     });
     const totalPages = Math.ceil(Number(articlesCount) / ITEMS_PER_PAGE);
 
@@ -95,7 +115,11 @@ export async function getArticle(URL: string) {
     const article = await prisma.article.findUnique({
       where: { URL: URL },
       include: {
-        category: true
+        categories: {
+          include: {
+            category: true
+          }
+        }
       }
     });
 
@@ -114,7 +138,11 @@ export async function getArticlesLatest() {
       },
       take: 3,
       include: {
-        category: true
+        categories: {
+          include: {
+            category: true
+          }
+        }
       }
     });
     return articles;
@@ -128,8 +156,10 @@ export async function getArticlesByCategory(categoryId: number) {
   try {
     const articles = await prisma.article.findMany({
       where: {
-        categoryId: {
-          equals: categoryId
+        categories: {
+          some: {
+            categoryId: categoryId
+          }
         }
       }
     });
@@ -148,7 +178,11 @@ export async function getArticlesByCount(count: number) {
       },
       take: count,
       include: {
-        category: true
+        categories: {
+          include: {
+            category: true
+          }
+        }
       }
     });
     return articles;
@@ -163,7 +197,7 @@ export async function getArticlesByCount(count: number) {
 export async function getCategories() {
   try {
     const categories = await prisma.category.findMany();
-    console.log('categories', categories);
+
     return categories;
   } catch (error) {
     console.error(error);

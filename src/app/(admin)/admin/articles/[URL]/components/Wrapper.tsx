@@ -14,7 +14,7 @@ import {
 } from '@/components/UI/select';
 import { _siteUrl } from '@/utils/constants';
 import slugify from '@/utils/slugify';
-import { Article, Category } from '@prisma/client';
+import { Article, ArticleCategory, Category } from '@prisma/client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -26,7 +26,7 @@ function Wrapper({
   Article,
   Categories
 }: {
-  Article: Article;
+  Article: Article & { categories: ArticleCategory[] };
   Categories: Category[];
 }) {
   const router = useRouter();
@@ -36,7 +36,7 @@ function Wrapper({
   const [imageURL, setImageURL] = useState<string | null>(null);
   const [excerpt, setExcerpt] = useState('');
   const [slug, setSlug] = useState('');
-  const [category, setCategory] = useState('' as string);
+  const [categories, setCategories] = React.useState([0]);
   const [URL, setURL] = useState('');
   const [editor, setEditor] = useState<string>('');
   const [id, setId] = useState<number>(0);
@@ -44,9 +44,10 @@ function Wrapper({
   const [status, setStatus] = useState('Draft');
   const [loading, setLoading] = useState(false);
   const [loadingImage, setLoadingImage] = useState(false);
-
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
   useEffect(() => {
     if (Article) {
+      console.log(Article);
       setTitle(Article.title || '');
       setExcerpt(Article.excerpt || '');
       setId(Article.id);
@@ -54,9 +55,7 @@ function Wrapper({
       setStatus(Article.status);
 
       console.log(Article.description);
-      setCategory(
-        Categories.find(cat => cat.id === Article.categoryId)?.name || ''
-      );
+      setCategories(Article.categories.map(cat => cat.categoryId));
       setEditor(Article.description || '');
       setSlug(Article.URL);
       setSelectedDate(new Date(Article.date));
@@ -119,17 +118,19 @@ function Wrapper({
     }
     setLoading(true);
     try {
-      await updateArticle(id, {
-        title,
-
-        description: editor,
-        excerpt,
-        image: imageURL || '',
-        URL,
-        status,
-        categoryId: Categories.find(cat => cat.name === category)?.id,
-        date: selectedDate.toISOString()
-      });
+      await updateArticle(
+        id,
+        {
+          title,
+          description: editor,
+          excerpt,
+          image: imageURL || '',
+          URL,
+          status,
+          date: selectedDate.toISOString()
+        },
+        categories
+      );
       toast.success('Article updated!');
     } catch (error) {
       if (error instanceof Error) {
@@ -262,27 +263,61 @@ function Wrapper({
                   <div className="mb-8">
                     <label htmlFor="category">Category</label>
                     <hr className="w-[60px] h-[4px] bg-black mt-1 mb-3" />
-
-                    <Select
-                      onValueChange={e => {
-                        setCategory(e);
-                      }}
-                      value={category}
-                      name="category"
-                    >
-                      <SelectTrigger className="w-full text-black outline-none">
-                        <SelectValue placeholder="Category" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          {Categories.map((category, index) => (
-                            <SelectItem key={index} value={category.name}>
-                              {category.name}
-                            </SelectItem>
-                          ))}
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                    <div className="flex flex-wrap items-center gap-4">
+                      {categories.map((category, index) => (
+                        <div
+                          key={index}
+                          className="px-2 py-1 bg-gray-200 rounded-full text-sm relative group"
+                        >
+                          {Categories.find(cat => cat.id === category)?.name}
+                          {category !== 0 && (
+                            <span
+                              className="absolute w-full h-full top-0 right-0  bg-red/70 text-white rounded-full  items-center justify-center cursor-pointer hidden group-hover:flex transition-all 
+                        duration-300"
+                              onClick={() => {
+                                setCategories(
+                                  categories.filter(cat => cat !== category)
+                                );
+                              }}
+                            >
+                              X
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                      <Button
+                        onClick={() => setIsSelectOpen(true)}
+                        className="w-8 h-8 flex p-0 justify-center items-center   rounded-full text-sm"
+                      >
+                        +
+                      </Button>
+                      {isSelectOpen && (
+                        <Select
+                          onValueChange={values => {
+                            setCategories([...categories, parseInt(values)]);
+                            setIsSelectOpen(false);
+                          }}
+                          name="categories"
+                        >
+                          <SelectTrigger className="w-full text-black outline-none">
+                            <SelectValue placeholder="Categories" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectGroup>
+                              {Categories.map((category, index) => (
+                                <SelectItem
+                                  key={index}
+                                  value={category.id.toString()}
+                                  disabled={categories.includes(category.id)}
+                                >
+                                  {category.name}
+                                </SelectItem>
+                              ))}
+                            </SelectGroup>
+                          </SelectContent>
+                        </Select>
+                      )}
+                    </div>
                   </div>
                 )}
                 <div className="mb-8">
@@ -304,16 +339,29 @@ function Wrapper({
                     </label>
                     <hr className="w-[60px] h-[4px] bg-black mt-1 mb-3" />
 
-                    <Link
-                      href={`${_siteUrl}/blog/${category ? slugify(category) + '/' : ''}${URL}`}
-                      target="_blank"
-                      className="w-full block overflow-auto outline-none h-auto p-2 bg-transparent resize-none MasqualeroBold border-2 border-black appearance-none focus:outline-none focus:ring-0 peer"
-                      style={{ overflowWrap: 'break-word' }}
-                    >
-                      {_siteUrl}/blog/
-                      {category ? slugify(category) + '/' : ''}
-                      {URL}
-                    </Link>
+                    <div className="flex flex-col gap-4">
+                      {categories.length > 0 &&
+                        Categories.length > 0 &&
+                        categories.map((cat, index) => {
+                          return (
+                            <Link
+                              key={index}
+                              href={`${_siteUrl}/blog/${Categories.find(c => c.id === cat)?.name ? slugify(Categories.find(c => c.id === cat)!.name) + '/' : ''}${URL}`}
+                              target="_blank"
+                              className="w-full block overflow-auto outline-none h-auto p-2 bg-transparent resize-none MasqualeroBold border-2 border-black appearance-none focus:outline-none focus:ring-0 peer"
+                              style={{ overflowWrap: 'break-word' }}
+                            >
+                              {_siteUrl}/blog/
+                              {Categories.find(c => c.id === cat)?.name
+                                ? slugify(
+                                    Categories.find(c => c.id === cat)!.name
+                                  ) + '/'
+                                : ''}
+                              {URL}
+                            </Link>
+                          );
+                        })}
+                    </div>
                   </div>
                 )}
 

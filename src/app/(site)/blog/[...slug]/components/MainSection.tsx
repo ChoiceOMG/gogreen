@@ -2,12 +2,15 @@ import Parallax from '@/components/Animations/Parallax';
 import { DateIcon } from '@/components/UI/SVG/DateIcon';
 import { Leaf } from '@/components/UI/SVG/Leaf';
 import { Button } from '@/components/UI/button';
+import { Category } from '@prisma/client';
+
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 type MainSectionProps = {
   reverse?: boolean;
-  subTitle: string;
+  categories: Category[];
   title: string;
   imgSrc?: string;
   dateObj: Date;
@@ -15,7 +18,7 @@ type MainSectionProps = {
 
 export const MainSection: React.FC<MainSectionProps> = ({
   reverse = false,
-  subTitle,
+  categories,
   title,
   imgSrc,
   dateObj
@@ -71,7 +74,19 @@ export const MainSection: React.FC<MainSectionProps> = ({
             </Parallax>
           </div>
           <div className="flex flex-col relative z-[1]">
-            <h4 className="h4 mb-7">{subTitle}</h4>
+            <div className="flex flex-wrap gap-4">
+              {categories.length > 0 &&
+                categories.map((category, index) => (
+                  <Link
+                    href={`/blog/${category.link}`}
+                    key={index}
+                    className="w-fit h4 mb-7"
+                  >
+                    {category.name}
+                  </Link>
+                ))}
+            </div>
+
             <h1 className="h1 mb-11 lg:mb-14">{title}</h1>
             <div className="flex items-center gap-4  mt-auto lg:mb-32">
               <DateIcon />
