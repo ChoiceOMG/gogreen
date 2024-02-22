@@ -1,24 +1,82 @@
 'use client';
 
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
-import {} from '@/utils/URL';
 import { usePathname } from 'next/navigation';
 import { MenuItem } from '@/types/types';
+import { ScrollExpandLine } from '../Animations';
+import { motion } from 'framer-motion';
+import { _industries, _services } from '@/utils/constants';
+import DropdownMenu from './DropdownMenu';
+import { MenuHeader } from '@/utils/URL';
 
-const Menu = ({ MenuHeader }: { MenuHeader: MenuItem[] }) => {
+const Menu = () => {
   const pathname = usePathname();
-  return MenuHeader.map((item, index) => (
-    <Link
-      href={item.link || '#'}
-      className={` whitespace-nowrap font-Avenir font-black uppercase  ${
-        pathname === item.link ? ' text-goGreen-green' : ''
-      } transition-colors duration-300 ease-in-out hover:text-goGreen-green `}
-      key={index}
-    >
-      {item.name}
-    </Link>
-  ));
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const linkClass = `whitespace-nowrap font-Avenir font-black uppercase transition-colors duration-300 ease-in-out hover:text-goGreen-green`;
+
+  const aboutLinks = [
+    {
+      title: 'Why Go Green',
+      link: '/why-us'
+    },
+    {
+      title: 'Our History',
+      link: '/our-journey'
+    },
+    {
+      title: 'Our Technologies',
+      link: '/our-technologies'
+    }
+  ];
+
+  useEffect(() => {
+    if (isAboutOpen || isServicesOpen) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.paddingRight = '9px';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+  }, [isAboutOpen, isServicesOpen]);
+
+  const aboutContent =
+    'We maintain competitive pricing and unwavering quality and are committed to reducing environmental impact and protecting people`s health.';
+  const servicesContent =
+    'Your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton.';
+
+  return (
+    <>
+      <DropdownMenu
+        title="About Us"
+        content={aboutContent}
+        href="/about"
+        menuItems={aboutLinks}
+        linkClass={linkClass}
+        currentPath={pathname}
+      />
+      <DropdownMenu
+        title="Services and Industries"
+        content={servicesContent}
+        href="/services"
+        menuItems={[..._services, ..._industries]}
+        linkClass={linkClass}
+        currentPath={pathname}
+      />
+      {MenuHeader.map((item, index) => (
+        <div key={index}>
+          <Link
+            href={item.link || '#'}
+            className={`${linkClass} ${pathname === item.link ? ' text-goGreen-green' : ''}`}
+          >
+            {item.title}
+          </Link>
+        </div>
+      ))}
+    </>
+  );
 };
 
 export default Menu;

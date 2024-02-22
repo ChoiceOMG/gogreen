@@ -50,7 +50,7 @@ const Footer = () => {
                       className={` whitespace-nowrap font-Avenir font-black uppercase transition-colors duration-300 ease-in-out hover:text-goGreen-green `}
                       href={menuItem.link || '#'}
                     >
-                      {menuItem.name}
+                      {menuItem.title}
                     </Link>
                   ))}
                   {index === menuColumns.length - 1 && (

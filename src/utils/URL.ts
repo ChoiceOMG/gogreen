@@ -1,45 +1,69 @@
 /* This file with all the urls in the header and in the footer  */
 
 import { MenuItem } from '../types/types';
+import { _industries, _services } from './constants';
 
 export const MenuHeader: MenuItem[] = [
   {
-    name: 'About Us',
-    link: '/about'
+    title: 'Blog',
+    link: '/blog'
+  }
+];
+
+export const MenuHeaderMobile: MenuItem[] = [
+  {
+    title: 'About Us',
+    link: '/about',
+    subMenu: [
+      {
+        title: 'Why Go Green',
+        link: '/why-us'
+      },
+      {
+        title: 'Our History',
+        link: '/our-journey'
+      },
+      {
+        title: 'Our Technologies',
+        link: '/our-technologies'
+      }
+    ]
   },
   {
-    name: 'Services and Industries',
-    link: '/services'
+    title: 'Services and Industries',
+    link: '/services',
+    subMenu: [..._services, ..._industries]
   },
+
   {
-    name: 'Blog',
+    title: 'Blog',
     link: '/blog'
   }
 ];
 
 export const MenuFooter: MenuItem[] = [
   {
-    name: 'About Us',
+    title: 'About Us',
     link: '/about'
   },
   {
-    name: 'Services and Industries',
+    title: 'Services and Industries',
     link: '/services'
   },
   {
-    name: 'Blog',
+    title: 'Blog',
     link: '/blog'
   },
   {
-    name: 'Contact Us',
+    title: 'Contact Us',
     link: '/contact'
   },
   {
-    name: 'Privacy Policy',
+    title: 'Privacy Policy',
     link: '/privacy'
   },
   {
-    name: 'Terms and Conditions',
+    title: 'Terms and Conditions',
     link: '/terms'
   }
 ];
@@ -48,15 +72,15 @@ export const MenuFooter: MenuItem[] = [
 
 export const MenuAdmin: MenuItem[] = [
   {
-    name: 'Account',
+    title: 'Account',
     link: '/admin/account'
   },
   {
-    name: 'Articles',
+    title: 'Articles',
     link: '/admin/articles'
   },
   {
-    name: 'Categories',
+    title: 'Categories',
     link: '/admin/categories'
   }
 ];
