@@ -6,11 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import LoadingSpinner from '../../../loading';
 import Link from 'next/link';
-import {
-  deleteArticle,
-  updateArticle,
-  updateArticleStatus
-} from '@/app/services/actions';
+import { deleteArticle, updateArticleStatus } from '@/app/services/actions';
 const STATUSES = ['Draft', 'Publish'];
 
 function Posts({ posts }: { posts: Article[] }) {

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Menu from './Menu';
 import MobileMenu from './MobileMenu';
-import { MenuHeader } from '@/utils/URL';
 
 import Image from 'next/image';
 
@@ -33,7 +32,7 @@ const Header = () => {
               />
             </Link>
             <nav className="flex gap-4 ml-auto max-lg:hidden justify-between mr-4 xl:mr-7">
-              <Menu MenuHeader={MenuHeader} />
+              <Menu />
             </nav>
 
             <Button
@@ -45,7 +44,7 @@ const Header = () => {
             </Button>
 
             <div className="lg:hidden block">
-              <MobileMenu Menu={MenuHeader} />
+              <MobileMenu />
             </div>
           </div>
         </div>
