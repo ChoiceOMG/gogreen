@@ -214,7 +214,8 @@ export async function changeAccountPassword(
 /* Articles */
 
 export async function createArticle(
-  createArticleData: Partial<Prisma.ArticleUncheckedCreateInput>
+  createArticleData: Partial<Prisma.ArticleCreateInput>,
+  categoryIds: number[]
 ) {
   try {
     if (createArticleData.title === '') {
@@ -223,13 +224,22 @@ export async function createArticle(
         message: 'Please enter your title.'
       };
     }
+    //if categoryIds is empty, add 0 to it
+    if (!categoryIds.includes(0)) {
+      categoryIds.push(0);
+    }
+
     const createdArticle = await prisma.article.create({
       data: {
         ...createArticleData,
         title: createArticleData.title?.toString() || '', // Ensure title is always a string
         description: createArticleData.description?.toString() || '', // Ensure description is always a string
         URL: createArticleData.URL?.toString() || '', // Ensure URL is always a string
-        categoryId: createArticleData.categoryId || 1
+        categories: {
+          create: categoryIds.map(id => ({
+            categoryId: id
+          }))
+        }
       }
     });
 
@@ -266,6 +276,10 @@ export async function deleteArticle(id: number) {
     }
 
     // Then delete the article
+    await prisma.articleCategory.deleteMany({
+      where: { articleId: id }
+    });
+
     await prisma.article.delete({
       where: { id: id }
     });
@@ -283,16 +297,28 @@ export async function deleteArticle(id: number) {
 }
 export async function updateArticle(
   id: number,
-  updateData: Partial<Prisma.ArticleUncheckedUpdateInput>
+  updateData: Partial<Prisma.ArticleUncheckedUpdateInput>,
+  categoryIds: number[]
 ) {
   try {
     const originalArticle = await prisma.article.findUnique({
       where: { id: id }
     });
 
+    //if categoryIds is empty, add 0 to it
+    if (!categoryIds.includes(0)) {
+      categoryIds.push(0);
+    }
+
     const updatedArticle = await prisma.article.update({
       where: { id: id },
-      data: updateData
+      data: {
+        ...updateData,
+        categories: {
+          deleteMany: {}, // delete all existing categories
+          create: categoryIds.map(categoryId => ({ categoryId })) // create new categories
+        }
+      }
     });
 
     revalidatePath('/admin/articles');
@@ -365,9 +391,8 @@ export async function deleteCategory(id: number) {
     }
 
     // First update all articles that reference the category
-    await prisma.article.updateMany({
-      where: { categoryId: id },
-      data: { categoryId: 0 }
+    await prisma.articleCategory.deleteMany({
+      where: { categoryId: id }
     });
 
     // Then delete the category

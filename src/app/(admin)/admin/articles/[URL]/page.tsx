@@ -10,7 +10,7 @@ import { redirect } from 'next/navigation';
 export default async function Page({ params }: { params: { URL: string } }) {
   const Article = await getArticle(params.URL);
   const Categories = await getCategories();
-
+  console.log(Article);
   if (!Article) {
     //redirect to articles page
     redirect('/admin/articles');
