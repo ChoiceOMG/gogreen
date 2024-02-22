@@ -6,16 +6,18 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import LoadingSpinner from '../../../loading';
 import Link from 'next/link';
-import { deleteArticle, updateArticle } from '@/app/services/actions';
+import {
+  deleteArticle,
+  updateArticle,
+  updateArticleStatus
+} from '@/app/services/actions';
 const STATUSES = ['Draft', 'Publish'];
 
 function Posts({ posts }: { posts: Article[] }) {
   const [postsList, setPostsList] = useState<Article[]>(posts);
   const [loading, setLoading] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-  const [openCategoryDropdown, setOpenCategoryDropdown] = useState<
-    number | null
-  >(null);
+
   const [sortField, setSortField] = useState<string | null>(null);
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
@@ -41,28 +43,18 @@ function Posts({ posts }: { posts: Article[] }) {
   useEffect(() => {
     setPostsList(posts);
   }, [posts]);
-  const handleUpdate = async (
-    index: number,
-    field: 'status' | 'categoryId',
-    newValue: string | number
-  ) => {
+  const handleUpdateStatus = async (index: number, status: string) => {
     setLoading(true);
     // Update the local state
-    (posts[index] as any)[field] = newValue;
+    posts[index].status = status;
 
     // Close the dropdown
-    if (field === 'status') {
-      setOpenDropdown(null);
-    } else if (field === 'categoryId') {
-      setOpenCategoryDropdown(null);
-    }
+    setOpenDropdown(null);
 
     // Update the database
     try {
-      await updateArticle(posts[index].id, { [field]: newValue });
-      toast.success(
-        `${field.charAt(0).toUpperCase() + field.slice(1)} updated!`
-      );
+      await updateArticleStatus(posts[index].id, { status: status });
+      toast.success(`Post updated to ${status}!`);
     } catch (e: any) {
       toast.error(e.data);
     }
@@ -88,12 +80,8 @@ function Posts({ posts }: { posts: Article[] }) {
     const handleClickOutside = (event: MouseEvent) => {
       const targetElement = event.target as Element;
 
-      if (
-        (openDropdown !== null || openCategoryDropdown !== null) &&
-        !targetElement.closest('.dropdown')
-      ) {
+      if (openDropdown !== null && !targetElement.closest('.dropdown')) {
         setOpenDropdown(null);
-        setOpenCategoryDropdown(null);
       }
     };
 
@@ -101,7 +89,7 @@ function Posts({ posts }: { posts: Article[] }) {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [openDropdown, openCategoryDropdown]);
+  }, [openDropdown]);
 
   const th_style = 'py-4 px-4 text-left text-sm font-bold';
   const td_style = 'py-4 px-4 relative';
@@ -169,7 +157,7 @@ function Posts({ posts }: { posts: Article[] }) {
                         items={STATUSES}
                         selectedItem={post.status}
                         onItemSelected={status =>
-                          handleUpdate(index, 'status', status)
+                          handleUpdateStatus(index, String(status))
                         }
                         isOpen={openDropdown === index}
                       />

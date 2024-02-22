@@ -338,6 +338,33 @@ export async function updateArticle(
   }
 }
 
+export async function updateArticleStatus(
+  id: number,
+  updateData: Partial<Prisma.ArticleUncheckedUpdateInput>
+) {
+  try {
+    const updatedArticle = await prisma.article.update({
+      where: { id: id },
+      data: updateData
+    });
+
+    revalidatePath('/admin/articles');
+    revalidatePath('/blog');
+
+    return {
+      status: 'success',
+      data: updatedArticle,
+      message: 'Article updated successfully.'
+    };
+  } catch (e) {
+    console.error(e);
+    return {
+      status: 'error',
+      message: 'Something went wrong. Please try again later.'
+    };
+  }
+}
+
 /* Categories */
 
 export async function createCategory(
