@@ -61,7 +61,6 @@ export default async function Page() {
         title="Healthcare"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/industries/healthcare/main.png"
       />
 

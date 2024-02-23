@@ -27,7 +27,7 @@ export default async function Page() {
       content: {
         title: 'Pressure Washing',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'GoGreen`s pressure washing delivers a highly efficient and thorough cleaning, removing dirt, grime, mold, and stains effectively. Regular pressure washing can prevent the buildup of contaminants, protecting your property from potential damage and avoiding costly repairs in the long run. We also use eco-friendly cleaners to protect the delicate outdoor enviornment.',
         img: '/images/services/outdoor/1.png'
       }
     },
@@ -36,7 +36,7 @@ export default async function Page() {
       content: {
         title: 'Window Cleaning',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'See things clearly with GoGreens eco-friendly window cleaning service. We ensure streak-free, spotless windows that enhance natural light and provide clear views, creating a brighter and more inviting environment.',
         img: '/images/services/outdoor/1.png'
       }
     }
@@ -48,7 +48,6 @@ export default async function Page() {
         title="Outdoor Building Maintenance"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/outdoor/main.png"
       />
 

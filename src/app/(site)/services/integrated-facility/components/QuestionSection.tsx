@@ -3,10 +3,14 @@ import React from 'react';
 
 export const QuestionSection = () => {
   const questions = [
-    { text: 'Do you Question Here?' },
-    { text: 'Another question?' },
-    { text: 'Do you Question Here?' },
-    { text: 'Another question?' }
+    {
+      text: 'Facilities spanning over 500K sq. ft. with numerous employees and locations.'
+    },
+    { text: 'Favor a streamlined contract with a single provider.' },
+    {
+      text: 'Seek to oversee and measure performance for efficient and dependable operations.'
+    },
+    { text: 'Require adherence to building codes.' }
   ];
 
   return (
@@ -16,16 +20,16 @@ export const QuestionSection = () => {
           <TextBlock
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="For Whom It's Suitable"
-            paragraph="At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton."
+            paragraph="GoGreen services are specifically crafted to cater to the needs of clients who operate large facilities, spanning over 500,000 square feet, with numerous employees and multiple locations. Our expertise is particularly beneficial for those who prefer a streamlined approach with a single provider and clients seeking efficient and dependable operations."
           />
 
           <div className=" space-y-7">
             {questions.map((question, index) => (
               <div key={index} className="flex items-center">
-                <div className="h4 w-[60px] h-[60px] bg-goGreen-green rounded-full flex items-center justify-center text-white mr-7">
+                <div className="h4 min-w-[60px] min-h-[60px] bg-goGreen-green rounded-full flex items-center justify-center text-white">
                   {index + 1}
                 </div>
-                <p className="Accent uppercase">{question.text}</p>
+                <p className="Accent uppercase pl-7">{question.text}</p>
               </div>
             ))}
           </div>

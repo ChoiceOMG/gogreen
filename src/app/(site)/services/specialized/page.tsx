@@ -23,11 +23,20 @@ export const metadata: Metadata = getPageMeta('/');
 export default async function Page() {
   const Items = [
     {
+      title: 'Luxury Residential Cleaning',
+      content: {
+        title: 'Luxury Residential Cleaning',
+        description:
+          'At GoGreen, we redefine luxury residential cleaning. Our tailored approach ensures that every corner of your residence is meticulously cleaned using eco-friendly products and cutting-edge technology. We understand the unique demands of luxury living.',
+        img: '/images/services/cleaning/1.png'
+      }
+    },
+    {
       title: 'Emergency Restoration',
       content: {
         title: 'Emergency Restoration',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Disasters can strike at any moment, and when they do, GoGreen is your trusted partner for swift and effective emergency restoration services. Our expert team understands the urgency of restoring your property after unforeseen events like floods, fires, or other emergencies. With a commitment to prompt response, we deploy advanced restoration technique.',
         img: '/images/services/cleaning/1.png'
       }
     },
@@ -36,37 +45,17 @@ export default async function Page() {
       content: {
         title: 'Specialized Cleaning',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
-        img: '/images/services/cleaning/1.png'
-      }
-    },
-    {
-      title: 'Technical Equipment Cleaning',
-      content: {
-        title: 'Technical Equipment Cleaning',
-        description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
-        img: '/images/services/cleaning/1.png'
-      }
-    },
-    {
-      title: 'Luxury Residential Cleaning',
-      content: {
-        title: 'Luxury Residential Cleaning',
-        description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          "Experience the difference with GoGreen's specialized cleaning services tailored to meet your unique needs. Whether it's delicate surfaces, unique equipment, or specific industry requirements, our expert team is equipped with the knowledge and skills to deliver precision in every detail.",
         img: '/images/services/cleaning/1.png'
       }
     }
   ];
-
   return (
     <>
       <MainSection
         title="Specialized"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/specialized/main.png"
       />
 

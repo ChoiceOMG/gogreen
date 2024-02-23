@@ -16,7 +16,6 @@ export default async function Page() {
         title="Contact Us"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/history/main.png"
         classNames="!pb-8"
       />

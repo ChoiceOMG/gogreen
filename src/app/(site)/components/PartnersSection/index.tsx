@@ -30,17 +30,17 @@ export const PartnersSection = () => {
           </div>
           <div className="flex items-center justify-evenly max-md:flex-col gap-11 mt-8 md:mt-14 ">
             <Image
-              src={partner_1}
+              src={partner_2}
               alt="Partners"
               quality={100}
-              width={400}
               height={60}
               className="object-cover"
             />
             <Image
-              src={partner_2}
+              src={partner_1}
               alt="Partners"
               quality={100}
+              width={400}
               height={60}
               className="object-cover"
             />

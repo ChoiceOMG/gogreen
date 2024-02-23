@@ -28,7 +28,7 @@ export const ArticlesSliderSection = async ({ className = '' }: Props) => {
           <Carousel className="pb-20">
             <CarouselContent isHero={false}>
               {posts.map((item, index) => (
-                <CarouselItem key={index}>
+                <CarouselItem key={index} className="pb-10 h-full">
                   <ArticleCard key={index} post={item} />
                 </CarouselItem>
               ))}

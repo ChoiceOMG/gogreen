@@ -20,7 +20,6 @@ export default async function Page() {
         title="Our Tech"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/tech/main.png"
       />
       <ScrollStopper>
@@ -33,14 +32,14 @@ export default async function Page() {
               key={1}
               subtitle="Your Partner for Eco-Friendly Cleaning"
               title="Intro"
-              paragraph="At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton."
+              paragraph="At GoGreen, we redefine janitorial services by seamlessly blending unparalleled cleanliness with an unwavering commitment to environmental preservation. Our mission is clear - to provide you with the highest quality cleaning solutions while actively contributing to a sustainable future."
               className=" pb-8"
             />,
             <TextBlock
               key={2}
               subtitle="Your Partner for Eco-Friendly Cleaning"
               title="Delivery Process"
-              paragraph="At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton."
+              paragraph="With each service, we go beyond cleanliness. We pride ourselves on maintaining the highest standards, ensuring that every space we touch exudes cleanliness and excellence. We go beyond the ordinary, implementing cutting-edge practices that not only clean but contribute to a healthier planet."
             />
           ]}
         />
@@ -56,9 +55,15 @@ export default async function Page() {
             <h4 className="h4 mb-4">Your Partner for Eco-Friendly Cleaning</h4>
             <h2 className="h2 mb-11">Benefits of Tech</h2>
             <p>
-              At Go Green, we’re not just a cleaning company. We’re your
-              partners in creating a cleaner, healthier, and more sustainable
-              environment for your business in Edmonton.
+              At GoGreen, our passionate team is at the forefront of leveraging
+              the market&lsquo;s best technology to deliver high-quality
+              results. We believe in the power of technology not only to achieve
+              pristine cleanliness but also to enhance accountability –
+              accountability to you and accountability to the environment. With
+              our tech-driven approach, you can trust that your space is not
+              only spotless but also managed with the utmost care. We utilize
+              cutting-edge technology to ensure that our clean goes beyond the
+              ordinary.
             </p>
           </div>
         </div>

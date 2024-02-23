@@ -23,7 +23,6 @@ export default async function Page() {
         title="Why GoGreen"
         subTitle="Pioneering Sustainable Cleaning Solutions in Edmonton"
         text="More than a cleaning service, we are your allies in fostering a cleaner, healthier, and sustainable business environment in Edmonton."
-        buttonText="Contact Us"
         imgSrc="/images/why/main.png"
       />
       <ImageTextSection

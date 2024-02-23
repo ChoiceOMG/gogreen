@@ -78,7 +78,7 @@ function MobileMenu() {
           <div className="flex flex-col  w-full justify-between py-10 overflow-auto">
             <nav className="flex flex-col text-left space-y-7 mobile-menu">
               {MenuHeaderMobile.map((item, index) => (
-                <>
+                <React.Fragment key={index}>
                   <div className="relative" key={index}>
                     <Link
                       href={item.link || '#'}
@@ -120,7 +120,7 @@ function MobileMenu() {
                       ))}
                     </div>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </nav>
             <Button

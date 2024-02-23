@@ -28,7 +28,7 @@ const Accordion = ({
           {title}
         </h4>
         <span
-          className={` w-[50px] h-[50px] rounded-full flex items-center justify-center transition-all duration-300
+          className={` min-w-[50px] min-h-[50px] rounded-full flex items-center justify-center transition-all duration-300
           ${isOpen ? 'transform rotate-180 bg-white' : 'transform rotate-0 bg-goGreen-green'}
 `}
         >

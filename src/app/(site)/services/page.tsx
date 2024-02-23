@@ -21,7 +21,6 @@ export default async function Page() {
         title="Services and Industries"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/main.png"
       />
 
@@ -40,7 +39,7 @@ export default async function Page() {
           <TextAndImagesSection
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="Innovations in Services"
-            paragraph="At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton."
+            paragraph="Why settle for basic cleaning services when you can experience the extraordinary? At GoGreen, we transcend the ordinary by incorporating cutting-edge technology into every aspect of our services. Choose GoGreen for a seamlessly clean and responsibly managed environment."
             image1Src="/images/home/about_1.png"
             image2Src="/images/home/about_2.png"
           />

@@ -43,13 +43,14 @@ export const MenuHeaderMobile: MenuItem[] = [
 
 export const MenuFooter: MenuItem[] = [
   {
-    title: 'About Us',
-    link: '/about'
-  },
-  {
     title: 'Services and Industries',
     link: '/services'
   },
+  {
+    title: 'About Us',
+    link: '/about'
+  },
+
   {
     title: 'Blog',
     link: '/blog'

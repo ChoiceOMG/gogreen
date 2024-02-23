@@ -47,25 +47,30 @@ export const ServicesSection = ({
                     key={index}
                     className="md:basis-1/2 lg:basis-1/3 2xl:basis-1/4 pl-7"
                   >
-                    {item.icon && (
-                      <div className="mb-4 w-[60px] h-[60px] bg-goGreen-mint rounded-full flex items-center justify-center">
-                        {item.icon}
-                      </div>
-                    )}
-                    <h4 className="h4 mb-4">{item.title}</h4>
-                    <p>{item.description}</p>
-                    {item.link && (
-                      <Button
-                        link={item.link}
-                        variant={'secondary'}
-                        linkProps={{
-                          title: item.linkTitle ? item.linkTitle : 'Learn More'
-                        }}
-                        className="w-fit mt-10"
-                      >
-                        Learn More
-                      </Button>
-                    )}
+                    <div className="flex flex-col h-full w-full">
+                      {' '}
+                      {item.icon && (
+                        <div className="mb-4 w-[60px] h-[60px] bg-goGreen-mint rounded-full flex items-center justify-center">
+                          {item.icon}
+                        </div>
+                      )}
+                      <h4 className="h4 mb-4">{item.title}</h4>
+                      <p className=" mb-10">{item.description}</p>
+                      {item.link && (
+                        <Button
+                          link={item.link}
+                          variant={'secondary'}
+                          linkProps={{
+                            title: item.linkTitle
+                              ? item.linkTitle
+                              : 'Learn More'
+                          }}
+                          className="w-fit mt-auto"
+                        >
+                          Learn More
+                        </Button>
+                      )}
+                    </div>
                   </CarouselItem>
                 ))}
               </CarouselContent>

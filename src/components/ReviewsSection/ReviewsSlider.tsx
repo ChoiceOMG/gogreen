@@ -1,21 +1,64 @@
+'use client';
+
 import {
   Carousel,
   CarouselContent,
-  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious
 } from '@/components/UI/carousel';
-import { ReviewsDev } from '@/app/services/ReviewsDev';
-import React from 'react';
+
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { GoogleReview } from '@/types/types';
+import { apiFetch } from '@/utils/api-requests';
+
 export const ReviewsSlider = () => {
-  const carouselItems = ReviewsDev;
+  const [reviews, setReviews] = useState<GoogleReview[]>([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    async function fetchReviews() {
+      // Check if we already have the data in localStorage
+      const cachedReviews = localStorage.getItem('reviews');
+
+      if (
+        cachedReviews &&
+        cachedReviews.length > 0 &&
+        cachedReviews !== 'null' &&
+        cachedReviews !== 'undefined'
+      ) {
+        setReviews(JSON.parse(cachedReviews));
+      } else {
+        try {
+          const res = await apiFetch<GoogleReview>('/api/reviews');
+
+          setReviews(res.data);
+
+          // Save the data in localStorage
+          localStorage.setItem('reviews', JSON.stringify(res.data));
+        } catch (error) {
+          console.error('Error fetching reviews:', error);
+        }
+      }
+
+      setLoading(false);
+    }
+
+    fetchReviews();
+  }, []);
 
   return (
-    <Carousel className="max-md:pb-20">
+    <Carousel className="max-md:pb-20 relative">
+      {loading && (
+        <div
+          className={`h-full w-full flex justify-center items-center absolute top-0 left-0 bg-white z-10 rounded-[60px] rounded-tr-[0px] `}
+        >
+          <div className="spinner"></div>
+        </div>
+      )}
       <CarouselContent isHero={false}>
-        {carouselItems.map((item, index) => (
+        {reviews.map((item, index) => (
           <CarouselItem key={index} className="-mt-5 py-5  max-lg:px-5">
             <div className="bg-white rounded-[60px] rounded-tr-[0px] shadow-[0px_4px_10px_0px_rgba(0,_0,_0,_0.08)] p-8 md:p-14 h-full">
               <div className="flex items-center mb-4 sm:mb-7">

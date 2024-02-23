@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+
 import { Button } from '@/components/UI/button';
 import {
   Carousel,
@@ -24,23 +26,46 @@ export const Slider = ({
     img?: string;
   }[];
 }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number>(1);
+  const [hoveredIndex, setHoveredIndex] = useState<number>(0);
+  const [api, setApi] = React.useState<CarouselApi>();
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    api.on('select', () => {
+      const currentIndex = api.selectedScrollSnap();
+
+      setHoveredIndex(currentIndex);
+      api.reInit();
+    });
+  }, [api]);
 
   return (
     <Carousel
       opts={{
-        align: 'start'
+        align: 'start',
+        slidesToScroll: 1,
+        containScroll: 'trimSnaps',
+
+        skipSnaps: true
       }}
+      setApi={setApi}
+      plugins={[
+        Autoplay({
+          delay: 2000
+        })
+      ]}
       className="w-full"
     >
       <div className="relative">
-        <CarouselContent>
+        <CarouselContent className="transition-transform duration-200 ease-linear">
           {items.map((item, index) => {
             return (
               <CarouselItem
                 key={item.title}
-                className={`md:basis-1/2 lg:basis-1/3 xl:basis-1/4 border-box md:pl-7 h-auto transition-all duration-300 ease-in-out ${hoveredIndex === index + 1 ? 'lg:!basis-1/2' : ''}`}
-                onMouseEnter={() => setHoveredIndex(index + 1)}
+                className={`md:basis-1/2 lg:basis-1/3 xl:basis-1/4 border-box md:pl-7 h-auto transition-all duration-200 ease-in-out ${hoveredIndex === index ? 'lg:!basis-1/2' : ''}`}
               >
                 <div
                   className={`relative min-h-[500px] px-4  text-white  rounded-[40px] lg:rounded-[60px]  !rounded-tl-[0px] overflow-hidden bg-black bg-opacity-30 pb-7 h-full w-full flex flex-col`}
@@ -73,7 +98,6 @@ export const Slider = ({
         <CarouselPrevious className=" max-md:top-10 max-md:-translate-y-0 ml-5 max-sm:hidden" />
         <CarouselNext className=" max-md:top-10 max-md:-translate-y-0 mr-5" />
       </div>
-      {/*   <CarouselDots /> */}
     </Carousel>
   );
 };

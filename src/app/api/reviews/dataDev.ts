@@ -1,4 +1,6 @@
-export const ReviewsDev = [
+import { GoogleReview } from '@/types/types';
+
+export const dataDev: GoogleReview[] = [
   {
     author_name: 'Megan',
     author_url:

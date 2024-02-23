@@ -22,14 +22,14 @@ const ArticleCard = ({
 
   return (
     <div className="grid lg:grid-cols-[1.5fr_2fr] gap-20 lg:gap-12 relative lg:pb-28">
-      <div className="max-lg:pr-14">
+      <div className="max-lg:pr-14 max-md:min-h-[350px]">
         {post.image && (
           <Image
             src={post.image}
             alt={post.title}
             width={500}
             height={500}
-            className="object-cover rounded-end-start"
+            className="object-cover rounded-end-start h-full w-auto"
             quality={100}
           />
         )}
@@ -61,7 +61,7 @@ const ArticleCard = ({
           </Button>
         </div>
       </div>
-      <div className="w-[270px] h-[270px] sm:w-[470px] sm:h-[470px] xl:w-[570px] xl:h-[570px] z-[-1] rounded-tr-[40px] max-lg:right-0 rounded-bl-[40px] lg:rounded-tr-[100px] lg:rounded-bl-[100px] absolute bg-goGreen-mint top-10  lg:left-16"></div>
+      <div className="max-md:w-screen max-md:h-[100vw] w-1/2 h-full max-h-full max-w-full  z-[-1] rounded-tr-[40px] max-lg:right-0 rounded-bl-[40px] lg:rounded-tr-[100px] lg:rounded-bl-[100px] absolute bg-goGreen-mint top-0 mt-10  lg:left-16"></div>
     </div>
   );
 };
