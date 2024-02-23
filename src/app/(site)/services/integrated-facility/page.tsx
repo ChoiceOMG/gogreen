@@ -23,52 +23,26 @@ import { SolutionsSection } from './components/SolutionsSection';
 import { QuestionSection } from './components/QuestionSection';
 import { ContactSection } from './components/ContactSection';
 import { CompanyLogosSection } from './components/CompanyLogosSection';
+import { ScrollExpandLine } from '@/components/Animations';
 
 export const metadata: Metadata = getPageMeta('/');
 
 export default async function Page() {
   const services = [
     {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
+      title: 'Disinfection and Sanitary Processing',
       description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
+        'Ensuring the safety and hygiene of your space with advanced disinfection and sanitary processing methods.'
     },
     {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
+      title: 'Commercial Floor Cleaning',
       description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
+        'Professional floor cleaning services for commercial properties, including deep cleaning, polishing, and surface restoration.'
     },
     {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
+      title: 'Outdoor Building Maintenance',
       description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
-    },
-    {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
-      description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
-    },
-    {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
-      description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
-    },
-    {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
-      description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
-    },
-    {
-      icon: <MailIcon width={27} height={20} />,
-      title: 'Service Name',
-      description:
-        'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.'
+        'Comprehensive outdoor building maintenance services: cleaning, repair, and maintaining the aesthetic appearance of your premises.'
     }
   ];
 
@@ -78,15 +52,28 @@ export default async function Page() {
         title="Integrated Facility Services"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/integrated/main.png"
       />
       <SolutionsSection />
-      <ServicesSection
-        items={services}
-        subtitle="Your Partner for Eco-Friendly Cleaning"
-        title="Integrated Facility Services"
-      />
+
+      <section className=" pb-20 lg:pb-44">
+        <div className="container">
+          <div className="relative pl-6">
+            {' '}
+            <h4 className="h4 mb-4">Your Partner for Eco-Friendly Cleaning</h4>
+            <h2 className="h2 mb-11">Integrated Facility Services</h2>
+            <ScrollExpandLine className="max-h-[84px] md:max-h-[261px]" />
+            <div className="grid sm:grid-cols-3 gap-4">
+              {services.map((item, index) => (
+                <div className="flex flex-col h-full w-full" key={index}>
+                  <h4 className="h4 mb-4">{item.title}</h4>
+                  <p className=" mb-10">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <QuestionSection />
       <ContactSection />

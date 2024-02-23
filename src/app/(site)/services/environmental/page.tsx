@@ -27,7 +27,7 @@ export default async function Page() {
       content: {
         title: 'Eco-friendly Cleaning and Products',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Our eco-friendly cleaning services prioritize the health of your space and the planet. We exclusively use environmentally conscious cleaning products that are effective yet gentle, ensuring a thorough clean without compromising on green principles. Contact us for details about our eco-friendly products, services, and the impact they have!',
         img: '/images/services/environmental/1.png'
       }
     },
@@ -36,7 +36,7 @@ export default async function Page() {
       content: {
         title: 'Waste Utilization Programs',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Our programs aim to minimize the environmental impact of waste by finding creative and sustainable solutions. From recycling initiatives to composting practices, GoGreen is dedicated to turning waste into valuable resources. By selection our service you help our waste utilization programs that contribute to a cleaner, greener future.',
         img: '/images/services/environmental/1.png'
       }
     }
@@ -48,7 +48,6 @@ export default async function Page() {
         title="Environmental Services"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/environmental/main.png"
       />
 

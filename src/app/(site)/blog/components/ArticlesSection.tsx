@@ -1,7 +1,6 @@
 import { getArticlesByPage } from '@/app/services/data';
 import { BubblePopComponent } from '@/components/Animations';
 import ArticleCard from '@/components/UI/ArticleCard';
-import { Article } from '@/types/types';
 import React from 'react';
 
 export default async function ArticlesSection({
@@ -19,7 +18,7 @@ export default async function ArticlesSection({
         {(!posts || posts.length <= 0) && (
           <h3 className="h3 text-center">No articles found</h3>
         )}
-        <div className="flex flex-col  space-y-24 lg:space-y-36">
+        <div className="flex flex-col  gap-24 lg:gap-36">
           {posts.map((item, index) => (
             <BubblePopComponent
               delay={index * 0.1}

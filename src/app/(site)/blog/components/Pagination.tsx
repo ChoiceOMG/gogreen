@@ -69,8 +69,8 @@ function PaginationNumber({
   isActive: boolean;
 }) {
   const className = clsx('flex h-5 w-5 items-center justify-center', {
-    'text-bt-forest-green': isActive,
-    'hover:text-bt-forest-green': !isActive && position !== 'middle'
+    'text-goGreen-green': isActive,
+    'hover:text-goGreen-green': !isActive && position !== 'middle'
   });
 
   return isActive || position === 'middle' ? (

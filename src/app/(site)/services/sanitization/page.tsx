@@ -27,25 +27,25 @@ export default async function Page() {
       content: {
         title: 'Commercial Deep Cleaning and Disinfection',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Elevate the hygiene standards of your commercial space with GoGreen`s specialized deep cleaning and disinfection services. Our expert team goes beyond the surface, delivering a cleaning experience that ensures a safe and sanitary environment. We take your industry specifications into consideration and use them to create a comprehensive cleaning plan.',
         img: '/images/services/sanitary/1.png'
       }
     },
     {
-      title: 'One-Time Disinfection Service',
+      title: 'One Time Disinfection',
       content: {
-        title: 'One-Time Disinfection Service',
+        title: 'One Time Disinfection',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          "When you need a swift and thorough disinfection solution, turn to GoGreen's one-time disinfection service. Our expert team is ready to provide immediate and effective sanitation, ensuring your space is free from harmful materials.  We utilize advanced disinfectants and follow meticulous protocols to create a safe and sanitized environment.",
         img: '/images/services/sanitary/1.png'
       }
     },
     {
-      title: 'Recurring Disinfection Service',
+      title: 'Recurring Disinfection',
       content: {
-        title: 'Recurring Disinfection Service',
+        title: 'Recurring Disinfection',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Our commitment to continuous disinfection means you get the peace of mind that comes from knowing your space is consistently and thoroughly disinfected. Take advantage of our flexible scheduling options, allowing you to tailor the frequency of disinfection. With GoGreen, your safety is our priority, and our recurring service is designed to provide lasting assurance in every environment.',
         img: '/images/services/sanitary/1.png'
       }
     }
@@ -57,7 +57,6 @@ export default async function Page() {
         title="Disinfection and Sanitary Processing"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/sanitary/main.png"
       />
 

@@ -19,9 +19,11 @@ export const SolutionsSection = () => {
           <h4 className="h4 mb-4">Your Partner for Eco-Friendly Cleaning</h4>
           <h2 className="h2 mb-11">Custom Solutions</h2>
           <p>
-            At Go Green, we’re not just a cleaning company. We’re your partners
-            in creating a cleaner, healthier, and more sustainable environment
-            for your business in Edmonton.
+            At GoGreen, we understand that one size does not fit all. That`s why
+            we offer more than just basic cleaning services. Our commitment to
+            excellence extends to providing custom solutions tailored to meet
+            your unique needs. Elevate your expectations and choose GoGreen for
+            bespoke solutions that go beyond the standard.
           </p>
         </div>
       </div>

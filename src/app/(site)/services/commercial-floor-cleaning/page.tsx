@@ -23,20 +23,20 @@ export const metadata: Metadata = getPageMeta('/');
 export default async function Page() {
   const Items = [
     {
-      title: 'Carpet Cleaning',
-      content: {
-        title: 'Carpet Cleaning',
-        description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
-        img: '/images/services/commercial/1.png'
-      }
-    },
-    {
       title: 'Floor Polishing',
       content: {
         title: 'Floor Polishing',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Trust GoGreen to bring out the luster in your floors, creating a polished and sophisticated finish that elevates the overall aesthetic of your space. We use only the best tools and products to get your floors to a gorgeous  and shiny state. ',
+        img: '/images/services/commercial/1.png'
+      }
+    },
+    {
+      title: 'Carpet Cleaning',
+      content: {
+        title: 'Carpet Cleaning',
+        description:
+          'We employ advanced techniques and eco-friendly products to thoroughly cleanse and rejuvenate your carpets, leaving them looking and feeling like new. Trust GoGreen for a deep and effective clean that enhances the appearance and longevity of your carpets.',
         img: '/images/services/commercial/1.png'
       }
     }
@@ -48,7 +48,6 @@ export default async function Page() {
         title="Commercial Floor Cleaning"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/commercial/main.png"
       />
 

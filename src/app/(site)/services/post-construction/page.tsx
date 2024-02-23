@@ -23,29 +23,29 @@ export const metadata: Metadata = getPageMeta('/');
 export default async function Page() {
   const Items = [
     {
-      title: 'Post-Construction Cleanings',
-      content: {
-        title: 'Post-Construction Cleaning',
-        description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
-        img: '/images/services/post-construction/1.png'
-      }
-    },
-    {
       title: 'Emergency Restoration',
       content: {
         title: 'Emergency Restoration',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'When disasters strike, trust GoGreen for rapid and effective emergency restoration services. Our expert team is on standby 24/7, ready to mitigate damage, restore properties, and bring peace of mind during challenging times. Choose GoGreen for immediate, reliable, and comprehensive emergency restoration solutions. ',
         img: '/images/services/post-construction/1.png'
       }
     },
     {
-      title: 'Move-In/Move-Out Cleaning',
+      title: 'Post Construction Cleaning',
       content: {
-        title: 'Move-In/Move-Out Cleaning',
+        title: 'Post Construction Cleaning',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          "Transform your construction site into a usable space with GoGreen's specialized post-construction cleaning services.  Our dedicated team specializes in removing debris, dust, and any remnants of the construction process, leaving your area spotless and ready for use. Trust GoGreen for a thorough and efficient post-construction clean.",
+        img: '/images/services/post-construction/1.png'
+      }
+    },
+    {
+      title: 'Move In/Move Out Cleaning',
+      content: {
+        title: 'Move In/Move Out Cleaning',
+        description:
+          "Planning a big move? Whether you're moving in or preparing to move out, trust GoGreen for a spotless start or easy handover. We ensure your commercial space is ready for its next chapter. Make it a smooth transition with GoGreen's specialized Move In/Move Out cleaning services. ",
         img: '/images/services/post-construction/1.png'
       }
     }
@@ -57,7 +57,6 @@ export default async function Page() {
         title="Post-Construction Cleaning"
         subTitle="Edmonton’s Green Cleaning Experts"
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
-        buttonText="Request a Quote"
         imgSrc="/images/services/post-construction/main.png"
       />
 

@@ -51,7 +51,7 @@ export const MainSection: React.FC<MainSectionProps> = ({
                   alt={title}
                   quality={100}
                   priority
-                  className={` ${reverse ? 'rounded-end-start' : 'rounded-start-end'} `}
+                  className={` ${reverse ? 'rounded-end-start' : 'rounded-start-end object-cover'} `}
                 />
               )}
               <Parallax>
