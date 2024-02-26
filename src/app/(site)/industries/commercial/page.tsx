@@ -22,7 +22,7 @@ export default async function Page() {
       content: {
         title: 'Offices',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'GoGreen`s services will turn your office into a  clean, inviting workspace that inspires efficiency. We customize our services to meet your specific office needs, providing flexibility and ensuring that you receive precisely the level of cleanliness your space requires.',
         img: '/images/industries/commercial/1.png'
       }
     },
@@ -31,7 +31,7 @@ export default async function Page() {
       content: {
         title: 'Retail Stores',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Retail stores need to make a great first impression, and GoGreen is here to help. We clean until every nook and cranny is spotless, creating an environment that attracts customers and enhances their shopping experience.',
         img: '/images/industries/commercial/1.png'
       }
     },
@@ -40,7 +40,7 @@ export default async function Page() {
       content: {
         title: 'Shopping Centers',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Immerse shoppers in a spotless and welcoming atmosphere with GoGreen`s meticulous shopping centre cleaning. We’re committed to providing a hygienic environment that enhances the overall shopping experience. From bathrooms and hallways to individual stores and employee lounges, GoGreen has your back.',
         img: '/images/industries/commercial/1.png'
       }
     }

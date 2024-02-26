@@ -22,7 +22,7 @@ export default async function Page() {
       content: {
         title: 'Hospitals',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Cleanliness is critical in healthcare, and GoGreen brings a wealth of experience to the cleaning of hospitals. High hygienic standards protect the well-being of patients, healthcare professionals, and visitors. We adhere to standards set by governing bodies and use innovative tools to give you the best clean. ',
         img: '/images/industries/healthcare/1.png'
       }
     },
@@ -31,7 +31,7 @@ export default async function Page() {
       content: {
         title: 'Laboratories',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Laboratory cleaning requires a level of precision and understanding that GoGreen is proud to deliver. From specialized equipment to stringent hygiene standards, our services promise cleanliness and compliance. As innovators ourselves, we’re passionate about aiding scientific excellence through cleaning.',
         img: '/images/industries/healthcare/1.png'
       }
     },
@@ -40,7 +40,7 @@ export default async function Page() {
       content: {
         title: 'Long-Term Care',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Long-term care facilities are more than just health centres, they are home. We offer compassionate cleaning services designed to make residents feel comfortable in their space. Help your valued community members feel at ease with GoGreen. ',
         img: '/images/industries/healthcare/1.png'
       }
     },
@@ -49,7 +49,7 @@ export default async function Page() {
       content: {
         title: 'Medical Offices and Centers',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'GoGreen specializes in tailored cleaning services for medical offices, we know a clean space instills trust in both patients and staff. Our healthcare-specific cleaning solutions reflect the precision and care required in the medical field. We’re also experienced in adhering to regulatory standards. ',
         img: '/images/industries/healthcare/1.png'
       }
     }

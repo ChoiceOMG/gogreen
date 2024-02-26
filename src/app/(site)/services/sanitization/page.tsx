@@ -27,7 +27,7 @@ export default async function Page() {
       content: {
         title: 'Commercial Deep Cleaning and Disinfection',
         description:
-          'Elevate the hygiene standards of your commercial space with GoGreen`s specialized deep cleaning and disinfection services. Our expert team goes beyond the surface, delivering a cleaning experience that ensures a safe and sanitary environment. We take your industry specifications into consideration and use them to create a comprehensive cleaning plan.',
+          'Elevate the hygiene standards of your commercial space with GoGreen`s specialized deep cleaning and disinfection services. Our expert team goes beyond the surface, delivering a cleaning experience that ensures a safe and sanitary environment. We consider your industry specifications and use them to create a comprehensive cleaning plan.',
         img: '/images/services/sanitary/1.png'
       }
     },
@@ -36,7 +36,7 @@ export default async function Page() {
       content: {
         title: 'One Time Disinfection',
         description:
-          "When you need a swift and thorough disinfection solution, turn to GoGreen's one-time disinfection service. Our expert team is ready to provide immediate and effective sanitation, ensuring your space is free from harmful materials.  We utilize advanced disinfectants and follow meticulous protocols to create a safe and sanitized environment.",
+          "When you need a swift and thorough disinfection solution, turn to GoGreen's one-time disinfection service. We’re ready to provide immediate and effective sanitation, ensuring your space is free from harm. By using advanced disinfectants and following meticulous protocols we create a safe and sanitized environment.",
         img: '/images/services/sanitary/1.png'
       }
     },
@@ -56,7 +56,7 @@ export default async function Page() {
       <MainSection
         title="Disinfection and Sanitary Processing"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        text="Explore eco-friendly disinfection services in Edmonton. Choose GoGreen for a proactive approach to health and hygiene."
         imgSrc="/images/services/sanitary/main.png"
       />
 

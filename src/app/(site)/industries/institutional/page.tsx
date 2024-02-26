@@ -18,20 +18,20 @@ export const metadata: Metadata = getPageMeta('/');
 export default async function Page() {
   const Items = [
     {
-      title: 'Government Buildings',
+      title: 'Government',
       content: {
-        title: 'Government Buildings',
+        title: 'Government',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'When you work in Government, public expectations are high. GoGreen understands the importance of making a positive impression. Our innovative solutions not only help you put your best foot forward but also demonstrate your commitment to environmental responsibility. ',
         img: '/images/industries/institutional/1.png'
       }
     },
     {
-      title: 'Financial Institutions',
+      title: 'Finance',
       content: {
-        title: 'Financial Institutions',
+        title: 'Finance',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Precision and professionalism reign supreme in the world of Finance. GoGreen offers tailored cleaning services to match these standards of excellence. We pride ourselves in creating an organized workspace that inspires efficiency and client trust.',
         img: '/images/industries/institutional/1.png'
       }
     },
@@ -40,7 +40,7 @@ export default async function Page() {
       content: {
         title: 'Municipalities',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'GoGreen provides dedicated cleaning services for municipalities, ensuring the heart of local communities stays vibrant and clean. Our team tends to public spaces, streets, and facilities, contributing to the well-being and aesthetics of the community. We uphold the cleanliness standards that make municipalities thriving and welcoming places.',
         img: '/images/industries/institutional/1.png'
       }
     }

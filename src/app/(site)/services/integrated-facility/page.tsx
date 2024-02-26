@@ -42,7 +42,7 @@ export default async function Page() {
     {
       title: 'Outdoor Building Maintenance',
       description:
-        'Comprehensive outdoor building maintenance services: cleaning, repair, and maintaining the aesthetic appearance of your premises.'
+        'Comprehensive outdoor building maintenance services: cleaning, repairing, and maintaining the aesthetic appearance of your premises.'
     }
   ];
 

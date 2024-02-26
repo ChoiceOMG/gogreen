@@ -13,7 +13,8 @@ import Cursor from './Cursor';
 import { LogoAnimation } from '@/components/Animations/LogoAnimation';
 
 const title = 'GoGreen';
-const description = '';
+const description =
+  'GoGreen is a cleaning company in Edmonton, Alberta. We provide commercial cleaning services for businesses in Edmonton and surrounding areas. We offer a wide range of cleaning services, including janitorial services, office cleaning, carpet cleaning, and more. We are committed to providing the highest quality cleaning services to our clients. Our team of professional cleaners is dedicated to delivering exceptional results. We are proud to be a leading cleaning company in Edmonton, Alberta. Contact us today to learn more about our cleaning services.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(_siteUrl),
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s | ${title}`,
     default: title
   },
-  description: title,
+  description: description,
   openGraph: {
     title: title,
     description: description,

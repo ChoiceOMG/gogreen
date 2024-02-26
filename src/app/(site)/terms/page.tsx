@@ -21,8 +21,8 @@ export default async function Page() {
               <>
                 <p>
                   These terms and conditions outline the rules and regulations
-                  for the use of GoGreen Facilities Management Edmonton&#39;s
-                  Website, located at https://ggfservices.com/.{' '}
+                  for the use of GoGreen Facilities Management Edmonton&lsquo;s
+                  Website, located at https://ggfservices.com/.
                 </p>
                 <p>
                   By accessing this website we assume you accept these terms and
@@ -34,9 +34,9 @@ export default async function Page() {
                   The following terminology applies to these Terms and
                   Conditions, Privacy Statement and Disclaimer Notice and all
                   Agreements: &ldquo;Client&rdquo;, &ldquo;You&rdquo; and
-                  &ldquo;Your&rdquo; refers to you, the person logged on this
-                  website and compliant to the Company&lsquo;s terms and
-                  conditions. &ldquo;The Company&rdquo;,
+                  &ldquo;You&rsquo;re&rdquo; refer to you, the person logged on
+                  to this website and compliant with the Company&apos;s terms
+                  and conditions. &ldquo;The Company&rdquo;,
                   &ldquo;Ourselves&rdquo;, &ldquo;We&rdquo;, &ldquo;Our&rdquo;
                   and &ldquo;Us&rdquo;, refers to our Company.
                   &ldquo;Party&rdquo;, &ldquo;Parties&rdquo;, or
@@ -44,12 +44,12 @@ export default async function Page() {
                   terms refer to the offer, acceptance and consideration of
                   payment necessary to undertake the process of our assistance
                   to the Client in the most appropriate manner for the express
-                  purpose of meeting the Client&lsquo;s needs in respect of
-                  provision of the Company&lsquo;s stated services, in
-                  accordance with and subject to, prevailing law of ca. Any use
-                  of the above terminology or other words in the singular,
-                  plural, capitalization and/or he/she or they, are taken as
-                  interchangeable and therefore as referring to same.
+                  purpose of meeting the Client&apos;s needs in respect of the
+                  provision of the Company&apos;s stated services, in accordance
+                  with and subject to, prevailing law of Canada. Any use of the
+                  above terminology or other words in the singular, plural,
+                  capitalization and/or he/she or they, are taken as
+                  interchangeable and therefore as referring to the same.
                 </p>
               </>
             }

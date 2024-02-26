@@ -15,7 +15,7 @@ export default async function Page() {
       <MainSection
         title="Contact Us"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        text="Book a cleaning or reach out to us with any questions you may have. Our team is here to assist you in creating a bespoke cleaning service. Let GoGreen be your partner in cleanliness and sustainability. Contact us now to schedule an appointment or inquire about our services."
         imgSrc="/images/history/main.png"
         classNames="!pb-8"
       />

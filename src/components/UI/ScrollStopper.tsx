@@ -7,8 +7,36 @@ const ScrollStopper: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const timeoutId = useRef<NodeJS.Timeout | null>(null);
+  const isMobile = useRef(false);
 
   useEffect(() => {
+    const checkMobileAndTouch = () => {
+      if (typeof window === 'undefined') return;
+
+      isMobile.current = window.innerWidth <= 768;
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+      if (isMobile.current || isTouch) {
+        console.log('isMobile or isTouch');
+        FixPage(false, ref);
+      }
+    };
+
+    // Run on mount
+    checkMobileAndTouch();
+
+    // Run on resize
+    window.addEventListener('resize', checkMobileAndTouch);
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener('resize', checkMobileAndTouch);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile.current) return;
+
     const observer = new IntersectionObserver(
       entries => {
         const entry = entries[0];

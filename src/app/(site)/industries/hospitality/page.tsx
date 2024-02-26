@@ -22,7 +22,7 @@ export default async function Page() {
       content: {
         title: 'Hotels and Resorts',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Make a stay at your resort or hotel memorable with exceptionally clean spaces. We know that hygiene is a make-or-break factor when it comes to guest satisfaction. GoGreen delivers an immaculate clean that enhances your hotel or resort, leaving a lasting impression on guests.',
         img: '/images/industries/hospitality/1.png'
       }
     },
@@ -31,7 +31,7 @@ export default async function Page() {
       content: {
         title: 'Event Venues',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Create unforgettable moments with GoGreen`s event venue cleaning services. Whether it`s prepping for a grand celebration or restoring after an event, we ensure that every space sparkles. GoGreen is here to help you shine!',
         img: '/images/industries/hospitality/1.png'
       }
     }

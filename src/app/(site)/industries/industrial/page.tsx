@@ -18,20 +18,20 @@ export const metadata: Metadata = getPageMeta('/');
 export default async function Page() {
   const Items = [
     {
-      title: 'Manufacturing & Distribution Facilities',
+      title: 'Food and Power Plant',
       content: {
-        title: 'Manufacturing & Distribution Facilities',
+        title: 'Food and Power Plant',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'In the critical sectors of food and power production, cleanliness is paramount, and an unreliable cleaning service can have devastating consequences. GoGreen ensures that facilities adhere to strict hygiene standards, promoting safety and efficiency in food processing and power generation. Trust GoGreen to safeguard your operations!',
         img: '/images/industries/industrial/1.png'
       }
     },
     {
-      title: 'Food and Power Plants',
+      title: 'Manufacturing and Distribution',
       content: {
-        title: 'Food and Power Plants',
+        title: 'Manufacturing and Distribution',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Fast-paced manufacturing and distribution centres need to make cleanliness a priority  – but don’t always have the time. GoGreen specializes in cleaning solutions designed to optimize productivity and safety in busy environments. Our attention to detail allows manufacturing and distribution facilities to maintain impeccable standards, helping foster safety and success.',
         img: '/images/industries/industrial/1.png'
       }
     }

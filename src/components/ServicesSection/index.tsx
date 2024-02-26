@@ -63,7 +63,8 @@ export const ServicesSection = ({
                           linkProps={{
                             title: item.linkTitle
                               ? item.linkTitle
-                              : 'Learn More'
+                              : `Learn More about ${item.title}`,
+                            'aria-label': `Learn More about ${item.title}`
                           }}
                           className="w-fit mt-auto"
                         >
