@@ -52,11 +52,6 @@ export const Slider = ({
         skipSnaps: true
       }}
       setApi={setApi}
-      plugins={[
-        Autoplay({
-          delay: 2000
-        })
-      ]}
       className="w-full"
     >
       <div className="relative">
@@ -95,7 +90,7 @@ export const Slider = ({
             );
           })}
         </CarouselContent>
-        <CarouselPrevious className=" max-md:top-10 max-md:-translate-y-0 ml-5 max-sm:hidden" />
+        <CarouselPrevious className=" max-md:top-10 max-md:-translate-y-0 ml-5 hidden" />
         <CarouselNext className=" max-md:top-10 max-md:-translate-y-0 mr-5" />
       </div>
     </Carousel>

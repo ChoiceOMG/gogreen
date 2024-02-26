@@ -43,6 +43,7 @@ const DropdownMenu = ({
         className={`${linkClass} ${
           currentPath === href ? ' text-goGreen-green' : ''
         }`}
+        onClick={() => setIsOpen(!isOpen)}
       >
         {title}
       </Link>
@@ -61,6 +62,7 @@ const DropdownMenu = ({
               <Link
                 href={href}
                 className="uppercase flex items-center justify-center w-fit cursor-pointer transition-colors duration-300 ease-in-out text-goGreen-green hover:underline"
+                onClick={() => setIsOpen(!isOpen)}
               >
                 Learn More
               </Link>
@@ -77,6 +79,7 @@ const DropdownMenu = ({
                         className={`Accent uppercase hover:text-goGreen-green transition-colors duration-300 ease-in-out 
             ${currentPath === item.link ? 'text-goGreen-green' : ''}`}
                         key={index}
+                        onClick={() => setIsOpen(!isOpen)}
                       >
                         {item.title}
                       </Link>

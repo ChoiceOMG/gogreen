@@ -12,8 +12,6 @@ import { MenuHeader } from '@/utils/URL';
 
 const Menu = () => {
   const pathname = usePathname();
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const linkClass = `whitespace-nowrap font-Avenir font-black uppercase transition-colors duration-300 ease-in-out hover:text-goGreen-green`;
 
@@ -31,16 +29,6 @@ const Menu = () => {
       link: '/our-technologies'
     }
   ];
-
-  useEffect(() => {
-    if (isAboutOpen || isServicesOpen) {
-      document.documentElement.style.overflow = 'hidden';
-      document.body.style.paddingRight = '9px';
-    } else {
-      document.documentElement.style.overflow = '';
-      document.body.style.paddingRight = '';
-    }
-  }, [isAboutOpen, isServicesOpen]);
 
   const aboutContent =
     'We maintain competitive pricing and unwavering quality and are committed to reducing environmental impact and protecting people`s health.';

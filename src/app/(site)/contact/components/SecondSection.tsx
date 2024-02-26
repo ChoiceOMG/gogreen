@@ -22,7 +22,8 @@ export const SecondSection = () => {
     },
     {
       title: 'Book A Cleaning Service Or Contact Us with Questions, RFPs.',
-      paragraph: 'Text, text, text, text, text…..',
+      paragraph:
+        'Book a cleaning or reach out to us with any questions you may have. Our team is here to assist you in creating a bespoke cleaning service. Let GoGreen be your partner in cleanliness and sustainability. Contact us now to schedule an appointment or inquire about our services.',
 
       icon: <VictoryCupIcon />
     }
