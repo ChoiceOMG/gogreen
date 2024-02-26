@@ -11,7 +11,7 @@ const Timeline = () => {
   const dots = [
     {
       title: '2007-2010',
-      text: 'Fueled by a passion for keeping your space clean while also keeping the environment clean, we decided to dream up a business model that could do both. The result was GoGreen!'
+      text: 'Fueled by a passion for keeping your space clean while also keeping the environment clean, we decided to dream up a business model that could do both. The result was GoGreen! '
     },
     {
       title: '2010-2012',
@@ -19,7 +19,7 @@ const Timeline = () => {
     },
     {
       title: '2012-2015',
-      text: 'GoGreen expanded, and we helped more people than ever before keep their businesses sanitary while simultaneously protecting the environment.'
+      text: 'GoGreen expanded, and we helped more people than ever before keep their businesses sanitary while protecting the environment.'
     },
     /*  {
       title: '2015-2018',
@@ -27,7 +27,7 @@ const Timeline = () => {
     }, */
     {
       title: '2018-2021',
-      text: 'GoGreen continues to invest in janitorial tools that push the boundaries. Through sustainable practices, our goal is to make your future cleaner – in every sense of the word. '
+      text: 'GoGreen continues to invest in janitorial tools that push the boundaries. Through sustainable practices, our goal is to make your future cleaner – in every sense of the word.'
     }
   ];
 

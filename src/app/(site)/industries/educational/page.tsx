@@ -22,7 +22,7 @@ export default async function Page() {
       content: {
         title: 'Schools',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'When you run a school, cleanliness is a top priority. Our school cleaning services go beyond the ordinary, ensuring classrooms, hallways, and common areas are up to standard. By choosing GoGreen, you not only ensure a clean and healthy learning environment but also contribute to a sustainable and thriving future for the next generation.',
         img: '/images/industries/educational/1.png'
       }
     },
@@ -31,7 +31,7 @@ export default async function Page() {
       content: {
         title: 'Higher Education',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'Trust GoGreen for university cleaning that contributes to the excellence of your institution. From dorms and rec centres to classrooms and lecture halls, we have you covered. GoGreen’s eco-friendly services positively impact both your facility and the planet, showing that you prioritize the well-being and future of students.',
         img: '/images/industries/educational/1.png'
       }
     },
@@ -40,7 +40,7 @@ export default async function Page() {
       content: {
         title: 'Specialized Courses',
         description:
-          'At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.At Go Green, we’re not just a cleaning company. We’re your partners in creating a cleaner, healthier, and more sustainable environment for your business in Edmonton.',
+          'When learning gets messy, trust GoGreen to have your back. We have the industry expertise needed to clean up after specialized courses. Our services are designed for the unique requirements of educational spaces. ',
         img: '/images/industries/educational/1.png'
       }
     }

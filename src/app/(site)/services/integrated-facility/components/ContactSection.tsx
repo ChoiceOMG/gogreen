@@ -14,21 +14,10 @@ export const ContactSection = ({ className = '' }: { className?: string }) => {
           </h2>
           <div className=" max-w-[600px] mx-auto text-center content">
             <p>
-              Ready to elevate your cleaning experience? Reach out to us for
-              personalized janitorial solutions designed to meet your unique
-              needs.{' '}
-            </p>
-            <p>
               Ready to transform your cleaning experience? Get in touch with
               GoGreen today to discover tailored janitorial solutions that
               elevate cleanliness while prioritizing sustainability. Our team is
               dedicated to providing services that go beyond expectations.
-            </p>
-            <p>
-              Experience the benefits of a cleaner, greener future with GoGreen.
-              Reach out now to discuss your unique needs and let us create a
-              customized plan that ensures your space shines with the highest
-              standards of cleanliness and environmental responsibility.
             </p>
           </div>
           <Button

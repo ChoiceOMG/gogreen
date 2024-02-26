@@ -27,7 +27,7 @@ export default async function Page() {
       content: {
         title: 'Eco-friendly Cleaning and Products',
         description:
-          'Our eco-friendly cleaning services prioritize the health of your space and the planet. We exclusively use environmentally conscious cleaning products that are effective yet gentle, ensuring a thorough clean without compromising on green principles. Contact us for details about our eco-friendly products, services, and the impact they have!',
+          'Our eco-friendly cleaning services prioritize the health of your space and the planet. We exclusively use environmentally conscious cleaning products that are effective yet gentle, ensuring a thorough clean without compromising on green principles. Contact us for details about our eco-friendly products, services, and the impact they have! ',
         img: '/images/services/environmental/1.png'
       }
     },
@@ -36,7 +36,7 @@ export default async function Page() {
       content: {
         title: 'Waste Utilization Programs',
         description:
-          'Our programs aim to minimize the environmental impact of waste by finding creative and sustainable solutions. From recycling initiatives to composting practices, GoGreen is dedicated to turning waste into valuable resources. By selection our service you help our waste utilization programs that contribute to a cleaner, greener future.',
+          'Our programs aim to minimize the environmental impact of waste by finding creative and sustainable solutions. From recycling initiatives to composting practices, GoGreen is dedicated to turning waste into valuable resources. By selecting GoGreen you help our waste utilization programs contribute to a cleaner, greener future.',
         img: '/images/services/environmental/1.png'
       }
     }
@@ -47,7 +47,7 @@ export default async function Page() {
       <MainSection
         title="Environmental Services"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        text="Discover a new kind of cleaning with GoGreen, where every service is designed to safeguard the environment and promote sustainability. Become a part of something bigger through the simple act of cleaning."
         imgSrc="/images/services/environmental/main.png"
       />
 

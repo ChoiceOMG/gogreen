@@ -39,7 +39,7 @@ export default async function Page() {
           <TextAndImagesSection
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="Our Future"
-            paragraph="Put plainly, people who care about the environment care about the future. That's why we've made it our mission to safeguard the ecosystem while delivering top-notch janitorial services. At GoGreen, we’re cleaning with a purpose. Join us in making a difference, one cleaning service at a time."
+            paragraph="Put plainly, people who care about the environment care about the future. That's why we've made it our mission to safeguard the ecosystem while delivering top-notch janitorial services. At GoGreen, we’re cleaning with a purpose. Join us in making a difference."
             image1Src="/images/home/about_1.png"
             image2Src="/images/home/about_2.png"
           />

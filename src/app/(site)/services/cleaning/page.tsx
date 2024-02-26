@@ -24,7 +24,7 @@ export default async function Page() {
       content: {
         title: 'Carpet',
         description:
-          'Sick of looking at mud, salt stains, and grime on carpets? GoGreen has your back. We go beyond the surface, targeting deep-seated dirt, stains, and allergens, leaving your carpets visibly cleaner and contributing to a healthier indoor environment. Let us help you put your best foot forward!',
+          'Sick of looking at mud, salt stains, and grime on carpets? GoGreen has your back. We go beyond the surface, targeting deep-seated dirt, stains, and allergens, leaving carpets visibly cleaner and contributing to a healthier indoor environment. Let us help you put your best foot forward!',
         img: '/images/services/cleaning/1.png'
       }
     },
@@ -33,7 +33,7 @@ export default async function Page() {
       content: {
         title: 'Floor Polishing',
         description:
-          "Revatilize your space with bright, shiny, and clean floors! Whether they're hardwood, tile, marble, or any other material, our team brings well worn floors back to life. Using state-of-the-art equipment and eco-friendly products, we bring out the natural luster of your floors, creating a polished and pristine finish.",
+          "Revatilize your space with bright, shiny, and clean floors! Whether they're hardwood, tile, marble, or any other material, our team brings well-worn floors back to life. Using state-of-the-art equipment and eco-friendly products, we enhance the natural lustre of your floors, creating a polished finish.",
         img: '/images/services/cleaning/1.png'
       }
     },
@@ -42,7 +42,7 @@ export default async function Page() {
       content: {
         title: 'Regular Services',
         description:
-          'Make the ordinary extrodinary with GoGreen. We understand that consistency is key to maintaining a clean and inviting environment. Our regular services encompass thorough cleaning, eco-friendly practices, and a touch of innovation. With GoGreen, you can trust that every cleaning session contributes to a healthier, more sustainable space.',
+          'Make the ordinary extraordinary with GoGreen. We understand that consistency is key to maintaining a clean and inviting environment. Our regular services encompass thorough cleaning, eco-friendly practices, and a touch of innovation. With GoGreen, you can trust that every cleaning session contributes to a healthier, more sustainable space.',
         img: '/images/services/cleaning/1.png'
       }
     },
@@ -51,7 +51,7 @@ export default async function Page() {
       content: {
         title: 'One Time Services',
         description:
-          "Whether it's a thorough deep clean, emergency restoration, or a unique cleaning project, our expert team is ready to provide top-tier service with efficiency and precision. GoGreen ensures that your space receives the attention it deserves, leaving a lasting impression on all who experience it. Experience the convenience and excellence of our one-time services. Choose GoGreen for instant solutions that make a lasting impact.",
+          "Whether it's a thorough deep clean, emergency restoration, or a unique cleaning project, our expert team is ready to provide top-tier service with efficiency and precision. GoGreen ensures that your space receives the attention it deserves, leaving a lasting impression. Experience the convenience and excellence of our one-time services. Choose GoGreen for instant solutions that make a lasting impact!",
         img: '/images/services/cleaning/1.png'
       }
     }

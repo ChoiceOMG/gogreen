@@ -27,7 +27,7 @@ export default async function Page() {
       content: {
         title: 'Floor Polishing',
         description:
-          'Trust GoGreen to bring out the luster in your floors, creating a polished and sophisticated finish that elevates the overall aesthetic of your space. We use only the best tools and products to get your floors to a gorgeous  and shiny state. ',
+          'Trust GoGreen to bring out the lustre in your floors, creating a polished and sophisticated finish that elevates the overall aesthetic of your space. We use only the best tools and products to make your floors gorgeous and shiny. ',
         img: '/images/services/commercial/1.png'
       }
     },
@@ -47,7 +47,7 @@ export default async function Page() {
       <MainSection
         title="Commercial Floor Cleaning"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        text="GoGreen offers eco-friendly floor cleaning services tailored to meet your needs, ensuring a spotless and polished finish every time."
         imgSrc="/images/services/commercial/main.png"
       />
 

@@ -212,6 +212,32 @@ const Carousel = React.forwardRef<
       };
     }, [isFixed, isOnFirstSlide, isOnLastSlide, api]);
 
+    React.useEffect(() => {
+      const checkMobileAndTouch = () => {
+        if (!enableScrollSnap || typeof window === 'undefined') return;
+
+        const isMobile = window.innerWidth <= 768;
+        const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+        if (isMobile || isTouch) {
+          setIsFixed(false);
+          FixPage(false, carouselRef2);
+          enableScrollSnap = false;
+        }
+      };
+
+      // Run on mount
+      checkMobileAndTouch();
+
+      // Run on resize
+      window.addEventListener('resize', checkMobileAndTouch);
+
+      // Clean up event listener on unmount
+      return () => {
+        window.removeEventListener('resize', checkMobileAndTouch);
+      };
+    }, []);
+
     return (
       <div ref={carouselRef2}>
         <CarouselContext.Provider

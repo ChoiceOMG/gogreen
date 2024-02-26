@@ -27,16 +27,16 @@ export default async function Page() {
       content: {
         title: 'Emergency Restoration',
         description:
-          'When disasters strike, trust GoGreen for rapid and effective emergency restoration services. Our expert team is on standby 24/7, ready to mitigate damage, restore properties, and bring peace of mind during challenging times. Choose GoGreen for immediate, reliable, and comprehensive emergency restoration solutions. ',
+          'When disasters strike, trust GoGreen for rapid and effective emergency restoration services. Our team is on-site to mitigate damage, restore properties, and bring peace of mind during challenging times. Choose GoGreen for immediate, reliable, and comprehensive emergency restoration solutions.',
         img: '/images/services/post-construction/1.png'
       }
     },
     {
-      title: 'Post Construction Cleaning',
+      title: 'Post-Construction Cleaning',
       content: {
-        title: 'Post Construction Cleaning',
+        title: 'Post-Construction Cleaning',
         description:
-          "Transform your construction site into a usable space with GoGreen's specialized post-construction cleaning services.  Our dedicated team specializes in removing debris, dust, and any remnants of the construction process, leaving your area spotless and ready for use. Trust GoGreen for a thorough and efficient post-construction clean.",
+          "Transform your construction site into a usable space with GoGreen's specialized post-construction cleaning services.  We specialize in removing debris, dust, and any remnants of the construction process, leaving your area spotless and ready for use. ",
         img: '/images/services/post-construction/1.png'
       }
     },
@@ -45,7 +45,7 @@ export default async function Page() {
       content: {
         title: 'Move In/Move Out Cleaning',
         description:
-          "Planning a big move? Whether you're moving in or preparing to move out, trust GoGreen for a spotless start or easy handover. We ensure your commercial space is ready for its next chapter. Make it a smooth transition with GoGreen's specialized Move In/Move Out cleaning services. ",
+          "Planning a big move? Whether you're moving in or preparing to move out, trust GoGreen for a spotless start or easy handover. We ensure your commercial space is ready for its next chapter. Make it a smooth transition with GoGreen's specialized Move-In/Move-Out cleaning services. ",
         img: '/images/services/post-construction/1.png'
       }
     }
@@ -56,7 +56,7 @@ export default async function Page() {
       <MainSection
         title="Post-Construction Cleaning"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        text="For unique cleaning situations, such as post-construction cleaning, emergency restoration, or move-in/move-out cleaning for commercial spaces, GoGreen stands as your specialized solution."
         imgSrc="/images/services/post-construction/main.png"
       />
 

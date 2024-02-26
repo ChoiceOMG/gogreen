@@ -27,7 +27,7 @@ export default async function Page() {
       content: {
         title: 'Pressure Washing',
         description:
-          'GoGreen`s pressure washing delivers a highly efficient and thorough cleaning, removing dirt, grime, mold, and stains effectively. Regular pressure washing can prevent the buildup of contaminants, protecting your property from potential damage and avoiding costly repairs in the long run. We also use eco-friendly cleaners to protect the delicate outdoor enviornment.',
+          'GoGreen`s pressure washing delivers a highly efficient and thorough cleaning, removing dirt, grime, mold, and stains effectively. Regular pressure washing can prevent the buildup of contaminants, protecting your property from potential damage and avoiding costly repairs in the long run. We also use eco-friendly cleaners to protect the delicate outdoor environment.',
         img: '/images/services/outdoor/1.png'
       }
     },
@@ -36,7 +36,7 @@ export default async function Page() {
       content: {
         title: 'Window Cleaning',
         description:
-          'See things clearly with GoGreens eco-friendly window cleaning service. We ensure streak-free, spotless windows that enhance natural light and provide clear views, creating a brighter and more inviting environment.',
+          'See things clearly with GoGreen’s eco-friendly window cleaning service. We ensure streak-free, spotless windows that enhance natural light and provide clear views, creating a brighter and more inviting environment.',
         img: '/images/services/outdoor/1.png'
       }
     }
@@ -47,7 +47,7 @@ export default async function Page() {
       <MainSection
         title="Outdoor Building Maintenance"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
+        text="Choose sustainability without compromising excellence by opting for GoGreen's outdoor building maintenance services. We ensure the preservation of the environment while extending the life and enhancing the appeal of your outdoor spaces. "
         imgSrc="/images/services/outdoor/main.png"
       />
 

@@ -39,7 +39,7 @@ export default async function Page() {
           <TextAndImagesSection
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="Innovations in Services"
-            paragraph="Why settle for basic cleaning services when you can experience the extraordinary? At GoGreen, we transcend the ordinary by incorporating cutting-edge technology into every aspect of our services. Choose GoGreen for a seamlessly clean and responsibly managed environment."
+            paragraph="Why settle for basic cleaning services when you can experience the extraordinary? At GoGreen, we transcend the ordinary by incorporating cutting-edge technology into every aspect of our services. Choose GoGreen for a clean and eco-friendly approach. "
             image1Src="/images/home/about_1.png"
             image2Src="/images/home/about_2.png"
           />

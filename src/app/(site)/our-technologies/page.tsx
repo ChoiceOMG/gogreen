@@ -39,7 +39,7 @@ export default async function Page() {
               key={2}
               subtitle="Your Partner for Eco-Friendly Cleaning"
               title="Delivery Process"
-              paragraph="With each service, we go beyond cleanliness. We pride ourselves on maintaining the highest standards, ensuring that every space we touch exudes cleanliness and excellence. We go beyond the ordinary, implementing cutting-edge practices that not only clean but contribute to a healthier planet."
+              paragraph="With each service, we go beyond cleanliness. We pride ourselves on maintaining the highest standards, ensuring that every space we touch exudes excellence. GoGreen goes beyond the ordinary, implementing cutting-edge practices that not only clean but contribute to a healthier planet."
             />
           ]}
         />
@@ -58,12 +58,10 @@ export default async function Page() {
               At GoGreen, our passionate team is at the forefront of leveraging
               the market&lsquo;s best technology to deliver high-quality
               results. We believe in the power of technology not only to achieve
-              pristine cleanliness but also to enhance accountability –
-              accountability to you and accountability to the environment. With
-              our tech-driven approach, you can trust that your space is not
-              only spotless but also managed with the utmost care. We utilize
-              cutting-edge technology to ensure that our clean goes beyond the
-              ordinary.
+              cleanliness but also to enhance accountability – accountability to
+              you and accountability to the environment. With our tech-driven
+              approach, you can trust that your space is spotless and managed
+              with the utmost care.
             </p>
           </div>
         </div>
