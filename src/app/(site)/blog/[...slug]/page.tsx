@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getPageMeta } from '@/utils/getMeta';
+import { getArticleMeta, getPageMeta } from '@/utils/getMeta';
 
 import { ContactUsSection } from '@/components/ContactUsSection';
 
@@ -9,12 +9,18 @@ import { RecommendedSection } from './components/RecommendedSection';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
 import { getArticle } from '@/app/services/data';
 
-import { headers } from 'next/headers';
-const headersList = headers();
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string[] };
+}) {
+  const slug = params.slug;
+  /*   const url = slug[slug.length - 1]; */
+  // Await the async function and use its result
 
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+  const articleMeta = await getArticleMeta(slug);
+  return articleMeta;
+}
 
 export default async function Page({ params }: { params: { slug: [] } }) {
   const slug = params.slug;

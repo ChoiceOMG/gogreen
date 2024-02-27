@@ -1,5 +1,5 @@
 import { _siteUrl } from './constants';
-
+import prisma from '@/app/db/client';
 interface PageMeta {
   title: string;
   description: string;
@@ -136,4 +136,25 @@ export const getPageMeta = (slug: string): PageMeta => {
   }
 
   return { title, description };
+};
+
+export const getArticleMeta = async (slug: string[]) => {
+  // Logic to find the title and description based on the slug
+  const Article = await prisma.article.findUnique({
+    where: {
+      URL: slug[slug.length - 1]
+    },
+    select: {
+      title: true,
+      excerpt: true,
+      image: true
+    }
+  });
+
+  return {
+    title: Article?.title || '',
+    description: Article?.excerpt || '',
+    image: Article?.image || '',
+    url: `${_siteUrl}/blog/${slug.join('/')}`
+  };
 };
