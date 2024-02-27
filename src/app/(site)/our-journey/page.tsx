@@ -10,7 +10,12 @@ import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
 import Timeline from '@/components/Timeline';
 import { TextBlock } from '@/components/UI/TextBlock';
 
-export const metadata: Metadata = getPageMeta('/');
+import { headers } from 'next/headers';
+const headersList = headers();
+
+export const metadata: Metadata = getPageMeta(
+  headersList.get('next-url') || '/'
+);
 
 export default async function Page() {
   return (

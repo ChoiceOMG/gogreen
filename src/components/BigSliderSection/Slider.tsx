@@ -30,6 +30,10 @@ export const Slider = ({
   const [api, setApi] = React.useState<CarouselApi>();
 
   React.useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      // It's a mobile device, exit the effect
+      return;
+    }
     if (!api) {
       return;
     }
@@ -55,7 +59,7 @@ export const Slider = ({
       className="w-full"
     >
       <div className="relative">
-        <CarouselContent className="transition-transform duration-200 ease-linear">
+        <CarouselContent className="md:transition-transform duration-200 ease-linear">
           {items.map((item, index) => {
             return (
               <CarouselItem

@@ -7,7 +7,12 @@ import { FAQ } from '@/components/FAQ';
 import { MapSection } from './components/MapSection';
 import { SecondSection } from './components/SecondSection';
 
-export const metadata: Metadata = getPageMeta('/');
+import { headers } from 'next/headers';
+const headersList = headers();
+
+export const metadata: Metadata = getPageMeta(
+  headersList.get('next-url') || '/'
+);
 
 export default async function Page() {
   return (

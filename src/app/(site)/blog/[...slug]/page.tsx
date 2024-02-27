@@ -9,7 +9,12 @@ import { RecommendedSection } from './components/RecommendedSection';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
 import { getArticle } from '@/app/services/data';
 
-export const metadata: Metadata = getPageMeta('/');
+import { headers } from 'next/headers';
+const headersList = headers();
+
+export const metadata: Metadata = getPageMeta(
+  headersList.get('next-url') || '/'
+);
 
 export default async function Page({ params }: { params: { slug: [] } }) {
   const slug = params.slug;
