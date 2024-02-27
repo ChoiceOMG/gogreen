@@ -11,7 +11,12 @@ import { IndustriesSection } from '@/components/BigSliderSection';
 import { _industries } from '@/utils/constants';
 import ScrollStopper from '@/components/UI/ScrollStopper';
 
-export const metadata: Metadata = getPageMeta('/');
+import { headers } from 'next/headers';
+const headersList = headers();
+
+export const metadata: Metadata = getPageMeta(
+  headersList.get('next-url') || '/'
+);
 
 export default async function Page() {
   return (
