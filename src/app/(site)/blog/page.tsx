@@ -10,12 +10,7 @@ import { ArticlesSkeleton } from '@/components/UI/skeletons';
 import Pagination from './components/Pagination';
 import ArticlesSection from './components/ArticlesSection';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/blog');
 
 export default async function Page({
   searchParams

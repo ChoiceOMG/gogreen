@@ -11,12 +11,7 @@ import { _industries, _services } from '@/utils/constants';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
 import { ContacFormSection } from '@/components/ContacFormSection';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/');
 
 export default async function Home() {
   return (

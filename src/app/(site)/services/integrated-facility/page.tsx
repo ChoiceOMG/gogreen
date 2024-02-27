@@ -25,12 +25,7 @@ import { ContactSection } from './components/ContactSection';
 import { CompanyLogosSection } from './components/CompanyLogosSection';
 import { ScrollExpandLine } from '@/components/Animations';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/services/integrated-facility');
 
 export default async function Page() {
   const services = [

@@ -18,12 +18,7 @@ import { LeafIcon } from '@/components/UI/SVG/LeafIcon';
 import { ReviewsSection } from '@/components/ReviewsSection';
 import { BusinessProcessSection } from '../../../../components/BusinessProcessSection';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/services/post-construction');
 
 export default async function Page() {
   const Items = [

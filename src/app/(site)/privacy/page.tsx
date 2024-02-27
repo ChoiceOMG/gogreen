@@ -7,12 +7,7 @@ import { TextBlock } from '@/components/UI/TextBlock';
 import Link from 'next/link';
 import { _mail } from '@/utils/constants';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/privacy');
 
 export default async function Page() {
   return (

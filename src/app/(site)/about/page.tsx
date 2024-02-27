@@ -7,12 +7,7 @@ import { PeopleSection } from './components/PeopleSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactUsSection } from '@/components/ContactUsSection';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/about');
 
 export default async function Page() {
   return (

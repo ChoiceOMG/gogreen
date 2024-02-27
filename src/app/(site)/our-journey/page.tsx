@@ -10,12 +10,7 @@ import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
 import Timeline from '@/components/Timeline';
 import { TextBlock } from '@/components/UI/TextBlock';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/our-journey');
 
 export default async function Page() {
   return (

@@ -13,12 +13,7 @@ import { TabsSection } from '@/components/TabsSection';
 
 import { _industries, _services } from '@/utils/constants';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/industries/hospitality');
 
 export default async function Page() {
   const Items = [

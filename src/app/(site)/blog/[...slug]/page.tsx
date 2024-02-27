@@ -1,13 +1,12 @@
-import { Metadata } from 'next';
-import { getArticleMeta, getPageMeta } from '@/utils/getMeta';
-
 import { ContactUsSection } from '@/components/ContactUsSection';
-
+import prisma from '@/app/db/client';
 import { MainSection } from './components/MainSection';
 import { ContentSection } from './components/ContentSection';
 import { RecommendedSection } from './components/RecommendedSection';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
 import { getArticle } from '@/app/services/data';
+import { _siteUrl } from '@/utils/constants';
+import { getArticleMeta } from '@/utils/getMeta';
 
 export async function generateMetadata({
   params

@@ -14,12 +14,7 @@ import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
 import Parallax from '@/components/Animations/Parallax';
 import { Leaf } from '@/components/UI/SVG/Leaf';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/why-us');
 
 export default async function Page() {
   return (

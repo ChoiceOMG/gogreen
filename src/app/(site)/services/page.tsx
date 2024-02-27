@@ -12,12 +12,7 @@ import { ServicesSection } from '@/components/ServicesSection';
 import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
 import { _industries, _services } from '@/utils/constants';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/services');
 
 export default async function Page() {
   return (

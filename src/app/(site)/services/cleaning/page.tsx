@@ -15,12 +15,7 @@ import TimelineModern from '@/components/Timeline/modern';
 import { FAQ } from '@/components/FAQ';
 import { _industries, _services } from '@/utils/constants';
 
-import { headers } from 'next/headers';
-const headersList = headers();
-
-export const metadata: Metadata = getPageMeta(
-  headersList.get('next-url') || '/'
-);
+export const metadata: Metadata = getPageMeta('/services/cleaning');
 
 export default async function Page() {
   const Items = [
