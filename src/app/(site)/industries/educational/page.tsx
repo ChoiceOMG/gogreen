@@ -32,7 +32,7 @@ export default async function Page() {
         title: 'Higher Education',
         description:
           'Trust GoGreen for university cleaning that contributes to the excellence of your institution. From dorms and rec centres to classrooms and lecture halls, we have you covered. GoGreen’s eco-friendly services positively impact both your facility and the planet, showing that you prioritize the well-being and future of students.',
-        img: '/images/industries/educational/1.png'
+        img: '/images/industries/educational/2.jpg'
       }
     },
     {
@@ -41,7 +41,7 @@ export default async function Page() {
         title: 'Specialized Courses',
         description:
           'When learning gets messy, trust GoGreen to have your back. We have the industry expertise needed to clean up after specialized courses. Our services are designed for the unique requirements of educational spaces. ',
-        img: '/images/industries/educational/1.png'
+        img: '/images/industries/educational/3.jpg'
       }
     }
   ];

@@ -36,11 +36,11 @@ const ArticleCard = ({
       </div>
       <div className="flex flex-col lg:pr-12">
         <div className="mt-auto">
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mb-4">
             {' '}
             {post.categories.map(category => (
               <Link
-                className="h4 text-goGreen-green mb-4"
+                className="h4 text-goGreen-green "
                 key={category.category.id}
                 href={`/blog/${category.category.link}`}
               >
@@ -49,7 +49,9 @@ const ArticleCard = ({
             ))}
           </div>
 
-          <h2 className="h2 mb-8">{post.title}</h2>
+          <Link href={link} title={post.title} className="h2 mb-8 block">
+            {post.title}
+          </Link>
           <p className="mb-9">{excerptContent}</p>
           <Button
             link={link}

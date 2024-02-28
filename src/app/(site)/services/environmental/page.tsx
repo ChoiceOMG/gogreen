@@ -37,7 +37,7 @@ export default async function Page() {
         title: 'Waste Utilization Programs',
         description:
           'Our programs aim to minimize the environmental impact of waste by finding creative and sustainable solutions. From recycling initiatives to composting practices, GoGreen is dedicated to turning waste into valuable resources. By selecting GoGreen you help our waste utilization programs contribute to a cleaner, greener future.',
-        img: '/images/services/environmental/1.png'
+        img: '/images/services/environmental/2.jpg'
       }
     }
   ];

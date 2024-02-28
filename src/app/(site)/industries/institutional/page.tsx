@@ -23,7 +23,7 @@ export default async function Page() {
         title: 'Government',
         description:
           'When you work in Government, public expectations are high. GoGreen understands the importance of making a positive impression. Our innovative solutions not only help you put your best foot forward but also demonstrate your commitment to environmental responsibility. ',
-        img: '/images/industries/institutional/1.png'
+        img: '/images/industries/institutional/1.jpg'
       }
     },
     {
@@ -32,7 +32,7 @@ export default async function Page() {
         title: 'Finance',
         description:
           'Precision and professionalism reign supreme in the world of Finance. GoGreen offers tailored cleaning services to match these standards of excellence. We pride ourselves in creating an organized workspace that inspires efficiency and client trust.',
-        img: '/images/industries/institutional/1.png'
+        img: '/images/industries/institutional/2.jpg'
       }
     },
     {
@@ -41,7 +41,7 @@ export default async function Page() {
         title: 'Municipalities',
         description:
           'GoGreen provides dedicated cleaning services for municipalities, ensuring the heart of local communities stays vibrant and clean. Our team tends to public spaces, streets, and facilities, contributing to the well-being and aesthetics of the community. We uphold the cleanliness standards that make municipalities thriving and welcoming places.',
-        img: '/images/industries/institutional/1.png'
+        img: '/images/industries/institutional/3.jpg'
       }
     }
   ];

@@ -135,8 +135,6 @@ export const getPageMeta = (slug: string): PageMeta => {
       break;
   }
 
-  console.log('slug', slug);
-  console.log('title', title);
   return { title, description };
 };
 
