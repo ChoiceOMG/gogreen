@@ -1,3 +1,4 @@
+'use client';
 import { ScrollExpandLine } from '@/components/Animations';
 import { Button } from '@/components/UI/button';
 import {
@@ -31,6 +32,7 @@ export const ServicesSection = ({
     typeof window !== 'undefined'
       ? window.matchMedia('(pointer: coarse)').matches
       : false;
+
   return (
     <section className=" pb-20 lg:pb-44">
       <div className="container">
