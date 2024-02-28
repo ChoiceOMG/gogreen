@@ -81,8 +81,7 @@ const Carousel = React.forwardRef<
 
     const [isOnFirstSlide, setIsOnFirstSlide] = React.useState(true);
     const [isOnLastSlide, setIsOnLastSlide] = React.useState(false);
-
-    // Используйте useRef для создания ссылки на элемент Carousel
+    const [isMobile, setIsMobile] = React.useState(false);
     const carouselRef2 = React.useRef<HTMLDivElement>(null);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
@@ -156,7 +155,7 @@ const Carousel = React.forwardRef<
     }, [api]);
 
     React.useEffect(() => {
-      if (!enableScrollSnap) {
+      if (!enableScrollSnap || !carouselRef2.current || isMobile) {
         return;
       }
       const observer = new IntersectionObserver(
@@ -186,7 +185,7 @@ const Carousel = React.forwardRef<
 
     React.useEffect(() => {
       const handleScroll = (e: WheelEvent) => {
-        if (!enableScrollSnap || !isFixed || !api) return;
+        if (!enableScrollSnap || !isFixed || !api || isMobile) return;
 
         const { deltaY } = e;
 
@@ -218,11 +217,12 @@ const Carousel = React.forwardRef<
 
         const isMobile = window.innerWidth <= 768;
         const isTouch = window.matchMedia('(pointer: coarse)').matches;
-
+        console.log('isMobile', isMobile);
         if (isMobile || isTouch) {
           setIsFixed(false);
           FixPage(false, carouselRef2);
           enableScrollSnap = false;
+          setIsMobile(true);
         }
       };
 
