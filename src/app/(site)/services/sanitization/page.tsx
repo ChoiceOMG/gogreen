@@ -37,7 +37,7 @@ export default async function Page() {
         title: 'One Time Disinfection',
         description:
           "When you need a swift and thorough disinfection solution, turn to GoGreen's one-time disinfection service. We’re ready to provide immediate and effective sanitation, ensuring your space is free from harm. By using advanced disinfectants and following meticulous protocols we create a safe and sanitized environment.",
-        img: '/images/services/sanitary/1.jpeg'
+        img: '/images/services/sanitary/2.jpeg'
       }
     },
     {
@@ -46,7 +46,7 @@ export default async function Page() {
         title: 'Recurring Disinfection',
         description:
           'Our commitment to continuous disinfection means you get the peace of mind that comes from knowing your space is consistently and thoroughly disinfected. Take advantage of our flexible scheduling options, allowing you to tailor the frequency of disinfection. With GoGreen, your safety is our priority, and our recurring service is designed to provide lasting assurance in every environment.',
-        img: '/images/services/sanitary/1.jpg'
+        img: '/images/services/sanitary/3.jpg'
       }
     }
   ];
