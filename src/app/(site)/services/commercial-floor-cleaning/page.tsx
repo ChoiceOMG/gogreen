@@ -30,7 +30,7 @@ export default async function Page() {
         title: 'Floor Polishing',
         description:
           'Trust GoGreen to bring out the lustre in your floors, creating a polished and sophisticated finish that elevates the overall aesthetic of your space. We use only the best tools and products to make your floors gorgeous and shiny. ',
-        img: '/images/services/commercial/1.png'
+        img: '/images/services/commercial/1.jpg'
       }
     },
     {
@@ -39,7 +39,7 @@ export default async function Page() {
         title: 'Carpet Cleaning',
         description:
           'We employ advanced techniques and eco-friendly products to thoroughly cleanse and rejuvenate your carpets, leaving them looking and feeling like new. Trust GoGreen for a deep and effective clean that enhances the appearance and longevity of your carpets.',
-        img: '/images/services/commercial/1.png'
+        img: '/images/services/commercial/2.jpg'
       }
     }
   ];

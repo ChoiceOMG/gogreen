@@ -28,7 +28,7 @@ export default async function Page() {
         title: 'Luxury Residential Cleaning',
         description:
           'At GoGreen, we’re all about giving you the very best clean. Our tailored approach ensures that every corner of your residence is meticulously cared for using eco-friendly products and cutting-edge technology. Simply put, we understand the unique demands of luxury living.',
-        img: '/images/services/cleaning/1.png'
+        img: '/images/services/specialized/1.jpg'
       }
     },
     {
@@ -37,7 +37,7 @@ export default async function Page() {
         title: 'Emergency Restoration',
         description:
           'Disasters can strike at any moment, and when they do, GoGreen is your trusted partner for swift and effective emergency restoration services. We understand the urgency of restoring your property after unforeseen events like floods, fires, or other emergencies. With a commitment to prompt response, we deploy advanced restoration techniques.',
-        img: '/images/services/cleaning/1.png'
+        img: '/images/services/specialized/2.jpg'
       }
     },
     {
@@ -46,7 +46,7 @@ export default async function Page() {
         title: 'Specialized Cleaning',
         description:
           "Experience the difference with GoGreen's cleaning services, crafted to meet your unique needs. Whether it's delicate surfaces, unique equipment, or specific industry requirements, our expert team has the knowledge and skills to deliver precision in every detail.",
-        img: '/images/services/cleaning/1.png'
+        img: '/images/services/specialized/3.jpg'
       }
     }
   ];

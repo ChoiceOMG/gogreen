@@ -32,7 +32,7 @@ export default async function Page() {
         title: 'Leisure Centers',
         description:
           'It’s hard to unwind when there is cleaning to be done, that’s why we pride ourselves in creating pristine leisure centre environments. GoGreen expertly cleans recreational spaces, pools, and common areas. By upholding high standards of cleanliness, we ensure guests are comfortable and happy. ',
-        img: '/images/industries/recreational/1.png'
+        img: '/images/industries/recreational/2.jpg'
       }
     },
     {
@@ -41,7 +41,7 @@ export default async function Page() {
         title: 'Stadiums and Sports Complexes',
         description:
           'GoGreen provides top-tier cleaning services for stadiums and sports complexes. We ensure that every seat, facility, and communal area is always ready to host the next big game or concert. Let us be your partner in creating memorable moments.',
-        img: '/images/industries/recreational/1.png'
+        img: '/images/industries/recreational/3.jpg'
       }
     }
   ];

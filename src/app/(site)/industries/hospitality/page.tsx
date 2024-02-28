@@ -32,7 +32,7 @@ export default async function Page() {
         title: 'Event Venues',
         description:
           'Create unforgettable moments with GoGreen`s event venue cleaning services. Whether it`s prepping for a grand celebration or restoring after an event, we ensure that every space sparkles. GoGreen is here to help you shine!',
-        img: '/images/industries/hospitality/1.png'
+        img: '/images/industries/hospitality/2.jpg'
       }
     }
   ];

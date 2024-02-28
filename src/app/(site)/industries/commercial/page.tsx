@@ -23,7 +23,7 @@ export default async function Page() {
         title: 'Offices',
         description:
           'GoGreen`s services will turn your office into a  clean, inviting workspace that inspires efficiency. We customize our services to meet your specific office needs, providing flexibility and ensuring that you receive precisely the level of cleanliness your space requires.',
-        img: '/images/industries/commercial/1.png'
+        img: '/images/industries/commercial/1.jpg'
       }
     },
     {
@@ -32,7 +32,7 @@ export default async function Page() {
         title: 'Retail Stores',
         description:
           'Retail stores need to make a great first impression, and GoGreen is here to help. We clean until every nook and cranny is spotless, creating an environment that attracts customers and enhances their shopping experience.',
-        img: '/images/industries/commercial/1.png'
+        img: '/images/industries/commercial/2.jpeg'
       }
     },
     {
@@ -41,7 +41,7 @@ export default async function Page() {
         title: 'Shopping Centers',
         description:
           'Immerse shoppers in a spotless and welcoming atmosphere with GoGreen`s meticulous shopping centre cleaning. We’re committed to providing a hygienic environment that enhances the overall shopping experience. From bathrooms and hallways to individual stores and employee lounges, GoGreen has your back.',
-        img: '/images/industries/commercial/1.png'
+        img: '/images/industries/commercial/3.webp'
       }
     }
   ];

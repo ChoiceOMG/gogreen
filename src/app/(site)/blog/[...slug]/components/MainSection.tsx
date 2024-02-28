@@ -74,13 +74,13 @@ export const MainSection: React.FC<MainSectionProps> = ({
             </Parallax>
           </div>
           <div className="flex flex-col relative z-[1]">
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-7">
               {categories.length > 0 &&
                 categories.map((category, index) => (
                   <Link
                     href={`/blog/${category.link}`}
                     key={index}
-                    className="w-fit h4 mb-7"
+                    className="w-fit h4 "
                   >
                     {category.name}
                   </Link>

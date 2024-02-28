@@ -39,7 +39,7 @@ export default async function Page() {
         title: 'Window Cleaning',
         description:
           'See things clearly with GoGreen’s eco-friendly window cleaning service. We ensure streak-free, spotless windows that enhance natural light and provide clear views, creating a brighter and more inviting environment.',
-        img: '/images/services/outdoor/1.png'
+        img: '/images/services/outdoor/2.png'
       }
     }
   ];
