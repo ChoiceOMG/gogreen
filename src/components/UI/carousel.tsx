@@ -5,12 +5,13 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType
 } from 'embla-carousel-react';
 
-import { debounce } from 'lodash';
+import { nanoid } from 'nanoid';
 
 import { cn } from '@/utils/utils';
 import { Button } from './button';
 import Arrows from './SVG/Arrows';
-import { FixPage } from '@/utils/fixPage';
+import { InView, useInView } from 'react-intersection-observer';
+import { useDebouncedCallback } from 'use-debounce';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -54,19 +55,16 @@ const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
 >(
-  (
-    {
-      orientation = 'horizontal',
-      opts,
-      setApi,
-      plugins,
-      className,
-      children,
-      enableScrollSnap = false,
-      ...props
-    },
-    ref
-  ) => {
+  ({
+    orientation = 'horizontal',
+    opts,
+    setApi,
+    plugins,
+    className,
+    children,
+    enableScrollSnap = false,
+    ...props
+  }) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
@@ -76,10 +74,111 @@ const Carousel = React.forwardRef<
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
+    const uniqueIdRef = React.useRef(nanoid());
 
     const [isOnFirstSlide, setIsOnFirstSlide] = React.useState(true);
     const [isOnLastSlide, setIsOnLastSlide] = React.useState(false);
-    const carouselRef2 = React.useRef<HTMLDivElement>(null);
+    const [lastScrollY, setLastScrollY] = React.useState(
+      typeof window !== 'undefined' ? window.scrollY : 0
+    );
+
+    const [scrollDirection, setScrollDirection] = React.useState(
+      'down' /* or 'up' */
+    );
+
+    const { ref, inView } = useInView({
+      threshold: 0
+    });
+
+    React.useEffect(() => {
+      if (typeof window !== 'undefined') {
+        const handleScroll = () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > lastScrollY) {
+            setScrollDirection('down');
+          } else if (currentScrollY < lastScrollY) {
+            setScrollDirection('up');
+          }
+
+          setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }
+    }, [lastScrollY]);
+
+    const FixPage = (isFixed: boolean) => {
+      if (isFixed) {
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = '9px';
+
+        document
+          .querySelector(`#${uniqueIdRef.current}`)
+          ?.scrollIntoView({ behavior: 'auto', block: 'center' });
+      } else {
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+
+      return;
+    };
+
+    const handleScroll = useDebouncedCallback((e: WheelEvent) => {
+      if (!api) return;
+
+      const { deltaY } = e;
+
+      if (
+        (deltaY > 0 && scrollDirection === 'down' && !isOnLastSlide) ||
+        (deltaY < 0 && scrollDirection === 'down' && !isOnFirstSlide) ||
+        (deltaY < 0 && scrollDirection === 'up' && !isOnFirstSlide) ||
+        (deltaY > 0 && scrollDirection === 'up' && !isOnLastSlide)
+      ) {
+        FixPage(true);
+      } else {
+        FixPage(false);
+      }
+
+      if (deltaY > 0) {
+        api.scrollNext();
+      } else {
+        api.scrollPrev();
+      }
+
+      e.preventDefault();
+    }, 100);
+
+    React.useEffect(() => {
+      if (!enableScrollSnap) return;
+      if (typeof window !== 'undefined') {
+        if (inView) {
+          FixPage(true);
+
+          window.addEventListener('wheel', handleScroll);
+
+          return () => {
+            window.removeEventListener('wheel', handleScroll);
+          };
+        } else {
+          FixPage(false);
+        }
+      }
+    }, [
+      inView,
+      scrollDirection,
+      api,
+      isOnFirstSlide,
+      isOnLastSlide,
+      enableScrollSnap,
+      handleScroll
+    ]);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -134,7 +233,7 @@ const Carousel = React.forwardRef<
     }, [api, onSelect]);
 
     React.useEffect(() => {
-      if (!api) return;
+      if (!api || !enableScrollSnap) return;
 
       const updateSlideStatus = () => {
         setIsOnFirstSlide(api.selectedScrollSnap() === 0);
@@ -151,19 +250,6 @@ const Carousel = React.forwardRef<
       };
     }, [api]);
 
-    const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-      if (!api) return;
-
-      const { deltaY } = e;
-
-      if (deltaY > 0) {
-        api.scrollNext();
-      } else {
-        api.scrollPrev();
-      }
-      e.preventDefault();
-    };
-
     return (
       <CarouselContext.Provider
         value={{
@@ -179,21 +265,8 @@ const Carousel = React.forwardRef<
         }}
       >
         <div
-          ref={carouselRef2}
-          onWheel={e => {
-            if (!enableScrollSnap) return;
-            handleScroll(e);
-            FixPage(true, carouselRef2);
-            e.preventDefault();
-          }}
-          onMouseEnter={() => {
-            if (!enableScrollSnap) return;
-            FixPage(true, carouselRef2);
-          }}
-          onMouseLeave={() => {
-            if (!enableScrollSnap) return;
-            FixPage(false, carouselRef2);
-          }}
+          ref={ref}
+          id={uniqueIdRef.current}
           onKeyDownCapture={handleKeyDown}
           className={cn('relative', className)}
           role="region"

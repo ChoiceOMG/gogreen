@@ -26,6 +26,13 @@ export const ServicesSection = ({
   title: string;
   subtitle: string;
 }) => {
+  const isMobile =
+    typeof window !== 'undefined' ? window.innerWidth <= 768 : false;
+  const isTouch =
+    typeof window !== 'undefined'
+      ? window.matchMedia('(pointer: coarse)').matches
+      : false;
+
   return (
     <section className=" pb-20 lg:pb-44">
       <div className="container">
@@ -38,7 +45,7 @@ export const ServicesSection = ({
             opts={{
               align: 'start'
             }}
-            enableScrollSnap={true}
+            enableScrollSnap={isMobile || isTouch ? false : true}
             className="w-full"
           >
             <div className="relative max-md:-ml-6 max-md:pb-24">

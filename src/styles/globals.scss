@@ -6,7 +6,9 @@
 
 @import './spinner.scss';
 @import './browserOptions.scss';
-
+html {
+  scroll-behavior: smooth;
+}
 /* UI */
 @layer base {
   :root {

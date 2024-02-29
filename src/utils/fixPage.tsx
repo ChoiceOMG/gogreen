@@ -1,8 +1,5 @@
-export const FixPage = (
-  isFixed: boolean,
-  elementRef: React.RefObject<HTMLElement>
-) => {
-  if (isFixed && elementRef.current) {
+export const FixPage = (isFixed: boolean) => {
+  if (isFixed) {
     document.documentElement.style.overflow = 'hidden';
     document.body.style.paddingRight = '9px';
   } else {
