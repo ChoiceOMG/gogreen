@@ -77,11 +77,8 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
 
-    const [isFixed, setIsFixed] = React.useState(false);
-
     const [isOnFirstSlide, setIsOnFirstSlide] = React.useState(true);
     const [isOnLastSlide, setIsOnLastSlide] = React.useState(false);
-    const [isMobile, setIsMobile] = React.useState(false);
     const carouselRef2 = React.useRef<HTMLDivElement>(null);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
@@ -154,117 +151,58 @@ const Carousel = React.forwardRef<
       };
     }, [api]);
 
-    React.useEffect(() => {
-      if (!enableScrollSnap || !carouselRef2.current || isMobile) {
-        return;
+    const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+      if (!api) return;
+
+      const { deltaY } = e;
+
+      if (deltaY > 0) {
+        api.scrollNext();
+      } else {
+        api.scrollPrev();
       }
-      const observer = new IntersectionObserver(
-        entries => {
-          const entry = entries[0];
-
-          setIsFixed(entry.isIntersecting);
-          FixPage(entry.isIntersecting, carouselRef2);
-        },
-        {
-          root: null,
-          rootMargin: '0px',
-          threshold: 0.5
-        }
-      );
-
-      if (carouselRef2.current) {
-        observer.observe(carouselRef2.current);
-      }
-
-      return () => {
-        if (carouselRef2.current) {
-          observer.unobserve(carouselRef2.current);
-        }
-      };
-    }, []);
-
-    React.useEffect(() => {
-      const handleScroll = (e: WheelEvent) => {
-        if (!enableScrollSnap || !isFixed || !api || isMobile) return;
-
-        const { deltaY } = e;
-
-        if ((isOnFirstSlide && deltaY < 0) || (isOnLastSlide && deltaY > 0)) {
-          FixPage(false, carouselRef2);
-          return;
-        } else {
-          if (deltaY > 0) {
-            api.scrollNext();
-          } else {
-            api.scrollPrev();
-          }
-          e.preventDefault();
-        }
-      };
-
-      if (isFixed) {
-        window.addEventListener('wheel', handleScroll, { passive: false });
-      }
-
-      return () => {
-        window.removeEventListener('wheel', handleScroll);
-      };
-    }, [isFixed, isOnFirstSlide, isOnLastSlide, api]);
-
-    React.useEffect(() => {
-      const checkMobileAndTouch = () => {
-        if (!enableScrollSnap || typeof window === 'undefined') return;
-
-        const isMobile = window.innerWidth <= 768;
-        const isTouch = window.matchMedia('(pointer: coarse)').matches;
-        console.log('isMobile', isMobile);
-        if (isMobile || isTouch) {
-          setIsFixed(false);
-          FixPage(false, carouselRef2);
-          enableScrollSnap = false;
-          setIsMobile(true);
-        }
-      };
-
-      // Run on mount
-      checkMobileAndTouch();
-
-      // Run on resize
-      window.addEventListener('resize', checkMobileAndTouch);
-
-      // Clean up event listener on unmount
-      return () => {
-        window.removeEventListener('resize', checkMobileAndTouch);
-      };
-    }, []);
+      e.preventDefault();
+    };
 
     return (
-      <div ref={carouselRef2}>
-        <CarouselContext.Provider
-          value={{
-            carouselRef,
-            api: api,
-            opts,
-            orientation:
-              orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
-            scrollPrev,
-            scrollNext,
-            canScrollPrev,
-            canScrollNext
+      <CarouselContext.Provider
+        value={{
+          carouselRef,
+          api: api,
+          opts,
+          orientation:
+            orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+          scrollPrev,
+          scrollNext,
+          canScrollPrev,
+          canScrollNext
+        }}
+      >
+        <div
+          ref={carouselRef2}
+          onWheel={e => {
+            if (!enableScrollSnap) return;
+            handleScroll(e);
+            FixPage(true, carouselRef2);
+            e.preventDefault();
           }}
+          onMouseEnter={() => {
+            if (!enableScrollSnap) return;
+            FixPage(true, carouselRef2);
+          }}
+          onMouseLeave={() => {
+            if (!enableScrollSnap) return;
+            FixPage(false, carouselRef2);
+          }}
+          onKeyDownCapture={handleKeyDown}
+          className={cn('relative', className)}
+          role="region"
+          aria-roledescription="carousel"
+          {...props}
         >
-          <div
-            ref={ref}
-            onKeyDownCapture={handleKeyDown}
-            className={cn('relative', className)}
-            role="region"
-            aria-roledescription="carousel"
-            {...props}
-          >
-            {children}
-          </div>
-        </CarouselContext.Provider>
-      </div>
+          {children}
+        </div>
+      </CarouselContext.Provider>
     );
   }
 );

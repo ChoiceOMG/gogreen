@@ -9,7 +9,6 @@ import { ImageTextSection } from '@/components/UI/ImageTextSection';
 import { TextBlock } from '@/components/UI/TextBlock';
 import { IndustriesSection } from '@/components/BigSliderSection';
 import { _industries } from '@/utils/constants';
-import ScrollStopper from '@/components/UI/ScrollStopper';
 
 export const metadata: Metadata = getPageMeta('/our-technologies');
 
@@ -22,28 +21,26 @@ export default async function Page() {
         text="Welcome to Go Green, your premier choice for sustainable cleaning and comprehensive facility maintenance services in Edmonton."
         imgSrc="/images/tech/main.png"
       />
-      <ScrollStopper>
-        <ImageTextSection
-          image1Src="/images/tech/1.png"
-          image2Src="/images/tech/2.png"
-          className="pb-44"
-          textBlocks={[
-            <TextBlock
-              key={1}
-              subtitle="Your Partner for Eco-Friendly Cleaning"
-              title="Intro"
-              paragraph="At GoGreen, we redefine janitorial services by seamlessly blending unparalleled cleanliness with an unwavering commitment to environmental preservation. Our mission is clear - to provide you with the highest quality cleaning solutions while actively contributing to a sustainable future."
-              className=" pb-8"
-            />,
-            <TextBlock
-              key={2}
-              subtitle="Your Partner for Eco-Friendly Cleaning"
-              title="Delivery Process"
-              paragraph="With each service, we go beyond cleanliness. We pride ourselves on maintaining the highest standards, ensuring that every space we touch exudes excellence. GoGreen goes beyond the ordinary, implementing cutting-edge practices that not only clean but contribute to a healthier planet."
-            />
-          ]}
-        />
-      </ScrollStopper>
+      <ImageTextSection
+        image1Src="/images/tech/1.png"
+        image2Src="/images/tech/2.png"
+        className="pb-44"
+        textBlocks={[
+          <TextBlock
+            key={1}
+            subtitle="Your Partner for Eco-Friendly Cleaning"
+            title="Intro"
+            paragraph="At GoGreen, we redefine janitorial services by seamlessly blending unparalleled cleanliness with an unwavering commitment to environmental preservation. Our mission is clear - to provide you with the highest quality cleaning solutions while actively contributing to a sustainable future."
+            className=" pb-8"
+          />,
+          <TextBlock
+            key={2}
+            subtitle="Your Partner for Eco-Friendly Cleaning"
+            title="Delivery Process"
+            paragraph="With each service, we go beyond cleanliness. We pride ourselves on maintaining the highest standards, ensuring that every space we touch exudes excellence. GoGreen goes beyond the ordinary, implementing cutting-edge practices that not only clean but contribute to a healthier planet."
+          />
+        ]}
+      />
       <IndustriesSection
         items={_industries}
         title="Innovations"
