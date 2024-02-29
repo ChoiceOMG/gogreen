@@ -75,7 +75,7 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
     const uniqueIdRef = React.useRef(nanoid());
-
+    const ref2 = React.useRef<HTMLDivElement>(null);
     const [isOnFirstSlide, setIsOnFirstSlide] = React.useState(true);
     const [isOnLastSlide, setIsOnLastSlide] = React.useState(false);
     const [lastScrollY, setLastScrollY] = React.useState(
@@ -118,9 +118,7 @@ const Carousel = React.forwardRef<
         document.body.style.overflow = 'hidden';
         document.body.style.paddingRight = '9px';
 
-        document
-          .querySelector(`#${uniqueIdRef.current}`)
-          ?.scrollIntoView({ behavior: 'auto', block: 'center' });
+        ref2.current?.scrollIntoView({ behavior: 'auto', block: 'center' });
       } else {
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
@@ -251,31 +249,33 @@ const Carousel = React.forwardRef<
     }, [api]);
 
     return (
-      <CarouselContext.Provider
-        value={{
-          carouselRef,
-          api: api,
-          opts,
-          orientation:
-            orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
-          scrollPrev,
-          scrollNext,
-          canScrollPrev,
-          canScrollNext
-        }}
-      >
-        <div
-          ref={ref}
-          id={uniqueIdRef.current}
-          onKeyDownCapture={handleKeyDown}
-          className={cn('relative', className)}
-          role="region"
-          aria-roledescription="carousel"
-          {...props}
+      <div ref={ref2}>
+        <CarouselContext.Provider
+          value={{
+            carouselRef,
+            api: api,
+            opts,
+            orientation:
+              orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+            scrollPrev,
+            scrollNext,
+            canScrollPrev,
+            canScrollNext
+          }}
         >
-          {children}
-        </div>
-      </CarouselContext.Provider>
+          <div
+            ref={ref}
+            id={uniqueIdRef.current}
+            onKeyDownCapture={handleKeyDown}
+            className={cn('relative', className)}
+            role="region"
+            aria-roledescription="carousel"
+            {...props}
+          >
+            {children}
+          </div>
+        </CarouselContext.Provider>
+      </div>
     );
   }
 );
