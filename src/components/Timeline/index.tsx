@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { TooltipDot } from './TooltipDot';
-import ScrollStopper from '../UI/ScrollStopper';
 
 const Timeline = () => {
   const [activeDot, setActiveDot] = useState(0);
