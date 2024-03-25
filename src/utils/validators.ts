@@ -4,7 +4,7 @@ export const validateEmail = (email: string) => {
 };
 
 export const validatePhoneNumber = (phoneNumber: string) => {
-  const regex = /^\+?[1-9]\d{1,14}$/;
+  const regex = /^\+?[\d\-\(\)]{1,20}$/;
   return regex.test(phoneNumber);
 };
 

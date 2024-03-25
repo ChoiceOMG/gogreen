@@ -120,7 +120,7 @@ export const Form = ({ className = '' }: { className?: string }) => {
             id="phone"
             name="phone"
             className={style_input}
-            pattern="\d*"
+            pattern="[\d\-\(\)]*"
             required
           />
           {phoneError && <div className="text-red-500">{phoneError}</div>}

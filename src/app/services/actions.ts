@@ -20,7 +20,7 @@ const ContactForm = z.object({
   email: z.string().min(1, {
     message: 'Please enter your email.'
   }),
-  phone: z.number().min(1, {
+  phone: z.string().min(1, {
     message: 'Please enter your phone number.'
   }),
   message: z.string().optional()
@@ -31,7 +31,7 @@ export async function sendContactForm(formData: FormData) {
   const validatedFields = ContactForm.safeParse({
     fullName: formData.get('fullName'),
     companyName: formData.get('companyName'),
-    phone: Number(formData.get('phone')),
+    phone: formData.get('phone'),
     email: formData.get('email'),
     message: formData.get('message')
   });
