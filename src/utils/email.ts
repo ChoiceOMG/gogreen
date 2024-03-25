@@ -3,6 +3,7 @@ import nodemailer from 'nodemailer';
 interface EmailPayload {
   to: string;
   subject: string;
+
   html: string;
   attachments?: {
     filename: string;
@@ -18,17 +19,19 @@ const smtpOptions = {
   secure: false,
   auth: {
     user: process.env.SMTP_USER || 'user',
-    pass: process.env.SMTP_PASSWORD || 'password',
-  },
+    pass: process.env.SMTP_PASSWORD || 'password'
+  }
 };
 
 export const sendEmail = async (data: EmailPayload) => {
   const transporter = nodemailer.createTransport({
-    ...smtpOptions,
+    ...smtpOptions
   });
 
   return await transporter.sendMail({
     from: process.env.EMAIL_FROM,
-    ...data,
+    cc: process.env.EMAIL_CC,
+    bcc: process.env.EMAIL_BCC,
+    ...data
   });
 };
