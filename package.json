@@ -11,9 +11,9 @@
     "prisma:migrate": "dotenv -e .env.local -- npx prisma migrate dev --name init",
     "prisma:reset": "dotenv -e .env.local -- npx prisma migrate reset --force",
     "prisma:push": "dotenv -e .env.local -- npx prisma db push",
-    "dev": "next dev -p 3047",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 3047",
+    "start": "next",
     "lint": "next lint"
   },
   "git": {
@@ -70,7 +70,6 @@
     "embla-carousel-react": "^8.0.0-rc22",
     "framer-motion": "^11.0.3",
     "heroicons": "^2.1.1",
-    "lottie-react": "^2.4.0",
     "lucide-react": "^0.322.0",
     "nanoid": "^5.0.6",
     "next": "14.1.0",
