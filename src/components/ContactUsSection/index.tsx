@@ -3,6 +3,7 @@ import { Button } from '../UI/button';
 import { _phone } from '@/utils/constants';
 import { Leaf } from '../UI/SVG/Leaf';
 import Parallax from '../Animations/Parallax';
+import { formatPhoneNumber } from '@/utils/helpers';
 
 export const ContactUsSection = () => {
   return (
@@ -31,7 +32,7 @@ export const ContactUsSection = () => {
             for your business in Edmonton.
           </p>
           <Button
-            link={'tel:' + _phone}
+            link={'tel:' + formatPhoneNumber(_phone)}
             variant={'green'}
             linkProps={{ title: 'Contact Number' }}
             className="w-fit mt-14"

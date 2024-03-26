@@ -14,6 +14,7 @@ import {
   _linkedin
 } from '@/utils/constants';
 import Link from 'next/link';
+import { formatPhoneNumber } from '@/utils/helpers';
 export const Socials = () => {
   const Links = [
     {
@@ -22,7 +23,7 @@ export const Socials = () => {
       alt: 'Mail'
     },
     {
-      href: 'tel:' + _phone,
+      href: 'tel:' + formatPhoneNumber(_phone),
       src: <PhoneIcon width={20} height={20} color="white" />,
       alt: 'Phone'
     },

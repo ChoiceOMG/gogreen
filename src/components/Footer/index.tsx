@@ -14,6 +14,7 @@ import {
 } from '@/utils/constants';
 import { PhoneIcon } from '../UI/SVG/PhoneIcon';
 import { LocateIcon } from '../UI/SVG/LocateIcon';
+import { formatPhoneNumber } from '@/utils/helpers';
 const Footer = () => {
   const menuColumns = MenuFooter.reduce<MenuItem[][]>(
     (acc, menuItem, index) => {
@@ -79,7 +80,7 @@ const Footer = () => {
                 <PhoneIcon width={28} height={28} />
 
                 <Link
-                  href={`tel:${_phone}`}
+                  href={`tel:${formatPhoneNumber(_phone)}`}
                   className=" whitespace-nowrap font-Avenir font-black uppercase transition-colors duration-300 ease-in-out hover:text-goGreen-green "
                 >{`${_phone}`}</Link>
               </li>
