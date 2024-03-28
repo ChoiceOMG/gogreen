@@ -31,7 +31,11 @@ export async function getArticlesByPage(
   limit: number = ITEMS_PER_PAGE
 ) {
   noStore();
-  const offset = (Number(page) - 1) * limit;
+  const pageNumber = Number(page);
+  if (isNaN(pageNumber)) {
+    throw new Error('Invalid page number');
+  }
+  const offset = (pageNumber - 1) * limit;
 
   try {
     const articles = await prisma.article.findMany({
