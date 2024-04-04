@@ -64,7 +64,7 @@ export const Slider = ({
             return (
               <CarouselItem
                 key={item.title}
-                className={`md:basis-1/2 lg:basis-1/3 xl:basis-1/4 border-box md:pl-7 h-auto transition-all duration-200 ease-in-out ${hoveredIndex === index ? 'lg:!basis-1/2' : ''}`}
+                className={`md:basis-1/2 lg:basis-1/3 xl:basis-1/4 md:border-box md:pl-7 md:h-auto transition-all duration-200 ease-in-out ${hoveredIndex === index ? 'lg:!basis-1/2' : ''}`}
               >
                 <div
                   className={`relative min-h-[500px] px-4  text-white  rounded-[40px] lg:rounded-[60px]  !rounded-tl-[0px] overflow-hidden bg-black bg-opacity-30 pb-7 h-full w-full flex flex-col`}

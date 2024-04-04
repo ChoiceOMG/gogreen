@@ -38,7 +38,7 @@ const ArticleCard = ({
         <div className="mt-auto">
           <div className="flex flex-wrap gap-4 mb-4">
             {' '}
-            {post.categories.map(category => (
+            {post.categories.slice(0, 4).map(category => (
               <Link
                 className="h4 text-goGreen-green "
                 key={category.category.id}
