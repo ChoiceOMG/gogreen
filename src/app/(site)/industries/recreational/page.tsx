@@ -21,8 +21,19 @@ export default async function Page() {
       title: 'Gyms',
       content: {
         title: 'Gyms',
-        description:
-          'When workouts get intense, gym cleaning needs to get intense too. We thoroughly clean fitness spaces, equipment, and high-traffic areas to help keep members safe, and boost customer satisfaction. GoGreen fosters a clean and welcoming atmosphere for fitness enthusiasts.',
+        description: (
+          <>
+            <p>
+              When workouts get intense, gym cleaning needs to get intense, too.
+              We thoroughly clean fitness spaces, equipment, and high-traffic
+              areas to help keep members safe and boost customer satisfaction.{' '}
+            </p>
+            <p>
+              GoGreen fosters a clean and welcoming atmosphere for fitness
+              enthusiasts.
+            </p>
+          </>
+        ),
         img: '/images/industries/recreational/1.png'
       }
     },
@@ -30,8 +41,20 @@ export default async function Page() {
       title: 'Leisure Centers',
       content: {
         title: 'Leisure Centers',
-        description:
-          'It’s hard to unwind when there is cleaning to be done, that’s why we pride ourselves in creating pristine leisure centre environments. GoGreen expertly cleans recreational spaces, pools, and common areas. By upholding high standards of cleanliness, we ensure guests are comfortable and happy. ',
+        description: (
+          <>
+            <p>
+              It’s hard to unwind when there is cleaning to be done, that’s why
+              we pride ourselves on creating pristine leisure centre
+              environments.{' '}
+            </p>
+            <p>
+              GoGreen expertly cleans recreational spaces, pools, and common
+              areas. By upholding high standards of cleanliness, we ensure
+              guests are comfortable and happy.
+            </p>
+          </>
+        ),
         img: '/images/industries/recreational/2.jpg'
       }
     },
@@ -39,8 +62,17 @@ export default async function Page() {
       title: 'Stadiums and Sports Complexes',
       content: {
         title: 'Stadiums and Sports Complexes',
-        description:
-          'GoGreen provides top-tier cleaning services for stadiums and sports complexes. We ensure that every seat, facility, and communal area is always ready to host the next big game or concert. Let us be your partner in creating memorable moments.',
+        description: (
+          <>
+            <p>
+              GoGreen provides top-tier cleaning services for stadiums and
+              sports complexes. We ensure that every seat, facility, and
+              communal area is always ready to host the next big game or
+              concert.
+            </p>
+            <p> Let us be your partner in creating memorable moments.</p>
+          </>
+        ),
         img: '/images/industries/recreational/3.jpg'
       }
     }

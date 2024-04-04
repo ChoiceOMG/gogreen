@@ -21,8 +21,20 @@ export default async function Page() {
       title: 'Hospitals',
       content: {
         title: 'Hospitals',
-        description:
-          'Cleanliness is critical in healthcare, and GoGreen brings a wealth of experience to the cleaning of hospitals. High hygienic standards protect the well-being of patients, healthcare professionals, and visitors. We adhere to standards set by governing bodies and use innovative tools to give you the best clean. ',
+        description: (
+          <>
+            <p>
+              Cleanliness is critical in healthcare, and GoGreen brings a wealth
+              of experience to the cleaning of hospitals. High hygienic
+              standards protect the well-being of patients, healthcare
+              professionals, and visitors.
+            </p>
+            <p>
+              We adhere to standards set by governing bodies and use innovative
+              tools to give you the best clean.
+            </p>
+          </>
+        ),
         img: '/images/industries/healthcare/1.jpg'
       }
     },
@@ -30,8 +42,20 @@ export default async function Page() {
       title: 'Laboratories',
       content: {
         title: 'Laboratories',
-        description:
-          'Laboratory cleaning requires a level of precision and understanding that GoGreen is proud to deliver. From specialized equipment to stringent hygiene standards, our services promise cleanliness and compliance. As innovators ourselves, we’re passionate about aiding scientific excellence through cleaning.',
+        description: (
+          <>
+            <p>
+              Laboratory cleaning requires a level of precision and
+              understanding that GoGreen is proud to deliver.{' '}
+            </p>
+            <p>
+              From specialized equipment to stringent hygiene standards, our
+              services promise cleanliness and compliance. As innovators
+              ourselves, we’re passionate about aiding scientific excellence
+              through cleaning.
+            </p>
+          </>
+        ),
         img: '/images/industries/healthcare/2.jpg'
       }
     },
@@ -39,8 +63,19 @@ export default async function Page() {
       title: 'Long-Term Care',
       content: {
         title: 'Long-Term Care',
-        description:
-          'Long-term care facilities are more than just health centres, they are home. We offer compassionate cleaning services designed to make residents feel comfortable in their space. Help your valued community members feel at ease with GoGreen. ',
+        description: (
+          <>
+            <p>
+              Long-term care facilities are more than just health centres, they
+              are homes.
+            </p>
+            <p>
+              We offer compassionate cleaning services designed to make
+              residents feel comfortable in their space. Help your valued
+              community members feel at ease with GoGreen.
+            </p>
+          </>
+        ),
         img: '/images/industries/healthcare/3.png'
       }
     },
@@ -48,8 +83,20 @@ export default async function Page() {
       title: 'Medical Offices and Centers',
       content: {
         title: 'Medical Offices and Centers',
-        description:
-          'GoGreen specializes in tailored cleaning services for medical offices, we know a clean space instills trust in both patients and staff. Our healthcare-specific cleaning solutions reflect the precision and care required in the medical field. We’re also experienced in adhering to regulatory standards. ',
+        description: (
+          <>
+            <p>
+              GoGreen specializes in tailored cleaning services for medical
+              offices, we know a clean space instills trust in both patients and
+              staff.
+            </p>
+            <p>
+              Our healthcare-specific cleaning solutions reflect the precision
+              and care required in the medical field. We’re also experienced in
+              adhering to regulatory standards.
+            </p>
+          </>
+        ),
         img: '/images/industries/healthcare/4.jpg'
       }
     }
@@ -73,7 +120,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.{' '}
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

@@ -26,8 +26,19 @@ export default async function Page() {
       title: 'Luxury Residential Cleaning',
       content: {
         title: 'Luxury Residential Cleaning',
-        description:
-          'At GoGreen, we’re all about giving you the very best clean. Our tailored approach ensures that every corner of your residence is meticulously cared for using eco-friendly products and cutting-edge technology. Simply put, we understand the unique demands of luxury living.',
+        description: (
+          <>
+            <p>
+              At GoGreen, we’re all about giving you the very best clean. Our
+              tailored approach ensures that every corner of your residence is
+              meticulously cared for using eco-friendly products and
+              cutting-edge technology.
+            </p>
+            <p>
+              Simply put, we understand the unique demands of luxury living.
+            </p>
+          </>
+        ),
         img: '/images/services/specialized/1.jpg'
       }
     },
@@ -35,8 +46,21 @@ export default async function Page() {
       title: 'Emergency Restoration',
       content: {
         title: 'Emergency Restoration',
-        description:
-          'Disasters can strike at any moment, and when they do, GoGreen is your trusted partner for swift and effective emergency restoration services. We understand the urgency of restoring your property after unforeseen events like floods, fires, or other emergencies. With a commitment to prompt response, we deploy advanced restoration techniques.',
+        description: (
+          <>
+            <p>
+              Disasters can strike at any moment, and when they do, GoGreen is
+              your trusted partner for swift and effective emergency restoration
+              services.
+            </p>
+            <p>
+              We understand the urgency of restoring your property after
+              unforeseen events like floods, fires, or other emergencies. With a
+              commitment to prompt response, we deploy advanced restoration
+              techniques.
+            </p>
+          </>
+        ),
         img: '/images/services/specialized/2.jpg'
       }
     },
@@ -44,8 +68,19 @@ export default async function Page() {
       title: 'Specialized Cleaning',
       content: {
         title: 'Specialized Cleaning',
-        description:
-          "Experience the difference with GoGreen's cleaning services, crafted to meet your unique needs. Whether it's delicate surfaces, unique equipment, or specific industry requirements, our expert team has the knowledge and skills to deliver precision in every detail.",
+        description: (
+          <>
+            <p>
+              Experience the difference with GoGreen`s cleaning services,
+              crafted to meet your unique needs.
+            </p>
+            <p>
+              Whether it`s delicate surfaces, unique equipment, or specific
+              industry requirements, our expert team has the knowledge and
+              skills to deliver precision in every detail.
+            </p>
+          </>
+        ),
         img: '/images/services/specialized/3.jpg'
       }
     }
@@ -68,7 +103,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions. Luxury Residential Cleaning
+                </p>
+              </>
+            }
           />
         ]}
       />

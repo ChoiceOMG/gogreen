@@ -28,8 +28,21 @@ export default async function Page() {
       title: 'Pressure Washing',
       content: {
         title: 'Pressure Washing',
-        description:
-          'GoGreen`s pressure washing delivers a highly efficient and thorough cleaning, removing dirt, grime, mold, and stains effectively. Regular pressure washing can prevent the buildup of contaminants, protecting your property from potential damage and avoiding costly repairs in the long run. We also use eco-friendly cleaners to protect the delicate outdoor environment.',
+        description: (
+          <>
+            <p>
+              GoGreen`s pressure washing delivers a highly efficient and
+              thorough cleaning, removing dirt, grime, mold, and stains
+              effectively.
+            </p>
+            <p>
+              Regular pressure washing can prevent the buildup of contaminants,
+              protect your property from potential damage and avoid costly
+              repairs in the long run. We also use eco-friendly cleaners to
+              protect the delicate outdoor environment.
+            </p>
+          </>
+        ),
         img: '/images/services/outdoor/1.png'
       }
     },
@@ -37,8 +50,19 @@ export default async function Page() {
       title: 'Window Cleaning',
       content: {
         title: 'Window Cleaning',
-        description:
-          'See things clearly with GoGreen’s eco-friendly window cleaning service. We ensure streak-free, spotless windows that enhance natural light and provide clear views, creating a brighter and more inviting environment.',
+        description: (
+          <>
+            <p>
+              See things clearly with GoGreen’s eco-friendly window cleaning
+              service.{' '}
+            </p>
+            <p>
+              We ensure streak-free, spotless windows that enhance natural light
+              and provide clear views, creating a brighter and more inviting
+              environment.{' '}
+            </p>
+          </>
+        ),
         img: '/images/services/outdoor/2.png'
       }
     }
@@ -62,7 +86,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

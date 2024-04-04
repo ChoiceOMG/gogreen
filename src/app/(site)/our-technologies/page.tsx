@@ -30,14 +30,40 @@ export default async function Page() {
             key={1}
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="Intro"
-            paragraph="At GoGreen, we redefine janitorial services by seamlessly blending unparalleled cleanliness with an unwavering commitment to environmental preservation. Our mission is clear - to provide you with the highest quality cleaning solutions while actively contributing to a sustainable future."
+            paragraph={
+              <>
+                <p>
+                  At GoGreen, we redefine janitorial services by seamlessly
+                  blending unparalleled cleanliness with an unwavering
+                  commitment to environmental preservation.{' '}
+                </p>
+                <p>
+                  Our mission is clear - to provide you with the highest quality
+                  cleaning solutions while actively contributing to a
+                  sustainable future.
+                </p>
+              </>
+            }
             className=" pb-8"
           />,
           <TextBlock
             key={2}
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="Delivery Process"
-            paragraph="With each service, we go beyond cleanliness. We pride ourselves on maintaining the highest standards, ensuring that every space we touch exudes excellence. GoGreen goes beyond the ordinary, implementing cutting-edge practices that not only clean but contribute to a healthier planet."
+            paragraph={
+              <>
+                <p>
+                  With each service, we go beyond cleanliness. We pride
+                  ourselves on maintaining the highest standards, ensuring that
+                  every space we touch exudes excellence.{' '}
+                </p>
+                <p>
+                  GoGreen goes beyond the ordinary, implementing cutting-edge
+                  practices that not only clean but contribute to a healthier
+                  planet.
+                </p>
+              </>
+            }
           />
         ]}
       />
@@ -51,15 +77,19 @@ export default async function Page() {
           <div className="flex justify-center items-center flex-col text-center max-w-[600px] mx-auto">
             <h4 className="h4 mb-4">Your Partner for Eco-Friendly Cleaning</h4>
             <h2 className="h2 mb-11">Benefits of Tech</h2>
-            <p>
-              At GoGreen, our passionate team is at the forefront of leveraging
-              the market&lsquo;s best technology to deliver high-quality
-              results. We believe in the power of technology not only to achieve
-              cleanliness but also to enhance accountability – accountability to
-              you and accountability to the environment. With our tech-driven
-              approach, you can trust that your space is spotless and managed
-              with the utmost care.
-            </p>
+            <div className="content">
+              <p>
+                At GoGreen, our passionate team is at the forefront of
+                leveraging the market‘s best technology to deliver high-quality
+                results. We believe in the power of technology not only to
+                achieve cleanliness but also to enhance accountability –
+                accountability to you and accountability to the environment.
+              </p>
+              <p>
+                With our tech-driven approach, you can trust that your space is
+                spotless and managed with the utmost care.
+              </p>
+            </div>
           </div>
         </div>
       </section>

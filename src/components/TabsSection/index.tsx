@@ -11,7 +11,7 @@ type Props = {
     title: string;
     content: {
       title: string;
-      description: string;
+      description: string | React.ReactNode;
       img: string;
     };
   }[];
@@ -46,7 +46,15 @@ export const TabsSection = ({ items }: Props) => {
               >
                 <div className="flex flex-col">
                   <h2 className="h2 mb-10">{items[activeTab].title}</h2>
-                  <p>{items[activeTab].content.description}</p>
+                  <div className="content">
+                    {' '}
+                    {typeof items[activeTab].content.description ===
+                    'string' ? (
+                      <p>{items[activeTab].content.description}</p>
+                    ) : (
+                      items[activeTab].content.description
+                    )}
+                  </div>
                 </div>
                 <div className="w-full h-full relative rounded-end-start overflow-hidden min-h-[285px]">
                   <Image

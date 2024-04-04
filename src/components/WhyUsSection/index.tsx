@@ -6,15 +6,50 @@ export const WhyUsSection = () => {
   const List = [
     {
       title: 'Environmental Responsibility',
-      text: 'Our dedication to eco-friendly janitorial and maintenance services makes us the perfect partner for keeping your premises in pristine condition. We do more than just clean – we care for the planet`s health and future generations.'
+      text: (
+        <>
+          <p>
+            Our dedication to eco-friendly janitorial and maintenance services
+            makes us the perfect partner for keeping your premises in pristine
+            condition.
+          </p>
+          <p>
+            We do more than just clean – we care for the planet`s health and
+            future generations.
+          </p>
+        </>
+      )
     },
     {
       title: 'Customized Services',
-      text: `At Go Green, we don’t offer one-size-fits-all solutions. We tailor our services to meet your specific needs and budget. This means you receive not only top-quality cleaning but also a service that perfectly matches your business.`
+      text: (
+        <>
+          <p>
+            At Go Green, we don’t offer one-size-fits-all solutions. We tailor
+            our services to meet your specific needs and budget.{' '}
+          </p>
+          <p>
+            This means you receive not only top-quality cleaning but also a
+            service that perfectly matches your business.
+          </p>
+        </>
+      )
     },
     {
       title: 'Competitive Advantage',
-      text: `Our exclusive green cleaning solutions not only ensure your space is impeccably clean but also enhance its appearance, directly impacting your competitive edge in the market. With Go Green, your business will stand out due to its high level of environmental responsibility and attractiveness to customers.`
+      text: (
+        <>
+          <p>
+            Our exclusive green cleaning solutions not only ensure your space is
+            impeccably clean but also enhance its appearance, directly impacting
+            your competitive edge in the market.
+          </p>
+          <p>
+            With Go Green, your business will stand out due to its high level of
+            environmental responsibility and attractiveness to customers.
+          </p>
+        </>
+      )
     }
   ];
   return (
@@ -40,7 +75,7 @@ export const WhyUsSection = () => {
             {List.map((item, index) => (
               <div key={index}>
                 <h4 className="h4 mb-4">{item.title}</h4>
-                <p>{item.text}</p>
+                <div className="content">{item.text}</div>
               </div>
             ))}
           </div>

@@ -21,8 +21,19 @@ export default async function Page() {
       title: 'Offices',
       content: {
         title: 'Offices',
-        description:
-          'GoGreen`s services will turn your office into a  clean, inviting workspace that inspires efficiency. We customize our services to meet your specific office needs, providing flexibility and ensuring that you receive precisely the level of cleanliness your space requires.',
+        description: (
+          <>
+            <p>
+              GoGreen`s services will turn your office into a clean, inviting
+              workspace that inspires efficiency.
+            </p>
+            <p>
+              We customize our services to meet your specific office needs,
+              providing flexibility and ensuring that you receive precisely the
+              level of cleanliness your space requires.
+            </p>
+          </>
+        ),
         img: '/images/industries/commercial/1.jpg'
       }
     },
@@ -30,8 +41,19 @@ export default async function Page() {
       title: 'Retail Stores',
       content: {
         title: 'Retail Stores',
-        description:
-          'Retail stores need to make a great first impression, and GoGreen is here to help. We clean until every nook and cranny is spotless, creating an environment that attracts customers and enhances their shopping experience.',
+        description: (
+          <>
+            <p>
+              Retail stores need to make a great first impression, and GoGreen
+              is here to help.{' '}
+            </p>
+            <p>
+              We clean until every nook and cranny is spotless, creating an
+              environment that attracts customers and enhances their shopping
+              experience.
+            </p>
+          </>
+        ),
         img: '/images/industries/commercial/2.jpeg'
       }
     },
@@ -39,8 +61,19 @@ export default async function Page() {
       title: 'Shopping Centers',
       content: {
         title: 'Shopping Centers',
-        description:
-          'Immerse shoppers in a spotless and welcoming atmosphere with GoGreen`s meticulous shopping centre cleaning. We’re committed to providing a hygienic environment that enhances the overall shopping experience. From bathrooms and hallways to individual stores and employee lounges, GoGreen has your back.',
+        description: (
+          <>
+            <p>
+              Immerse shoppers in a spotless and welcoming atmosphere with
+              GoGreen`s meticulous shopping centre cleaning.
+            </p>
+            <p>
+              We’re committed to providing a hygienic environment that enhances
+              the overall shopping experience. From bathrooms and hallways to
+              individual stores and employee lounges, GoGreen has your back.
+            </p>
+          </>
+        ),
         img: '/images/industries/commercial/3.webp'
       }
     }
@@ -64,7 +97,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

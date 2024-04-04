@@ -5,7 +5,7 @@ import React from 'react';
 type InfoCardProps = {
   title: string;
   icon?: React.ReactNode;
-  paragraph: string;
+  paragraph: string | React.ReactNode;
   buttonLink?: string;
 };
 
@@ -19,7 +19,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
     <div className="flex flex-col ">
       {icon && <div className="mb-4">{icon}</div>}
       <h4 className="h4 mb-4">{title}</h4>
-      <p>{paragraph}</p>
+      <div className="content">{paragraph}</div>
 
       {buttonLink && (
         <div className="mt-auto">

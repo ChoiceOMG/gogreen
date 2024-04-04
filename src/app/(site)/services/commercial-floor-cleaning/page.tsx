@@ -62,7 +62,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.{' '}
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

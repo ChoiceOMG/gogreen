@@ -72,7 +72,21 @@ export default async function Page() {
           <TextAndImagesSection
             subtitle="From the Floors to the Lightbulbs"
             title="GoGreen Manages Facilities"
-            paragraph="Go Green Facilities Services Inc. provides meticulous floor care, employs eco-friendly cleaning practices on all surfaces, and sustainably manages facilities' lighting systems. Our holistic service model addresses every aspect of a building's upkeep, with environmental consciousness leading the way, ensuring that facilities are impeccably maintained and operate efficiently and sustainably."
+            paragraph={
+              <>
+                <p>
+                  Go Green Facilities Services Inc. provides meticulous floor
+                  care, employs eco-friendly cleaning practices on all surfaces,
+                  and sustainably manages facilities` lighting systems.{' '}
+                </p>
+                <p>
+                  Our holistic service model addresses every aspect of a
+                  building`s upkeep, with environmental consciousness leading
+                  the way, ensuring that facilities are impeccably maintained
+                  and operate efficiently and sustainably.
+                </p>
+              </>
+            }
             image1Src="/images/home/about_1.png"
             image2Src="/images/home/about_2.png"
           />

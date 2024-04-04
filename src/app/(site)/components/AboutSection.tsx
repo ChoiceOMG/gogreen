@@ -10,7 +10,22 @@ export const AboutSection = () => {
         <TextAndImagesSection
           subtitle="Built by Veteran Industry Leaders Rex Clancy and Wayne Gooding"
           title="About Us"
-          paragraph="Edmonton`s leading provider of sustainable cleaning solutions and comprehensive facility care. Our eco-friendly approach is clean, healthy, and environmentally responsible. Entrust your facilities to Go Green and enjoy peace of mind with the highest standards of green efficiency. Our service spans from detailed cleaning to preventive maintenance. Let us handle the cleanliness of your facility while you concentrate on your business."
+          paragraph={
+            <>
+              <p>
+                Edmonton`s leading provider of sustainable cleaning solutions
+                and comprehensive facility care. Our eco-friendly approach is
+                clean, healthy, and environmentally responsible.
+              </p>
+              <p>
+                Entrust your facilities to Go Green and enjoy peace of mind with
+                the highest standards of green efficiency. Our service spans
+                from detailed cleaning to preventive maintenance. Let us handle
+                the cleanliness of your facility while you concentrate on your
+                business.
+              </p>
+            </>
+          }
           image1Src="/images/home/about_1.png"
           image2Src="/images/home/about_2.png"
         />

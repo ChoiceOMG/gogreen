@@ -21,8 +21,20 @@ export default async function Page() {
       title: 'Schools',
       content: {
         title: 'Schools',
-        description:
-          'When you run a school, cleanliness is a top priority. Our school cleaning services go beyond the ordinary, ensuring classrooms, hallways, and common areas are up to standard. By choosing GoGreen, you not only ensure a clean and healthy learning environment but also contribute to a sustainable and thriving future for the next generation.',
+        description: (
+          <>
+            <p>
+              When you run a school, cleanliness is a top priority. Our school
+              cleaning services go beyond the ordinary, ensuring classrooms,
+              hallways, and common areas are up to standard.
+            </p>
+            <p>
+              By choosing GoGreen, you not only ensure a clean and healthy
+              learning environment but also contribute to a sustainable and
+              thriving future for the next generation.
+            </p>
+          </>
+        ),
         img: '/images/industries/educational/1.png'
       }
     },
@@ -30,8 +42,20 @@ export default async function Page() {
       title: 'Higher Education',
       content: {
         title: 'Higher Education',
-        description:
-          'Trust GoGreen for university cleaning that contributes to the excellence of your institution. From dorms and rec centres to classrooms and lecture halls, we have you covered. GoGreen’s eco-friendly services positively impact both your facility and the planet, showing that you prioritize the well-being and future of students.',
+        description: (
+          <>
+            <p>
+              Trust GoGreen for university cleaning that contributes to the
+              excellence of your institution. From dorms and rec centres to
+              classrooms and lecture halls, we have you covered.
+            </p>
+            <p>
+              GoGreen’s eco-friendly services positively impact both your
+              facility and the planet, showing that you prioritize the
+              well-being and future of students.
+            </p>
+          </>
+        ),
         img: '/images/industries/educational/2.jpg'
       }
     },
@@ -39,8 +63,16 @@ export default async function Page() {
       title: 'Specialized Courses',
       content: {
         title: 'Specialized Courses',
-        description:
-          'When learning gets messy, trust GoGreen to have your back. We have the industry expertise needed to clean up after specialized courses. Our services are designed for the unique requirements of educational spaces. ',
+        description: (
+          <>
+            <p>When learning gets messy, trust GoGreen to have your back.</p>
+            <p>
+              We have the industry expertise needed to clean up after
+              specialized courses. Our services are designed for the unique
+              requirements of educational spaces.
+            </p>
+          </>
+        ),
         img: '/images/industries/educational/3.jpg'
       }
     }
@@ -64,7 +96,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />
