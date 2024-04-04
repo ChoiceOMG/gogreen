@@ -8,22 +8,59 @@ export const SecondSection = () => {
   const List = [
     {
       title: 'Our Journey',
-      paragraph:
-        'From humble beginnings to a leading force in eco-friendly services, Go Green`s journey continues along the path to commitment to sustainability. We`re constantly innovating and adopting the latest green practices to serve you better. Our team, trained in advanced eco-friendly techniques, is equipped to meet your needs with excellence.',
+      paragraph: (
+        <>
+          <p>
+            From humble beginnings to a leading force in eco-friendly services,
+            Go Green`s journey continues along the path to commitment to
+            sustainability.
+          </p>
+          <p>
+            We`re constantly innovating and adopting the latest green practices
+            to serve you better. Our team, trained in advanced eco-friendly
+            techniques, is equipped to meet your needs with excellence.
+          </p>
+        </>
+      ),
       buttonLink: '/our-journey',
       icon: <LeafIcon />
     },
     {
       title: 'Our Technologies',
-      paragraph:
-        'At Go Green, we combine advanced green cleaning technologies with sustainable practices to clean and enhance your workplace`s health and productivity. Experience the Go Green difference and join our growing list of satisfied clients in Edmonton, benefiting from a range of tailored cleaning and maintenance services that promise to deliver cleanliness and environmental stewardship.',
+      paragraph: (
+        <>
+          <p>
+            At Go Green, we combine advanced green cleaning technologies with
+            sustainable practices to clean and enhance your workplace`s health
+            and productivity.{' '}
+          </p>
+          <p>
+            Experience the Go Green difference and join our growing list of
+            satisfied clients in Edmonton, benefiting from a range of tailored
+            cleaning and maintenance services that promise to deliver
+            cleanliness and environmental stewardship.
+          </p>
+        </>
+      ),
       buttonLink: '/our-technologies',
       icon: <HandMagicIcon />
     },
     {
       title: 'Our Experience',
-      paragraph:
-        'Founded by industry veterans Wayne and Rex, and currently managed by Nina Paul, our leadership brings decades of combined experience to the forefront of our operations. This depth of knowledge and passion for service has positioned us as a leader in providing eco-friendly cleaning solutions to a diverse range of sectors.',
+      paragraph: (
+        <>
+          <p>
+            Founded by industry veterans Wayne and Rex, and currently managed by
+            Nina Paul, our leadership brings decades of combined experience to
+            the forefront of our operations.
+          </p>
+          <p>
+            This depth of knowledge and passion for service has positioned us as
+            a leader in providing eco-friendly cleaning solutions to a diverse
+            range of sectors.
+          </p>
+        </>
+      ),
       buttonLink: '/why-us',
       icon: <VictoryCupIcon />
     }

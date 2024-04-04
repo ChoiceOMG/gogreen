@@ -21,8 +21,19 @@ export default async function Page() {
       title: 'Government',
       content: {
         title: 'Government',
-        description:
-          'When you work in Government, public expectations are high. GoGreen understands the importance of making a positive impression. Our innovative solutions not only help you put your best foot forward but also demonstrate your commitment to environmental responsibility. ',
+        description: (
+          <>
+            <p>
+              When you work in Government, public expectations are high. GoGreen
+              understands the importance of making a positive impression.
+            </p>
+            <p>
+              Our innovative solutions not only help you put your best foot
+              forward but also demonstrate your commitment to environmental
+              responsibility.
+            </p>
+          </>
+        ),
         img: '/images/industries/institutional/1.jpg'
       }
     },
@@ -30,8 +41,19 @@ export default async function Page() {
       title: 'Finance',
       content: {
         title: 'Finance',
-        description:
-          'Precision and professionalism reign supreme in the world of Finance. GoGreen offers tailored cleaning services to match these standards of excellence. We pride ourselves in creating an organized workspace that inspires efficiency and client trust.',
+        description: (
+          <>
+            <p>
+              Precision and professionalism reign supreme in the world of
+              Finance. GoGreen offers tailored cleaning services to match these
+              standards of excellence.
+            </p>
+            <p>
+              We pride ourselves in creating an organized workspace that
+              inspires efficiency and client trust.
+            </p>
+          </>
+        ),
         img: '/images/industries/institutional/2.jpg'
       }
     },
@@ -39,8 +61,20 @@ export default async function Page() {
       title: 'Municipalities',
       content: {
         title: 'Municipalities',
-        description:
-          'GoGreen provides dedicated cleaning services for municipalities, ensuring the heart of local communities stays vibrant and clean. Our team tends to public spaces, streets, and facilities, contributing to the well-being and aesthetics of the community. We uphold the cleanliness standards that make municipalities thriving and welcoming places.',
+        description: (
+          <>
+            <p>
+              GoGreen provides dedicated cleaning services for municipalities,
+              ensuring the heart of local communities stays vibrant and clean.{' '}
+            </p>
+            <p>
+              Our team tends to public spaces, streets, and facilities,
+              contributing to the well-being and aesthetics of the community. We
+              uphold the cleanliness standards that make municipalities thriving
+              and welcoming places.
+            </p>
+          </>
+        ),
         img: '/images/industries/institutional/3.jpg'
       }
     }
@@ -64,7 +98,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.{' '}
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

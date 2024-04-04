@@ -21,8 +21,19 @@ export default async function Page() {
       title: 'Hotels and Resorts',
       content: {
         title: 'Hotels and Resorts',
-        description:
-          'Make a stay at your resort or hotel memorable with exceptionally clean spaces. We know that hygiene is a make-or-break factor when it comes to guest satisfaction. GoGreen delivers an immaculate clean that enhances your hotel or resort, leaving a lasting impression on guests.',
+        description: (
+          <>
+            <p>
+              Make a stay at your resort or hotel memorable with exceptionally
+              clean spaces. We know that hygiene is a make-or-break factor when
+              it comes to guest satisfaction.
+            </p>
+            <p>
+              GoGreen delivers an immaculate clean that enhances your hotel or
+              resort, leaving a lasting impression on guests.
+            </p>
+          </>
+        ),
         img: '/images/industries/hospitality/1.png'
       }
     },
@@ -30,8 +41,16 @@ export default async function Page() {
       title: 'Event Venues',
       content: {
         title: 'Event Venues',
-        description:
-          'Create unforgettable moments with GoGreen`s event venue cleaning services. Whether it`s prepping for a grand celebration or restoring after an event, we ensure that every space sparkles. GoGreen is here to help you shine!',
+        description: (
+          <>
+            <p>
+              Create unforgettable moments with GoGreen`s event venue cleaning
+              services. Whether it`s prepping for a grand celebration or
+              restoring after an event, we ensure that every space sparkles.{' '}
+            </p>
+            <p>GoGreen is here to help you shine!</p>
+          </>
+        ),
         img: '/images/industries/hospitality/2.jpg'
       }
     }
@@ -55,7 +74,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

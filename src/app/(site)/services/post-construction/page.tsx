@@ -26,8 +26,20 @@ export default async function Page() {
       title: 'Emergency Restoration',
       content: {
         title: 'Emergency Restoration',
-        description:
-          'When disasters strike, trust GoGreen for rapid and effective emergency restoration services. Our team is on-site to mitigate damage, restore properties, and bring peace of mind during challenging times. Choose GoGreen for immediate, reliable, and comprehensive emergency restoration solutions.',
+        description: (
+          <>
+            <p>
+              When disasters strike, trust GoGreen for rapid and effective
+              emergency restoration services.{' '}
+            </p>
+            <p>
+              Our team is on-site to mitigate damage, restore properties, and
+              bring peace of mind during challenging times. Choose GoGreen for
+              immediate, reliable, and comprehensive emergency restoration
+              solutions.
+            </p>
+          </>
+        ),
         img: '/images/services/post-construction/1.jpg'
       }
     },
@@ -35,8 +47,19 @@ export default async function Page() {
       title: 'Post-Construction Cleaning',
       content: {
         title: 'Post-Construction Cleaning',
-        description:
-          "Transform your construction site into a usable space with GoGreen's specialized post-construction cleaning services.  We specialize in removing debris, dust, and any remnants of the construction process, leaving your area spotless and ready for use. ",
+        description: (
+          <>
+            <p>
+              Transform your construction site into a usable space with
+              GoGreen`s specialized post-construction cleaning services.{' '}
+            </p>
+            <p>
+              We specialize in removing debris, dust, and any remnants of the
+              construction process, leaving your area spotless and ready for
+              use.
+            </p>
+          </>
+        ),
         img: '/images/services/post-construction/2.jpg'
       }
     },
@@ -44,8 +67,19 @@ export default async function Page() {
       title: 'Move In/Move Out Cleaning',
       content: {
         title: 'Move In/Move Out Cleaning',
-        description:
-          "Planning a big move? Whether you're moving in or preparing to move out, trust GoGreen for a spotless start or easy handover. We ensure your commercial space is ready for its next chapter. Make it a smooth transition with GoGreen's specialized Move-In/Move-Out cleaning services. ",
+        description: (
+          <>
+            <p>
+              Planning a big move? Whether you`re moving in or preparing to move
+              out, trust GoGreen for a spotless start or easy handover.
+            </p>
+            <p>
+              We ensure your commercial space is ready for its next chapter.
+              Make it a smooth transition with GoGreen`s specialized
+              Move-In/Move-Out cleaning services.
+            </p>
+          </>
+        ),
         img: '/images/services/post-construction/3.jpg'
       }
     }
@@ -69,7 +103,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

@@ -5,7 +5,7 @@ import React from 'react';
 type TextAndImagesSectionProps = {
   subtitle: string;
   title: string;
-  paragraph: string;
+  paragraph: string | React.ReactNode;
   image1Src: string;
   image2Src: string;
 };

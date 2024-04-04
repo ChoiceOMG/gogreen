@@ -21,8 +21,21 @@ export default async function Page() {
       title: 'Food and Power Plant',
       content: {
         title: 'Food and Power Plant',
-        description:
-          'In the critical sectors of food and power production, cleanliness is paramount, and an unreliable cleaning service can have devastating consequences. GoGreen ensures that facilities adhere to strict hygiene standards, promoting safety and efficiency in food processing and power generation. Trust GoGreen to safeguard your operations!',
+        description: (
+          <>
+            <p>
+              In the critical sectors of food and power production, cleanliness
+              is paramount, and an unreliable cleaning service can have
+              devastating consequences.
+            </p>
+            <p>
+              GoGreen ensures that facilities adhere to strict hygiene
+              standards, promoting safety and efficiency in food processing and
+              power generation.{' '}
+            </p>
+            <p>Trust GoGreen to safeguard your operations!</p>
+          </>
+        ),
         img: '/images/industries/industrial/1.jpg'
       }
     },
@@ -30,8 +43,21 @@ export default async function Page() {
       title: 'Manufacturing and Distribution',
       content: {
         title: 'Manufacturing and Distribution',
-        description:
-          'Fast-paced manufacturing and distribution centres need to make cleanliness a priority  – but don’t always have the time. GoGreen specializes in cleaning solutions designed to optimize productivity and safety in busy environments. Our attention to detail allows manufacturing and distribution facilities to maintain impeccable standards, helping foster safety and success.',
+        description: (
+          <>
+            <p>
+              Fast-paced manufacturing and distribution centres need to make
+              cleanliness a priority – but don’t always have the time. GoGreen
+              specializes in cleaning solutions designed to optimize
+              productivity and safety in busy environments.{' '}
+            </p>
+            <p>
+              Our attention to detail allows manufacturing and distribution
+              facilities to maintain impeccable standards, helping foster safety
+              and success.
+            </p>
+          </>
+        ),
         img: '/images/industries/industrial/2.jpeg'
       }
     }
@@ -55,7 +81,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.{' '}
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.
+                </p>
+              </>
+            }
           />
         ]}
       />

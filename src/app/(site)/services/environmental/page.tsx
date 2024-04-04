@@ -26,8 +26,20 @@ export default async function Page() {
       title: 'Eco-friendly Cleaning and Products',
       content: {
         title: 'Eco-friendly Cleaning and Products',
-        description:
-          'Our eco-friendly cleaning services prioritize the health of your space and the planet. We exclusively use environmentally conscious cleaning products that are effective yet gentle, ensuring a thorough clean without compromising on green principles. Contact us for details about our eco-friendly products, services, and the impact they have! ',
+        description: (
+          <>
+            <p>
+              Our eco-friendly cleaning services prioritize the health of your
+              space and the planet. We exclusively use environmentally conscious
+              cleaning products that are effective yet gentle, ensuring a
+              thorough clean without compromising on green principles.
+            </p>
+            <p>
+              Contact us for details about our eco-friendly products, services,
+              and the impact they have!
+            </p>
+          </>
+        ),
         img: '/images/services/environmental/1.png'
       }
     },
@@ -35,8 +47,21 @@ export default async function Page() {
       title: 'Waste Utilization Programs',
       content: {
         title: 'Waste Utilization Programs',
-        description:
-          'Our programs aim to minimize the environmental impact of waste by finding creative and sustainable solutions. From recycling initiatives to composting practices, GoGreen is dedicated to turning waste into valuable resources. By selecting GoGreen you help our waste utilization programs contribute to a cleaner, greener future.',
+        description: (
+          <>
+            <p>
+              Our programs aim to minimize the environmental impact of waste by
+              finding creative and sustainable solutions.
+            </p>
+
+            <p>
+              From recycling initiatives to composting practices, GoGreen is
+              dedicated to turning waste into valuable resources. By selecting
+              GoGreen, you help our waste utilization programs contribute to a
+              cleaner, greener future.
+            </p>
+          </>
+        ),
         img: '/images/services/environmental/2.jpg'
       }
     }
@@ -60,7 +85,21 @@ export default async function Page() {
             key={1}
             subtitle="Eco-friendly Janitorial and Maintenance"
             title="Go Green"
-            paragraph="Our commitment to eco-friendly janitorial and maintenance services makes us the ideal partner for keeping your premises pristine. Tailoring our services to meet your needs and budget, Go Green ensures your business shines brighter, enhancing your competitive edge with our exceptional green cleaning solutions."
+            paragraph={
+              <>
+                <p>
+                  Our commitment to eco-friendly janitorial and maintenance
+                  services makes us the ideal partner for keeping your premises
+                  pristine.
+                </p>
+                <p>
+                  Tailoring our services to meet your needs and budget, Go Green
+                  ensures your business shines brighter, enhancing your
+                  competitive edge with our exceptional green cleaning
+                  solutions.{' '}
+                </p>
+              </>
+            }
           />
         ]}
       />

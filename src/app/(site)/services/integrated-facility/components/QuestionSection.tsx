@@ -20,7 +20,22 @@ export const QuestionSection = () => {
           <TextBlock
             subtitle="Your Partner for Eco-Friendly Cleaning"
             title="For Whom It's Suitable"
-            paragraph="GoGreen services are specifically crafted to cater to the needs of clients who operate large facilities, spanning over 500,000 square feet, with numerous employees and multiple locations. Our expertise is particularly beneficial for those who prefer a streamlined approach from a single provider. We also have ample experience adhering to building codes and other regulations."
+            paragraph={
+              <>
+                <p>
+                  GoGreen services are specifically crafted to cater to the
+                  needs of clients who operate large facilities, spanning over
+                  500,000 square feet, with numerous employees and multiple
+                  locations.
+                </p>
+                <p>
+                  Our expertise is particularly beneficial for those who prefer
+                  a streamlined approach from a single provider. We also have
+                  ample experience adhering to building codes and other
+                  regulations.
+                </p>
+              </>
+            }
           />
 
           <div className=" space-y-7">

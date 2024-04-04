@@ -18,13 +18,20 @@ export const SolutionsSection = () => {
         <div className="flex items-center justify-center flex-col max-w-[600px] mx-auto text-center">
           <h4 className="h4 mb-4">Your Partner for Eco-Friendly Cleaning</h4>
           <h2 className="h2 mb-11">Custom Solutions</h2>
-          <p>
-            At GoGreen, we understand that one size does not fit all.
-            That&apos;s why we offer more than just basic cleaning services. Our
-            commitment to excellence extends to providing custom solutions
-            designed to meet your unique needs. Elevate your expectations and
-            choose GoGreen for bespoke solutions that go above and beyond.
-          </p>
+          <div className="content">
+            <p>
+              {' '}
+              At GoGreen, we understand that one size does not fit all. That`s
+              why we offer more than just basic cleaning services. Our
+              commitment to excellence extends to providing custom solutions
+              designed to meet your unique needs.{' '}
+            </p>
+            <p>
+              {' '}
+              Elevate your expectations and choose GoGreen for bespoke solutions
+              that go above and beyond.
+            </p>
+          </div>
         </div>
       </div>
     </section>
