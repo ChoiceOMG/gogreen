@@ -2,6 +2,7 @@
 
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -16,6 +17,12 @@ import { apiFetch } from '@/utils/api-requests';
 export const ReviewsSlider = () => {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   useEffect(() => {
     setLoading(true);
     async function fetchReviews() {
@@ -48,8 +55,21 @@ export const ReviewsSlider = () => {
     fetchReviews();
   }, []);
 
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    api.on('select', () => {
+      const currentIndex = api.selectedScrollSnap();
+
+      setIsExpanded(false);
+      api.reInit();
+    });
+  }, [api]);
+
   return (
-    <Carousel className="max-md:pb-20 relative">
+    <Carousel className="max-md:pb-20 relative" setApi={setApi}>
       {loading && (
         <div
           className={`h-full w-full flex justify-center items-center absolute top-0 left-0 bg-white z-10 rounded-[60px] rounded-tr-[0px] `}
@@ -93,7 +113,12 @@ export const ReviewsSlider = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full">
+              <div
+                className={`w-full 
+transition-all duration-200 ease-in-out
+ ${isExpanded ? '' : 'line-clamp-5-mobile'}`}
+                onClick={toggleExpand}
+              >
                 <p>{item.text}</p>
               </div>
             </div>

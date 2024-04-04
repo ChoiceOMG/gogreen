@@ -80,7 +80,7 @@ export const MainSection: React.FC<MainSectionProps> = ({
                   <Link
                     href={`/blog/${category.link}`}
                     key={index}
-                    className="w-fit h4 "
+                    className="w-fit h4 text-goGreen-green"
                   >
                     {category.name}
                   </Link>

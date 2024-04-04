@@ -208,4 +208,13 @@ html {
   .grid-cust {
     @apply grid sm:grid-cols-2 lg:grid-cols-3 justify-center gap-11 md:gap-14 xl:gap-28;
   }
+
+  @media (max-width: 768px) {
+    .line-clamp-5-mobile {
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
 }
