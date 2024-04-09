@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { GoogleReviews } from '@/components/GoogleReviewsBlock';
 export const AboutSection = () => {
   return (
-    <section className=" pb-32 lg:pb-56">
+    <section className=" py-32 lg:py-56">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           <div className="relative">

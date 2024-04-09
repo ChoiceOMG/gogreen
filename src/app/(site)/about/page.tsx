@@ -20,7 +20,7 @@ export default async function Page() {
       />
       <SecondSection />
       <WhyUsSection />
-      <PeopleSection />
+      {/*  <PeopleSection /> */}
       <AboutSection />
       <ContactUsSection />
     </>

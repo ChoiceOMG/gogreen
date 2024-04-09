@@ -1,4 +1,5 @@
 import { withAuth } from 'next-auth/middleware';
+import { NextResponse } from 'next/server';
 
 export default withAuth(
   function middleware(req) {
@@ -6,7 +7,8 @@ export default withAuth(
   },
   {
     pages: {
-      signIn: '/login'
+      signIn: '/login',
+      signOut: '/'
     },
     callbacks: {
       authorized: ({ token, req }) => {
@@ -16,14 +18,11 @@ export default withAuth(
         }
 
         // Extract the base path from the URL
-        const basePath = req.nextUrl.pathname.split('/')[1];
 
-        // Check if the base path is 'admin'
-        if (basePath === 'admin') {
-          // Allow access only if the user has the 'ADMIN' or 'STAFF' role
-          return token.role === 'ADMIN' || token.role === 'STAFF';
+        if (!token.id) {
+          NextResponse.redirect(new URL('/login', req.url));
+          return false;
         }
-
         // Allow access to other paths
         return true;
       }
