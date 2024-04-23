@@ -11,9 +11,9 @@
     "prisma:migrate": "dotenv -e .env.local -- npx prisma migrate dev --name init",
     "prisma:reset": "dotenv -e .env.local -- npx prisma migrate reset --force",
     "prisma:push": "dotenv -e .env.local -- npx prisma db push",
-    "dev": "next dev",
+    "dev": "next dev -p 3304",
     "build": "next build",
-    "start": "next",
+    "start": "next -p 3304",
     "lint": "next lint"
   },
   "git": {
@@ -86,11 +86,9 @@
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
     "sharp": "^0.33.2",
-    "swiper": "^11.0.6",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "tiptap": "^1.32.2",
-    "tiptap-react-image-resize": "^1.1.4",
     "tiptap-resize-image": "^2.0.1",
     "use-debounce": "^10.0.0",
     "uuid": "^9.0.1",
