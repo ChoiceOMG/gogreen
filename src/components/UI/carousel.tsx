@@ -55,16 +55,18 @@ const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
 >(
-  ({
-    orientation = 'horizontal',
-    opts,
-    setApi,
-    plugins,
-    className,
-    children,
-    enableScrollSnap = false,
-    ...props
-  }) => {
+  (
+    {
+      orientation = 'horizontal',
+      opts,
+      setApi,
+      plugins,
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
@@ -74,109 +76,6 @@ const Carousel = React.forwardRef<
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
-    const uniqueIdRef = React.useRef(nanoid());
-    const ref2 = React.useRef<HTMLDivElement>(null);
-    const [isOnFirstSlide, setIsOnFirstSlide] = React.useState(true);
-    const [isOnLastSlide, setIsOnLastSlide] = React.useState(false);
-    const [lastScrollY, setLastScrollY] = React.useState(
-      typeof window !== 'undefined' ? window.scrollY : 0
-    );
-
-    const [scrollDirection, setScrollDirection] = React.useState(
-      'down' /* or 'up' */
-    );
-
-    const { ref, inView } = useInView({
-      threshold: 0
-    });
-
-    React.useEffect(() => {
-      if (typeof window !== 'undefined') {
-        const handleScroll = () => {
-          const currentScrollY = window.scrollY;
-
-          if (currentScrollY > lastScrollY) {
-            setScrollDirection('down');
-          } else if (currentScrollY < lastScrollY) {
-            setScrollDirection('up');
-          }
-
-          setLastScrollY(currentScrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-          window.removeEventListener('scroll', handleScroll);
-        };
-      }
-    }, [lastScrollY]);
-
-    const FixPage = (isFixed: boolean) => {
-      if (isFixed) {
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-        document.body.style.paddingRight = '9px';
-
-        ref2.current?.scrollIntoView({ behavior: 'auto', block: 'center' });
-      } else {
-        document.documentElement.style.overflow = '';
-        document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
-      }
-
-      return;
-    };
-
-    const handleScroll = useDebouncedCallback((e: WheelEvent) => {
-      if (!api) return;
-
-      const { deltaY } = e;
-
-      if (
-        (deltaY > 0 && scrollDirection === 'down' && !isOnLastSlide) ||
-        (deltaY < 0 && scrollDirection === 'down' && !isOnFirstSlide) ||
-        (deltaY < 0 && scrollDirection === 'up' && !isOnFirstSlide) ||
-        (deltaY > 0 && scrollDirection === 'up' && !isOnLastSlide)
-      ) {
-        FixPage(true);
-      } else {
-        FixPage(false);
-      }
-
-      if (deltaY > 0) {
-        api.scrollNext();
-      } else {
-        api.scrollPrev();
-      }
-
-      e.preventDefault();
-    }, 100);
-
-    React.useEffect(() => {
-      if (!enableScrollSnap) return;
-      if (typeof window !== 'undefined') {
-        if (inView) {
-          FixPage(true);
-
-          window.addEventListener('wheel', handleScroll);
-
-          return () => {
-            window.removeEventListener('wheel', handleScroll);
-          };
-        } else {
-          FixPage(false);
-        }
-      }
-    }, [
-      inView,
-      scrollDirection,
-      api,
-      isOnFirstSlide,
-      isOnLastSlide,
-      enableScrollSnap,
-      handleScroll
-    ]);
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -230,52 +129,31 @@ const Carousel = React.forwardRef<
       };
     }, [api, onSelect]);
 
-    React.useEffect(() => {
-      if (!api || !enableScrollSnap) return;
-
-      const updateSlideStatus = () => {
-        setIsOnFirstSlide(api.selectedScrollSnap() === 0);
-        setIsOnLastSlide(
-          api.selectedScrollSnap() === api.scrollSnapList().length - 1
-        );
-      };
-
-      updateSlideStatus();
-      api.on('select', updateSlideStatus);
-
-      return () => {
-        api.off('select', updateSlideStatus);
-      };
-    }, [api]);
-
     return (
-      <div ref={ref2}>
-        <CarouselContext.Provider
-          value={{
-            carouselRef,
-            api: api,
-            opts,
-            orientation:
-              orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
-            scrollPrev,
-            scrollNext,
-            canScrollPrev,
-            canScrollNext
-          }}
+      <CarouselContext.Provider
+        value={{
+          carouselRef,
+          api: api,
+          opts,
+          orientation:
+            orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+          scrollPrev,
+          scrollNext,
+          canScrollPrev,
+          canScrollNext
+        }}
+      >
+        <div
+          ref={ref}
+          onKeyDownCapture={handleKeyDown}
+          className={cn('relative', className)}
+          role="region"
+          aria-roledescription="carousel"
+          {...props}
         >
-          <div
-            ref={ref}
-            id={uniqueIdRef.current}
-            onKeyDownCapture={handleKeyDown}
-            className={cn('relative', className)}
-            role="region"
-            aria-roledescription="carousel"
-            {...props}
-          >
-            {children}
-          </div>
-        </CarouselContext.Provider>
-      </div>
+          {children}
+        </div>
+      </CarouselContext.Provider>
     );
   }
 );
