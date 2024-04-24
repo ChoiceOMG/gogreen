@@ -9,7 +9,7 @@ import Loading from './loading';
 
 import { FixButton } from '@/components/UI/FixButton';
 import { GoogleTagManager } from '@next/third-parties/google';
-import Cursor from './Cursor';
+//import Cursor from './Cursor';
 
 const title = 'GoGreen';
 const description =
