@@ -46,8 +46,10 @@ export default function RootLayout({
       lang="en"
       className={` ${openSans.className} ${Avenir.variable} text-goGreen-black`}
     >
+       <GoogleTagManager  gtmId='GTM-MJN5R2QV' />
+
       <body>
-        <Cursor />
+        {/* <Cursor /> */}
         <Header />
         <Suspense fallback={<Loading />}>
           {' '}
@@ -56,13 +58,8 @@ export default function RootLayout({
         <FixButton />
         <Footer />
       </body>
-      {process.env.NODE_ENV === 'production' &&
-        process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
-          // Google Tag Manager
-          <GoogleTagManager
-            gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}
-          />
-        )}
+
+
     </html>
   );
 }
