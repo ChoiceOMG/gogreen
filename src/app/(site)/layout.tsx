@@ -29,10 +29,48 @@ export const metadata: Metadata = {
     siteName: title,
     locale: 'en_CA',
     type: 'website',
-    images: [{ url: `${_siteUrl}/images/logo.svg` }]
+    images: [
+      {
+        url: `${_siteUrl}/apple-touch-icon.png`
+      },
+      {
+        url: `${_siteUrl}/favicon-32x32.png`,
+        type: 'image/png'
+      },
+      {
+        url: `${_siteUrl}/favicon-16x16.png`,
+        type: 'image/png'
+      },
+      {
+        url: `${_siteUrl}/safari-pinned-tab.svg`
+      }
+    ]
   },
   icons: {
-    shortcut: [{ url: `${_siteUrl}/images/logo.svg` }]
+    shortcut: [
+      {
+        url: `${_siteUrl}/apple-touch-icon.png`,
+        sizes: '180x180',
+        rel: 'apple-touch-icon'
+      },
+      {
+        url: `${_siteUrl}/favicon-32x32.png`,
+        sizes: '32x32',
+        rel: 'icon',
+        type: 'image/png'
+      },
+      {
+        url: `${_siteUrl}/favicon-16x16.png`,
+        sizes: '16x16',
+        rel: 'icon',
+        type: 'image/png'
+      },
+      {
+        url: `${_siteUrl}/safari-pinned-tab.svg`,
+        color: '#5bbad5',
+        rel: 'mask-icon'
+      }
+    ]
   }
 };
 
@@ -46,7 +84,7 @@ export default function RootLayout({
       lang="en"
       className={` ${openSans.className} ${Avenir.variable} text-goGreen-black`}
     >
-       <GoogleTagManager  gtmId='GTM-MJN5R2QV' />
+      <GoogleTagManager gtmId="GTM-MJN5R2QV" />
 
       <body>
         {/* <Cursor /> */}
@@ -58,8 +96,6 @@ export default function RootLayout({
         <FixButton />
         <Footer />
       </body>
-
-
     </html>
   );
 }
