@@ -5,7 +5,6 @@ import { getPageMeta } from '@/utils/getMeta';
 import { Metadata } from 'next';
 import { IndustriesSection } from '../components/BigSliderSection';
 import { MainSection } from '../components/MainSection';
-import { ReviewsSection } from '../components/ReviewsSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { WhyUsSection } from '../components/WhyUsSection';
 import { AboutSection } from './components/AboutSection';
@@ -29,7 +28,7 @@ export default async function Home() {
         subTitle="Better Service and Better Quotes"
       />
       <WhyUsSection />
-      <ReviewsSection className="-top-24" />
+      {/* <ReviewsSection className="-top-24" /> */}
       <ArticlesSliderSection />
       <PartnersSection />
       <ContacFormSection />
