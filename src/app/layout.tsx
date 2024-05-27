@@ -4,11 +4,11 @@ import { Avenir, openSans } from '@/styles/fonts/fonts';
 import '@/styles/globals.scss';
 import { _siteUrl } from '@/utils/constants';
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
-import Loading from './loading';
+import { Providers } from './providers';
 
 import { FixButton } from '@/components/UI/FixButton';
 import { GoogleTagManager } from '@next/third-parties/google';
+import { getSession } from 'next-auth/react';
 //import Cursor from './Cursor';
 
 const title = 'GoGreen';
@@ -74,11 +74,12 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getSession();
   return (
     <html
       lang="en"
@@ -87,6 +88,7 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-MJN5R2QV" />
 
       <body>
+        <Providers session={session}>
         {/* <Cursor /> */}
         <Header />
 
@@ -94,6 +96,7 @@ export default function RootLayout({
 
         <FixButton />
         <Footer />
+        </Providers>
       </body>
     </html>
   );
