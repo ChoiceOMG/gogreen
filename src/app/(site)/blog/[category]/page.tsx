@@ -1,18 +1,18 @@
-import { Metadata } from 'next';
 import { getPageMeta } from '@/utils/getMeta';
+import { Metadata } from 'next';
 
 import { ContactUsSection } from '@/components/ContactUsSection';
-import { MainSection } from '../components/MainSection';
 import { CategoriesSection } from '../components/CategoriesSection';
+import { MainSection } from '../components/MainSection';
 
-import ArticlesSection from '../components/ArticlesSection';
-import {
-  getCategories,
-  getCategory,
-  getTotalArticlesPages
-} from '@/app/services/data';
-import { Suspense } from 'react';
 import { ArticlesSkeleton } from '@/components/UI/skeletons';
+import {
+    getCategories,
+    getCategory,
+    getTotalArticlesPages
+} from '@/services/data';
+import { Suspense } from 'react';
+import ArticlesSection from '../components/ArticlesSection';
 import Pagination from '../components/Pagination';
 
 export const metadata: Metadata = getPageMeta('/blog');

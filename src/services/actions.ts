@@ -1,12 +1,12 @@
 'use server';
 
+import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
+import prisma from '@/app/db/client';
 import { sendEmail } from '@/utils/email';
-import { revalidatePath } from 'next/cache';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/auth';
-import prisma from '../db/client';
-import { hash } from 'bcryptjs';
 import { Prisma } from '@prisma/client';
+import { hash } from 'bcryptjs';
+import { getServerSession } from 'next-auth';
+import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import { StateAccount, UpdateAccountPassword } from './typesAndSchemas';
 
@@ -57,7 +57,7 @@ export async function sendContactForm(formData: FormData) {
       border-radius: 35px;
       border: 1px solid #495B6E;
     }
-    
+
     .container {
       max-width: 600px;
       margin: 0 auto;
@@ -69,7 +69,7 @@ export async function sendContactForm(formData: FormData) {
       text-align: center;
       border-bottom: 1px solid #495B6E;
     }
-    
+
     .header h1 {
       margin: 0;
       padding: 0;
@@ -77,11 +77,11 @@ export async function sendContactForm(formData: FormData) {
       font-weight: bold;
       text-transform: uppercase;
     }
-    
+
     .content {
       padding: 20px;
     }
-    
+
     .footer {
       padding: 20px;
       text-align: center;

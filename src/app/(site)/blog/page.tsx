@@ -1,14 +1,14 @@
-import { Metadata } from 'next';
 import { getPageMeta } from '@/utils/getMeta';
+import { Metadata } from 'next';
 
 import { ContactUsSection } from '@/components/ContactUsSection';
-import { MainSection } from './components/MainSection';
-import { CategoriesSection } from './components/CategoriesSection';
-import { getCategories, getTotalArticlesPages } from '@/app/services/data';
-import { Suspense } from 'react';
 import { ArticlesSkeleton } from '@/components/UI/skeletons';
-import Pagination from './components/Pagination';
+import { getCategories, getTotalArticlesPages } from '@/services/data';
+import { Suspense } from 'react';
 import ArticlesSection from './components/ArticlesSection';
+import { CategoriesSection } from './components/CategoriesSection';
+import { MainSection } from './components/MainSection';
+import Pagination from './components/Pagination';
 
 export const metadata: Metadata = getPageMeta('/blog');
 

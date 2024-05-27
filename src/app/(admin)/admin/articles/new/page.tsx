@@ -1,8 +1,8 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 
-import Wrapper from './components/Wrapper';
-import { getCategories } from '@/app/services/data';
 import { Loader } from '@/components/UI/Editor/LoaderEditor';
+import { getCategories } from '@/services/data';
+import Wrapper from './components/Wrapper';
 
 export default async function Page() {
   const Categories = await getCategories();

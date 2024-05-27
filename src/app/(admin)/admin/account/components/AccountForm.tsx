@@ -1,7 +1,7 @@
 'use client';
 
-import { changeAccount } from '@/app/services/actions';
 import { Button } from '@/components/UI/button';
+import { changeAccount } from '@/services/actions';
 import { User } from '@prisma/client';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';

@@ -1,7 +1,7 @@
-import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/auth';
+import { getUser } from '@/services/data';
+import { getServerSession } from 'next-auth';
 import MainSection from './components/MainSection';
-import { getUser } from '@/app/services/data';
 
 export default async function Page() {
   const session = await getServerSession(authOptions);

@@ -1,8 +1,8 @@
 'use client';
 
-import { createArticle } from '@/app/services/actions';
 import { Editor } from '@/components/UI/Editor/TextEditor';
 import { Button } from '@/components/UI/button';
+import { createArticle } from '@/services/actions';
 
 import {
   Select,

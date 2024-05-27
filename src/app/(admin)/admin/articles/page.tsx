@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import Wrapper from './components/Articles';
-import { getTotalArticlesPages } from '@/app/services/data';
-import { Suspense } from 'react';
+import { Button } from '@/components/UI/button';
 import { TableSkeleton } from '@/components/UI/skeletons';
+import { getTotalArticlesPages } from '@/services/data';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import Wrapper from './components/Articles';
 import Pagination from './components/Pagination';
 import Search from './components/Search';
-import { Button } from '@/components/UI/button';
 
 export default async function Page({
   searchParams

@@ -1,6 +1,6 @@
 'use client';
 
-import { deleteArticle, updateArticleStatus } from '@/app/services/actions';
+import { deleteArticle, updateArticleStatus } from '@/services/actions';
 import { Article } from '@prisma/client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';

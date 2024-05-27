@@ -1,6 +1,5 @@
-import React from 'react';
+import { getArticlesByPage } from '@/services/data';
 import Posts from './Posts';
-import { getArticlesByPage } from '@/app/services/data';
 
 export default async function Wrapper({
   query,

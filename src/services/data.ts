@@ -1,5 +1,4 @@
-import { Id } from 'react-toastify';
-import prisma from '../db/client';
+import prisma from '@/app/db/client';
 import { unstable_noStore as noStore } from 'next/cache';
 
 const ITEMS_PER_PAGE = 9;

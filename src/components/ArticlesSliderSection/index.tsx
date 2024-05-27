@@ -1,15 +1,14 @@
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious
 } from '@/components/UI/carousel';
-import React from 'react';
 
 import ArticleCard from '@/components/UI/ArticleCard';
 
-import { getArticlesLast } from '@/app/services/data';
+import { getArticlesLast } from '@/services/data';
 type Props = {
   className?: string;
 };

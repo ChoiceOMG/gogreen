@@ -1,6 +1,6 @@
 'use client';
 
-import { deleteCategory } from '@/app/services/actions';
+import { deleteCategory } from '@/services/actions';
 import { Category } from '@prisma/client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';

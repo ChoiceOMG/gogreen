@@ -1,11 +1,10 @@
-import Link from 'next/link';
 
-import { getCategories } from '@/app/services/data';
-import { Suspense } from 'react';
 import { TableSkeleton } from '@/components/UI/skeletons';
+import { getCategories } from '@/services/data';
+import { Suspense } from 'react';
 
-import List from './components/List';
 import { CreateCategoryButton } from './components/CreateCategoryButton';
+import List from './components/List';
 
 export default async function Page() {
   const categories = await getCategories();

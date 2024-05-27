@@ -1,6 +1,5 @@
 'use client';
 
-import { deleteArticle, updateArticle } from '@/app/services/actions';
 import { Editor } from '@/components/UI/Editor/TextEditor';
 import { Button } from '@/components/UI/button';
 import {
@@ -11,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/UI/select';
+import { deleteArticle, updateArticle } from '@/services/actions';
 import { _siteUrl } from '@/utils/constants';
 import slugify from '@/utils/slugify';
 import { Article, ArticleCategory, Category } from '@prisma/client';

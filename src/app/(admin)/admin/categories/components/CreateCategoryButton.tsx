@@ -1,15 +1,15 @@
 'use client';
-import { createCategory } from '@/app/services/actions';
 import { Button } from '@/components/UI/button';
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogTitle,
-  DialogTrigger
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogTitle,
+    DialogTrigger
 } from '@/components/UI/dialog';
 import { Input } from '@/components/UI/input';
+import { createCategory } from '@/services/actions';
 import slugify from '@/utils/slugify';
 
 import React, { useEffect } from 'react';

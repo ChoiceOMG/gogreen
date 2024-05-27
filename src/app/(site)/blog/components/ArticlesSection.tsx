@@ -1,7 +1,6 @@
-import { getArticlesByPage } from '@/app/services/data';
 import { BubblePopComponent } from '@/components/Animations';
 import ArticleCard from '@/components/UI/ArticleCard';
-import React from 'react';
+import { getArticlesByPage } from '@/services/data';
 
 export default async function ArticlesSection({
   currentPage,

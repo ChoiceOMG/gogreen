@@ -1,9 +1,9 @@
 'use client';
-import { changeAccountPassword } from '@/app/services/actions';
-import { initialState } from '@/app/services/typesAndSchemas';
 import { Button } from '@/components/UI/button';
 import { Input } from '@/components/UI/input';
-import React, { useEffect, useState } from 'react';
+import { changeAccountPassword } from '@/services/actions';
+import { initialState } from '@/services/typesAndSchemas';
+import { useEffect, useState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { toast } from 'react-toastify';
 

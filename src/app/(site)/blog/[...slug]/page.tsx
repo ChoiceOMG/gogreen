@@ -1,13 +1,11 @@
-import { ContactUsSection } from '@/components/ContactUsSection';
-import prisma from '@/app/db/client';
-import { MainSection } from './components/MainSection';
-import { ContentSection } from './components/ContentSection';
-import { RecommendedSection } from './components/RecommendedSection';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
-import { getArticle } from '@/app/services/data';
-import { _siteUrl } from '@/utils/constants';
+import { ContactUsSection } from '@/components/ContactUsSection';
+import { getArticle } from '@/services/data';
 import { getArticleMeta } from '@/utils/getMeta';
 import { notFound } from 'next/navigation';
+import { ContentSection } from './components/ContentSection';
+import { MainSection } from './components/MainSection';
+import { RecommendedSection } from './components/RecommendedSection';
 
 export async function generateMetadata({
   params

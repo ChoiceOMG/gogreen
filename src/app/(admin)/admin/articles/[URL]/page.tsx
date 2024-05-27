@@ -1,9 +1,8 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 
+import { getArticle, getCategories } from '@/services/data';
 import Wrapper from './components/Wrapper';
-import { getArticle, getCategories } from '@/app/services/data';
 
-import Link from 'next/link';
 import { Loader } from '@/components/UI/Editor/LoaderEditor';
 import { redirect } from 'next/navigation';
 

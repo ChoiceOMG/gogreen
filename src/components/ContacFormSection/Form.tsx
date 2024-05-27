@@ -1,7 +1,7 @@
 'use client';
 
-import { sendContactForm } from '@/app/services/actions';
 import { Button } from '@/components/UI/button';
+import { sendContactForm } from '@/services/actions';
 import { useRef, useState } from 'react';
 
 import OverlayMessage from '@/components/UI/OverlayMessage';
