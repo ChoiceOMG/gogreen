@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import LoadingSpinner from '../../../loading';
-import { User } from '@prisma/client';
-import { toast } from 'react-toastify';
 import { changeAccount } from '@/app/services/actions';
 import { Button } from '@/components/UI/button';
+import { User } from '@prisma/client';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 function AccountForm({ user }: { user: User | null }) {
   const [firstName, setFirstName] = useState('');
@@ -132,7 +131,7 @@ function AccountForm({ user }: { user: User | null }) {
       >
         Save
       </Button>
-      {loading && <LoadingSpinner className="absolute top-0 left-0" />}
+      {loading && "Loading..." }
     </form>
   );
 }

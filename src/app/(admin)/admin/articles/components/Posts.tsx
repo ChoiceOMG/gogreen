@@ -1,12 +1,11 @@
 'use client';
 
+import { deleteArticle, updateArticleStatus } from '@/app/services/actions';
 import { Article } from '@prisma/client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import LoadingSpinner from '../../../loading';
-import Link from 'next/link';
-import { deleteArticle, updateArticleStatus } from '@/app/services/actions';
 const STATUSES = ['Draft', 'Publish'];
 
 function Posts({ posts }: { posts: Article[] }) {
@@ -98,7 +97,7 @@ function Posts({ posts }: { posts: Article[] }) {
       ) : (
         <table className="min-w-full bg-[#F9F9F9] rounded-lg mt-10 text-black">
           {loading ? (
-            <LoadingSpinner />
+           " Loading... "
           ) : (
             <>
               <thead>

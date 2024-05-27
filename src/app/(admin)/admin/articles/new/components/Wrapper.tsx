@@ -1,6 +1,5 @@
 'use client';
 
-import LoadingSpinner from '@/app/(admin)/loading';
 import { createArticle } from '@/app/services/actions';
 import { Editor } from '@/components/UI/Editor/TextEditor';
 import { Button } from '@/components/UI/button';
@@ -15,7 +14,7 @@ import {
 } from '@/components/UI/select';
 import { _siteUrl } from '@/utils/constants';
 import slugify from '@/utils/slugify';
-import { Category, Prisma } from '@prisma/client';
+import { Category } from '@prisma/client';
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -176,7 +175,7 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
                 <hr className="w-[60px] h-[4px] bg-black mt-1 mb-3" />
                 {loadingImage ? (
                   <div className="relative">
-                    <LoadingSpinner />{' '}
+                   " Loading..."
                   </div>
                 ) : (
                   <div className="relative">
@@ -238,7 +237,7 @@ function Wrapper({ Categories }: { Categories: Category[] }) {
                         {Categories.find(cat => cat.id === category)?.name}
                         {category !== 0 && (
                           <span
-                            className="absolute w-full h-full top-0 right-0  bg-red/70 text-white rounded-full  items-center justify-center cursor-pointer hidden group-hover:flex transition-all 
+                            className="absolute w-full h-full top-0 right-0  bg-red/70 text-white rounded-full  items-center justify-center cursor-pointer hidden group-hover:flex transition-all
                         duration-300"
                             onClick={() => {
                               setCategories(

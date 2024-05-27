@@ -1,9 +1,8 @@
 'use client';
 
-import { Button } from '@/components/UI/button';
 import { sendContactForm } from '@/app/services/actions';
-import React, { useRef, useState } from 'react';
-import LoadingSpinner from '../../app/(site)/loading';
+import { Button } from '@/components/UI/button';
+import { useRef, useState } from 'react';
 
 import OverlayMessage from '@/components/UI/OverlayMessage';
 import { validatePhoneNumber } from '@/utils/validators';
@@ -133,7 +132,7 @@ export const Form = ({ className = '' }: { className?: string }) => {
       </div>
       {loading && (
         <div className="absolute inset-0  rounded-[10px] z-10">
-          <LoadingSpinner className="!w-full !h-full !min-h-0" />
+          Loading...
         </div>
       )}
 

@@ -1,11 +1,10 @@
 'use client';
 
+import { Button } from '@/components/UI/button';
 import { motion } from 'framer-motion';
 import { getSession, signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
-import LoadingSpinner from '../../loading';
-import { Button } from '@/components/UI/button';
 
 export const AuthForm = () => {
   const router = useRouter();
@@ -69,7 +68,7 @@ export const AuthForm = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <LoadingSpinner className="!h-full" />
+          Loading...
         </motion.div>
       ) : (
         <form onSubmit={onSubmit}>

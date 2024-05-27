@@ -1,12 +1,10 @@
 'use client';
 
+import { deleteCategory } from '@/app/services/actions';
 import { Category } from '@prisma/client';
 import { motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
-import LoadingSpinner from '../../../loading';
-import Link from 'next/link';
-import { deleteCategory } from '@/app/services/actions';
 import { EditCategoryButton } from './EditCategoryButton';
 
 function List({ categories }: { categories: Category[] }) {
@@ -39,7 +37,7 @@ function List({ categories }: { categories: Category[] }) {
       ) : (
         <table className="min-w-full bg-[#F9F9F9] rounded-lg mt-10 text-black">
           {loading ? (
-            <LoadingSpinner />
+            "Loading..."
           ) : (
             <>
               <thead>

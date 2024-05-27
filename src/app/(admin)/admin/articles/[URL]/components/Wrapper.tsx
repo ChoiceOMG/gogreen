@@ -1,6 +1,5 @@
 'use client';
 
-import LoadingSpinner from '@/app/(admin)/loading';
 import { deleteArticle, updateArticle } from '@/app/services/actions';
 import { Editor } from '@/components/UI/Editor/TextEditor';
 import { Button } from '@/components/UI/button';
@@ -160,7 +159,7 @@ function Wrapper({
     <>
       <section className="py-10 ">
         {loading ? (
-          <LoadingSpinner />
+          "Loading ... "
         ) : (
           <div className="container">
             <input
@@ -209,7 +208,7 @@ function Wrapper({
                   {loadingImage ? (
                     <div className="relative">
                       {' '}
-                      <LoadingSpinner />{' '}
+                      "Loading... "{' '}
                     </div>
                   ) : (
                     <div className="relative">
@@ -272,7 +271,7 @@ function Wrapper({
                           {Categories.find(cat => cat.id === category)?.name}
                           {category !== 0 && (
                             <span
-                              className="absolute w-full h-full top-0 right-0  bg-red/70 text-white rounded-full  items-center justify-center cursor-pointer hidden group-hover:flex transition-all 
+                              className="absolute w-full h-full top-0 right-0  bg-red/70 text-white rounded-full  items-center justify-center cursor-pointer hidden group-hover:flex transition-all
                         duration-300"
                               onClick={() => {
                                 setCategories(
