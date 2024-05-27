@@ -1,8 +1,7 @@
 import { GoogleReviews } from '@/components/GoogleReviewsBlock';
-import React from 'react';
 import { ReviewsSlider } from './ReviewsSlider';
 
-export const ReviewsSection = ({ className = '' }: { className?: string }) => {
+export const ReviewsSection = async ({ className = '' }: { className?: string }) => {
   return (
     <section className={`relative  ${className}`}>
       <div className="container">

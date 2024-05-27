@@ -1,8 +1,7 @@
-import React from 'react';
-import { Slider } from './Slider';
 import { ScrollExpandLine } from '@/components/Animations';
+import { Slider } from './Slider';
 
-export const IndustriesSection = ({
+export const IndustriesSection = async ({
   title,
   subTitle,
   items

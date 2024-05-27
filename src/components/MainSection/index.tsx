@@ -1,4 +1,3 @@
-'use client'
 import { Leaf } from '@/components/UI/SVG/Leaf';
 import { Button } from '@/components/UI/button';
 import Image from 'next/image';
@@ -18,7 +17,7 @@ type MainSectionProps = {
 	links?: 'industries' | 'services';
 };
 
-export const MainSection: React.FC<MainSectionProps> = ({
+export const MainSection: React.FC<MainSectionProps> = async ({
 	reverse = false,
 	subTitle = 'Commercial Janitorial Services in Edmonton',
 	title = 'GoGreen Facilities Services Ltd.',

@@ -4,7 +4,6 @@ import { Button } from '@/components/UI/button';
 import {
   Carousel,
   CarouselContent,
-  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious

@@ -1,8 +1,7 @@
 import { Leaf } from '@/components/UI/SVG/Leaf';
-import React from 'react';
 import Parallax from '../Animations/Parallax';
 
-export const WhyUsSection = () => {
+export const WhyUsSection = async () => {
   const List = [
     {
       title: 'Environmental Responsibility',

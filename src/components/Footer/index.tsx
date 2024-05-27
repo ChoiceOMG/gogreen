@@ -1,20 +1,18 @@
-import { MenuFooter } from '@/utils/URL';
-import Link from 'next/link';
-import React from 'react';
 import { MenuItem } from '@/types/types';
-import Image from 'next/image';
-import { Socials } from '../UI/Socials';
-import { MailIcon } from '../UI/SVG/MailIcon';
+import { MenuFooter } from '@/utils/URL';
 import {
   _address,
-  _addressLink,
   _googleLink,
   _mail,
   _phone
 } from '@/utils/constants';
-import { PhoneIcon } from '../UI/SVG/PhoneIcon';
-import { LocateIcon } from '../UI/SVG/LocateIcon';
 import { formatPhoneNumber } from '@/utils/helpers';
+import Image from 'next/image';
+import Link from 'next/link';
+import { LocateIcon } from '../UI/SVG/LocateIcon';
+import { MailIcon } from '../UI/SVG/MailIcon';
+import { PhoneIcon } from '../UI/SVG/PhoneIcon';
+import { Socials } from '../UI/Socials';
 const Footer = () => {
   const menuColumns = MenuFooter.reduce<MenuItem[][]>(
     (acc, menuItem, index) => {
@@ -102,13 +100,13 @@ const Footer = () => {
           <div className="flex justify-between items-center max-md:flex-col gap-4">
             {' '}
             <p className="text-white text-center ">
-              Copyright 2024 © GoGreen. Canadian Web Design by{' '}
+              Copyright 2024 © GoGreen. Full-stack web application by {' '}
               <Link
                 href="https://www.choice.marketing/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Choice OMG full stack development
+                Choice OMG
               </Link>
             </p>
             <div className="flex gap-4 items-center justify-around sm:justify-end">

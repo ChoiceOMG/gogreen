@@ -1,12 +1,11 @@
 import { Leaf } from '@/components/UI/SVG/Leaf';
 import Image from 'next/image';
-import React from 'react';
-import partner_1 from './partners/Starbritelogo.png';
 import partner_2 from './partners/2.png';
 import partner_3 from './partners/3.png';
+import partner_1 from './partners/Starbritelogo.png';
 
 import Parallax from '@/components/Animations/Parallax';
-export const PartnersSection = () => {
+export const PartnersSection = async () => {
   return (
     <section className=" bg-goGreen-mint relative">
       <Parallax>

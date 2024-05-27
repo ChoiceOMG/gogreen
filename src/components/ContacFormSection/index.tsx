@@ -1,9 +1,8 @@
 import { ScrollExpandLine } from '@/components/Animations';
-import React from 'react';
-import { Form } from './Form';
 import { Button } from '../UI/button';
+import { Form } from './Form';
 
-export const ContacFormSection = () => {
+export const ContacFormSection = async () => {
   return (
     <section className="py-20 lg:py-44">
       <div className="container">
