@@ -1,15 +1,15 @@
-import { Metadata } from 'next';
-import { getPageMeta } from '@/utils/getMeta';
-import { MainSection } from '../../components/MainSection';
-import { AboutSection } from './components/AboutSection';
-import { ServicesSection } from '../../components/ServicesSection';
-import { IndustriesSection } from '../../components/BigSliderSection';
-import { WhyUsSection } from '../../components/WhyUsSection';
-import { ReviewsSection } from '../../components/ReviewsSection';
-import { PartnersSection } from './components/PartnersSection';
-import { _industries, _services } from '@/utils/constants';
 import { ArticlesSliderSection } from '@/components/ArticlesSliderSection';
 import { ContacFormSection } from '@/components/ContacFormSection';
+import { _industries, _services } from '@/utils/constants';
+import { getPageMeta } from '@/utils/getMeta';
+import { Metadata } from 'next';
+import { IndustriesSection } from '../components/BigSliderSection';
+import { MainSection } from '../components/MainSection';
+import { ReviewsSection } from '../components/ReviewsSection';
+import { ServicesSection } from '../components/ServicesSection';
+import { WhyUsSection } from '../components/WhyUsSection';
+import { AboutSection } from './components/AboutSection';
+import { PartnersSection } from './components/PartnersSection';
 
 export const metadata: Metadata = getPageMeta('/');
 

@@ -1,22 +1,19 @@
-import { Metadata } from 'next';
-import { getPageMeta } from '@/utils/getMeta';
 import { MainSection } from '@/components/MainSection';
+import { getPageMeta } from '@/utils/getMeta';
+import { Metadata } from 'next';
 
 import { ContactUsSection } from '@/components/ContactUsSection';
 
 import { ImageTextSection } from '@/components/UI/ImageTextSection';
 
-import { TextBlock } from '@/components/UI/TextBlock';
 import { IndustriesSection } from '@/components/BigSliderSection';
-import { ServicesSection } from '@/components/ServicesSection';
-import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
-import { TabsSection } from '@/components/TabsSection';
-import TimelineModern from '@/components/Timeline/modern';
+import { BusinessProcessSection } from '@/components/BusinessProcessSection';
 import { FAQ } from '@/components/FAQ';
-import { _industries, _services } from '@/utils/constants';
-import { LeafIcon } from '@/components/UI/SVG/LeafIcon';
 import { ReviewsSection } from '@/components/ReviewsSection';
-import { BusinessProcessSection } from '../../../../components/BusinessProcessSection';
+import { ServicesSection } from '@/components/ServicesSection';
+import { TabsSection } from '@/components/TabsSection';
+import { TextBlock } from '@/components/UI/TextBlock';
+import { _industries, _services } from '@/utils/constants';
 
 export const metadata: Metadata = getPageMeta(
   '/services/commercial-floor-cleaning'

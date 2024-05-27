@@ -1,86 +1,86 @@
-import { Metadata } from 'next';
-import { getPageMeta } from '@/utils/getMeta';
 import { MainSection } from '@/components/MainSection';
+import { getPageMeta } from '@/utils/getMeta';
+import { Metadata } from 'next';
 
 import { ContactUsSection } from '@/components/ContactUsSection';
 
 import { ImageTextSection } from '@/components/UI/ImageTextSection';
 
-import { TextBlock } from '@/components/UI/TextBlock';
 import { IndustriesSection } from '@/components/BigSliderSection';
-import { ServicesSection } from '@/components/ServicesSection';
-import { TextAndImagesSection } from '@/components/UI/TextAndImagesSection';
-import { TabsSection } from '@/components/TabsSection';
-import TimelineModern from '@/components/Timeline/modern';
+import { BusinessProcessSection } from '@/components/BusinessProcessSection';
 import { FAQ } from '@/components/FAQ';
-import { _industries, _services } from '@/utils/constants';
-import { LeafIcon } from '@/components/UI/SVG/LeafIcon';
 import { ReviewsSection } from '@/components/ReviewsSection';
-import { BusinessProcessSection } from '../../../../components/BusinessProcessSection';
+import { ServicesSection } from '@/components/ServicesSection';
+import { TabsSection } from '@/components/TabsSection';
+import { TextBlock } from '@/components/UI/TextBlock';
+import { _industries, _services } from '@/utils/constants';
 
-export const metadata: Metadata = getPageMeta('/services/post-construction');
+export const metadata: Metadata = getPageMeta('/services/sanitization');
 
 export default async function Page() {
   const Items = [
     {
-      title: 'Emergency Restoration',
+      title: 'Commercial Deep Cleaning and Disinfection',
       content: {
-        title: 'Emergency Restoration',
+        title: 'Commercial Deep Cleaning and Disinfection',
         description: (
           <>
             <p>
-              When disasters strike, trust GoGreen for rapid and effective
-              emergency restoration services.{' '}
+              Elevate the hygiene standards of your commercial space with
+              GoGreen`s specialized deep cleaning and disinfection services.
             </p>
             <p>
-              Our team is on-site to mitigate damage, restore properties, and
-              bring peace of mind during challenging times. Choose GoGreen for
-              immediate, reliable, and comprehensive emergency restoration
-              solutions.
+              Our expert team goes beyond the surface, delivering a cleaning
+              experience that ensures a safe and sanitary environment. We
+              consider your industry specifications and use them to create a
+              comprehensive cleaning plan.
             </p>
           </>
         ),
-        img: '/images/services/post-construction/1.jpg'
+        img: '/images/services/sanitary/1.jpg'
       }
     },
     {
-      title: 'Post-Construction Cleaning',
+      title: 'One Time Disinfection',
       content: {
-        title: 'Post-Construction Cleaning',
+        title: 'One Time Disinfection',
         description: (
           <>
             <p>
-              Transform your construction site into a usable space with
-              GoGreen`s specialized post-construction cleaning services.{' '}
+              When you need a swift and thorough disinfection solution, turn to
+              GoGreen`s one-time disinfection service. We’re ready to provide
+              immediate and effective sanitation, ensuring your space is free
+              from harm.{' '}
             </p>
             <p>
-              We specialize in removing debris, dust, and any remnants of the
-              construction process, leaving your area spotless and ready for
-              use.
+              By using advanced disinfectants and following meticulous
+              protocols, we create a safe and sanitized environment.
             </p>
           </>
         ),
-        img: '/images/services/post-construction/2.jpg'
+        img: '/images/services/sanitary/2.jpeg'
       }
     },
     {
-      title: 'Move In/Move Out Cleaning',
+      title: 'Recurring Disinfection',
       content: {
-        title: 'Move In/Move Out Cleaning',
+        title: 'Recurring Disinfection',
         description: (
           <>
             <p>
-              Planning a big move? Whether you`re moving in or preparing to move
-              out, trust GoGreen for a spotless start or easy handover.
+              Our commitment to continuous disinfection means you get the peace
+              of mind that comes from knowing your space is consistently and
+              thoroughly disinfected. Take advantage of our flexible scheduling
+              options, allowing you to tailor the frequency of disinfection.{' '}
             </p>
             <p>
-              We ensure your commercial space is ready for its next chapter.
-              Make it a smooth transition with GoGreen`s specialized
-              Move-In/Move-Out cleaning services.
+              With GoGreen, your safety is our priority, and our recurring
+              service is designed to provide lasting assurance in every
+              environment.
             </p>
           </>
         ),
-        img: '/images/services/post-construction/3.jpg'
+        img: '/images/services/sanitary/3.jpg'
       }
     }
   ];
@@ -88,10 +88,10 @@ export default async function Page() {
   return (
     <>
       <MainSection
-        title="Post-Construction Cleaning"
+        title="Disinfection and Sanitary Processing"
         subTitle="Edmonton’s Green Cleaning Experts"
-        text="For unique cleaning situations, such as post-construction cleaning, emergency restoration, or move-in/move-out cleaning for commercial spaces, GoGreen stands as your specialized solution."
-        imgSrc="/images/services/post-construction/main.png"
+        text="Explore eco-friendly disinfection services in Edmonton. Choose GoGreen for a proactive approach to health and hygiene."
+        imgSrc="/images/services/sanitary/main.png"
       />
 
       <ImageTextSection
