@@ -1,7 +1,14 @@
 import { GoogleReviews } from '@/components/GoogleReviewsBlock';
 import { ReviewsSlider } from './ReviewsSlider';
+import { GetReviews } from '@/services/data';
 
-export const ReviewsSection = async ({ className = '' }: { className?: string }) => {
+export const ReviewsSection = async ({
+  className = ''
+}: {
+  className?: string;
+}) => {
+  const reviewsData = await GetReviews();
+  console.log('reviewsData', reviewsData);
   return (
     <section className={`relative  ${className}`}>
       <div className="container">
@@ -10,7 +17,7 @@ export const ReviewsSection = async ({ className = '' }: { className?: string })
             <GoogleReviews />
           </div>
           <div className="basis-2/3 overflow-x-hidden">
-            <ReviewsSlider />
+            <ReviewsSlider reviewsData={reviewsData.reviews} />
           </div>
         </div>
       </div>

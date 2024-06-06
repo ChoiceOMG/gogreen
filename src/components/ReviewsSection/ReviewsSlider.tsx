@@ -12,11 +12,13 @@ import {
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { GoogleReview } from '@/types/types';
-import { apiFetch } from '@/utils/api-requests';
 
-export const ReviewsSlider = () => {
-  const [reviews, setReviews] = useState<GoogleReview[]>([]);
-  const [loading, setLoading] = useState(true);
+export const ReviewsSlider = ({
+  reviewsData
+}: {
+  reviewsData: GoogleReview[];
+}) => {
+  const [reviews, setReviews] = useState<GoogleReview[] | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [api, setApi] = useState<CarouselApi>();
   const toggleExpand = () => {
@@ -24,36 +26,10 @@ export const ReviewsSlider = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
-    async function fetchReviews() {
-      // Check if we already have the data in localStorage
-      const cachedReviews = localStorage.getItem('reviews');
-
-      if (
-        cachedReviews &&
-        cachedReviews.length > 0 &&
-        cachedReviews !== 'null' &&
-        cachedReviews !== 'undefined'
-      ) {
-        setReviews(JSON.parse(cachedReviews));
-      } else {
-        try {
-          const res = await apiFetch<GoogleReview>('/api/reviews');
-
-          setReviews(res.data);
-
-          // Save the data in localStorage
-          localStorage.setItem('reviews', JSON.stringify(res.data));
-        } catch (error) {
-          console.error('Error fetching reviews:', error);
-        }
-      }
-
-      setLoading(false);
+    if (reviewsData) {
+      setReviews(reviewsData);
     }
-
-    fetchReviews();
-  }, []);
+  }, [reviewsData]);
 
   useEffect(() => {
     if (!api) {
@@ -61,22 +37,16 @@ export const ReviewsSlider = () => {
     }
 
     api.on('select', () => {
-      const currentIndex = api.selectedScrollSnap();
-
       setIsExpanded(false);
       api.reInit();
     });
   }, [api]);
 
+  if (!reviews) {
+    return null;
+  }
   return (
     <Carousel className="max-md:pb-20 relative" setApi={setApi}>
-      {loading && (
-        <div
-          className={`h-full w-full flex justify-center items-center absolute top-0 left-0 bg-white z-10 rounded-[60px] rounded-tr-[0px] `}
-        >
-          <div className="spinner"></div>
-        </div>
-      )}
       <CarouselContent isHero={false}>
         {reviews.map((item, index) => (
           <CarouselItem key={index} className="-mt-5 py-5  max-lg:px-5">

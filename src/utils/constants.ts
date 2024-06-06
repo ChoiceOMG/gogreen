@@ -5,8 +5,8 @@ export const _mail = 'rfq@ggfservices.com';
 export const _phone = '(780) 437-1011';
 export const _address = '9805 33 Ave NW, Edmonton';
 export const _addressLink =
-  'https://www.google.com/maps/place/9805+33+Ave+NW,+Edmonton,+AB+T6N+1B6/data=!4m2!3m1!1s0x53a01f29e07408b9:0x12762f0bffb5f2c9?sa=X&ved=2ahUKEwjS48q8oJWEAxUcJzQIHc1HBdMQ8gF6BAgVEAA';
-export const _googleLink = 'https://maps.app.goo.gl/Ax5iWpznJ84Efu7R8';
+  'https://www.google.com/maps/place/Go+Green+Facilities+Services+%26+Janitorial/@53.4653411,-113.4825403,15z/data=!4m6!3m5!1s0x2ab98b72a4d7da87:0x30b64c0885a3f145!8m2!3d53.4653411!4d-113.4825403!16s%2Fg%2F11y4643dqq?entry=ttu';
+export const _googleLink = 'https://maps.app.goo.gl/XyWQgWHjMVw1kRbn7';
 export const _facebook = 'https://www.facebook.com/ggfservices/';
 export const _instagram = 'https://www.instagram.com/ggfservices/';
 

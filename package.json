@@ -60,7 +60,6 @@
     "@tiptap/react": "^2.4.0",
     "@tiptap/starter-kit": "^2.4.0",
     "axios": "^1.7.2",
-    "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -74,6 +73,7 @@
     "nanoid": "^5.0.7",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
+    "node-cache": "^5.1.2",
     "nodemailer": "^6.9.13",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
@@ -89,7 +89,6 @@
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "tiptap": "^1.32.2",
-    "tiptap-resize-image": "^2.0.1",
     "use-debounce": "^10.0.1",
     "uuid": "^9.0.1",
     "zod": "^3.23.8"
