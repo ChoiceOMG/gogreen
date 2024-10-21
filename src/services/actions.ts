@@ -105,7 +105,7 @@ export async function sendContactForm(formData: FormData) {
       <p><strong>Message:</strong> ${message}</p>
     </div>
     <div class="footer">
-      <p>Copyright 2024 © GoGreen. Canadian Web Design by Choice OMG full stack development</p>
+      <p>Copyright 2024 © GoGreen. For support, please contact Choice OMG support@choice.marketing. Do not mark these emails as spam.</p>
     </div>
   </div>
 </div>
@@ -114,8 +114,10 @@ export async function sendContactForm(formData: FormData) {
 
   `;
   try {
+    const mailTo = process.env.EMAIL_TO
+    if (!mailTo) throw new Error("Destination email missing. Please contact the webmaster.")
     await sendEmail({
-      to: process.env.EMAIL_TO || 'illia@choice.marketing',
+      to: mailTo,
       // to: email,
       subject: `[Contact Form]: Message from ${fullName}`,
       html: htmlMessage
