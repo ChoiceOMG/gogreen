@@ -1,7 +1,7 @@
 {
   "name": "gogreen",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "prisma:init": "dotenv -e .env.local -- npx prisma init",
     "prisma:deploy": "dotenv -e .env.local -- npx prisma migrate deploy",
